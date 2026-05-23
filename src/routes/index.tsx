@@ -19,6 +19,15 @@ const navItems = [
   { label: "تواصل معنا", href: "#contact" },
 ];
 
+const SOCIAL = {
+  facebook: "https://www.facebook.com/share/18UzuBstJe/?mibextid=wwXIfr",
+  instagram: "https://www.instagram.com/alramzalmethly?igsh=MXVuNjFjcDRramdpMA==",
+  linkedin: "https://www.linkedin.com/company/al-ramz-al-methaly/posts/?feedView=all",
+  whatsapp: "https://wa.me/201204442060",
+  whatsappDisplay: "+20 120 444 2060",
+  email: "alramzalmethaly@gmail.com",
+};
+
 const features = [
   { icon: Users, title: "فريق من الخبراء", desc: "نخبة من المستشارين ذوي الخبرات الواسعة في الأسواق الخليجية والعربية." },
   { icon: Sparkles, title: "حلول مخصصة", desc: "نصمم حلولاً مالية وإدارية تناسب طبيعة عملك وأهدافك الاستراتيجية." },
