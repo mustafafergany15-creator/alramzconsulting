@@ -75,11 +75,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "الرمز المثالي | استشارات مالية وإدارية" },
       { name: "description", content: "الرمز المثالي - شركة استشارات مالية وإدارية متكاملة. حلول مخصصة لنجاح مستدام في المملكة العربية السعودية ومصر." },
       { name: "author", content: "Al Ramz Al Methaly" },
-      { property: "og:title", content: "الرمز المثالي | نحو نجاح مستدام" },
-      { property: "og:description", content: "حلول مالية وإدارية متكاملة من نخبة الخبراء" },
+      { property: "og:title", content: "الرمز المثالي | استشارات مالية وإدارية" },
+      { property: "og:description", content: "الرمز المثالي - شركة استشارات مالية وإدارية متكاملة. حلول مخصصة لنجاح مستدام في المملكة العربية السعودية ومصر." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "الرمز المثالي | استشارات مالية وإدارية" },
+      { name: "twitter:description", content: "الرمز المثالي - شركة استشارات مالية وإدارية متكاملة. حلول مخصصة لنجاح مستدام في المملكة العربية السعودية ومصر." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e697fefb-14b7-4a04-95c8-4d8dba908858/id-preview-d8302f20--1b580b66-1428-436e-82d2-b2d56fe77899.lovable.app-1779566749842.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e697fefb-14b7-4a04-95c8-4d8dba908858/id-preview-d8302f20--1b580b66-1428-436e-82d2-b2d56fe77899.lovable.app-1779566749842.png" },
     ],
     links: [
       {
