@@ -302,16 +302,16 @@ function CTA() {
                 احجز استشارتك الأولى مجاناً وتعرّف على الحلول التي نقدّمها لمنشأتك بكل احترافية وسرية تامة.
               </p>
               <div className="mt-8 space-y-3">
-                <a href="tel:+966500000000" className="flex items-center gap-3 justify-end hover:text-gold transition">
-                  <span dir="ltr">+966 50 000 0000</span>
+                <a href={SOCIAL.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 justify-end hover:text-gold transition">
+                  <span dir="ltr">{SOCIAL.whatsappDisplay}</span>
                   <Phone className="h-5 w-5 text-gold" />
                 </a>
-                <a href="mailto:info@alramz.com" className="flex items-center gap-3 justify-end hover:text-gold transition">
-                  <span>info@alramz.com</span>
+                <a href={`mailto:${SOCIAL.email}`} className="flex items-center gap-3 justify-end hover:text-gold transition">
+                  <span>{SOCIAL.email}</span>
                   <Mail className="h-5 w-5 text-gold" />
                 </a>
                 <div className="flex items-center gap-3 justify-end">
-                  <span>الرياض، المملكة العربية السعودية</span>
+                  <span>جمهورية مصر العربية</span>
                   <MapPin className="h-5 w-5 text-gold" />
                 </div>
               </div>
