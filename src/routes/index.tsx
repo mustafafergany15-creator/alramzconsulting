@@ -48,13 +48,13 @@ function TopBar() {
     <div className="bg-emerald-gradient text-ivory text-sm">
       <div className="container mx-auto flex flex-wrap items-center justify-between gap-3 px-6 py-2.5">
         <div className="flex items-center gap-6">
-          <a href="tel:+966500000000" className="flex items-center gap-2 hover:text-gold transition">
+          <a href={SOCIAL.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-gold transition">
             <Phone className="h-3.5 w-3.5 text-gold" />
-            <span dir="ltr">+966 50 000 0000</span>
+            <span dir="ltr">{SOCIAL.whatsappDisplay}</span>
           </a>
-          <a href="mailto:info@alramz.com" className="hidden sm:flex items-center gap-2 hover:text-gold transition">
+          <a href={`mailto:${SOCIAL.email}`} className="hidden sm:flex items-center gap-2 hover:text-gold transition">
             <Mail className="h-3.5 w-3.5 text-gold" />
-            info@alramz.com
+            {SOCIAL.email}
           </a>
         </div>
         <div className="flex items-center gap-3">
