@@ -348,11 +348,15 @@ function Footer() {
               <img src={logo} alt="شعار" className="h-14 w-14 rounded-full shadow-gold" width={56} height={56} loading="lazy" />
             </div>
             <p className="mt-5 text-ivory/70 leading-relaxed max-w-md mr-0 ml-auto">
-              شركة استشارات مالية وإدارية متكاملة تقدّم حلولاً تمكّن منشآت المنطقة من النمو والاستدامة.
+              شركة الرمز المثالي للاستشارات المالية والإدارية — شركة مصرية ذات مسؤولية محدودة، تقدّم حلولاً متكاملة تمكّن منشآت المنطقة من النمو والاستدامة.
             </p>
             <div className="mt-6 flex gap-3 justify-end">
-              {[Facebook, Linkedin, Instagram].map((Icon, i) => (
-                <a key={i} href="#" className="h-10 w-10 rounded-full border border-gold/40 flex items-center justify-center hover:bg-gold-gradient hover:text-emerald-deep transition">
+              {[
+                { Icon: Facebook, href: SOCIAL.facebook, label: "Facebook" },
+                { Icon: Linkedin, href: SOCIAL.linkedin, label: "LinkedIn" },
+                { Icon: Instagram, href: SOCIAL.instagram, label: "Instagram" },
+              ].map(({ Icon, href, label }) => (
+                <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="h-10 w-10 rounded-full border border-gold/40 flex items-center justify-center hover:bg-gold-gradient hover:text-emerald-deep transition">
                   <Icon className="h-4 w-4" />
                 </a>
               ))}
@@ -369,9 +373,15 @@ function Footer() {
           <div>
             <h4 className="font-bold text-gold mb-4">تواصل</h4>
             <ul className="space-y-2 text-ivory/70 text-sm">
-              <li dir="ltr" className="text-right">+966 50 000 0000</li>
-              <li>info@alramz.com</li>
-              <li>الرياض - القاهرة</li>
+              <li>
+                <a href={SOCIAL.whatsapp} target="_blank" rel="noopener noreferrer" dir="ltr" className="block text-right hover:text-gold transition">
+                  واتساب: {SOCIAL.whatsappDisplay}
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${SOCIAL.email}`} className="hover:text-gold transition break-all">{SOCIAL.email}</a>
+              </li>
+              <li>جمهورية مصر العربية</li>
             </ul>
           </div>
         </div>
