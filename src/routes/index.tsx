@@ -43,6 +43,31 @@ const services = [
   { icon: ShieldCheck, title: "إدارة المخاطر", desc: "أطر حوكمة وامتثال متكاملة لحماية أصولك واستدامة أعمالك." },
 ];
 
+const buildConsultationWhatsAppUrl = (form: HTMLFormElement) => {
+  const fd = new FormData(form);
+  const name = String(fd.get("name") || "").trim();
+  const email = String(fd.get("email") || "").trim();
+  const phone = String(fd.get("phone") || "").trim();
+  const message = String(fd.get("message") || "").trim();
+  const text = [
+    "طلب استشارة جديد من موقع الرمز المثالي",
+    "",
+    `الاسم: ${name}`,
+    `البريد الإلكتروني: ${email}`,
+    `رقم الجوال: ${phone}`,
+    `الرسالة: ${message}`,
+  ].join("\n");
+
+  const params = new URLSearchParams({
+    phone: "201204442060",
+    text,
+    type: "phone_number",
+    app_absent: "0",
+  });
+
+  return `https://api.whatsapp.com/send/?${params.toString()}`;
+};
+
 function TopBar() {
   return (
     <div className="bg-emerald-gradient text-ivory text-sm">
@@ -321,31 +346,19 @@ function CTA() {
               className="glass-card rounded-3xl p-8 space-y-4"
               onSubmit={(e) => {
                 e.preventDefault();
-                const f = e.currentTarget as HTMLFormElement;
-                const fd = new FormData(f);
-                const name = (fd.get("name") as string) || "";
-                const email = (fd.get("email") as string) || "";
-                const phone = (fd.get("phone") as string) || "";
-                const message = (fd.get("message") as string) || "";
-                const text =
-                  `طلب استشارة جديد من موقع الرمز المثالي%0A%0A` +
-                  `الاسم: ${name}%0A` +
-                  `البريد الإلكتروني: ${email}%0A` +
-                  `رقم الجوال: ${phone}%0A` +
-                  `الرسالة: ${message}`;
-                window.open(`https://wa.me/201204442060?text=${text}`, "_blank", "noopener,noreferrer");
-                f.reset();
+                const form = e.currentTarget as HTMLFormElement;
+                window.location.href = buildConsultationWhatsAppUrl(form);
               }}
             >
               <h3 className="font-display text-2xl font-bold text-emerald-deep text-right">أرسل لنا رسالة</h3>
               <input name="name" required className="w-full px-5 py-3.5 rounded-xl bg-white/80 border border-gold/30 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 text-right" placeholder="الاسم الكامل" />
               <input name="email" required className="w-full px-5 py-3.5 rounded-xl bg-white/80 border border-gold/30 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 text-right" placeholder="البريد الإلكتروني" type="email" />
-              <input name="phone" required className="w-full px-5 py-3.5 rounded-xl bg-white/80 border border-gold/30 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 text-right" placeholder="رقم الجوال" />
+              <input name="phone" required className="w-full px-5 py-3.5 rounded-xl bg-white/80 border border-gold/30 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 text-right" placeholder="رقم الجوال" type="tel" />
               <textarea name="message" required className="w-full px-5 py-3.5 rounded-xl bg-white/80 border border-gold/30 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 text-right min-h-28" placeholder="كيف يمكننا مساعدتك؟" />
               <button type="submit" className="w-full bg-emerald-gradient text-ivory font-bold py-4 rounded-xl shadow-luxury hover:shadow-gold transition">
                 إرسال الطلب
               </button>
-              <p className="text-xs text-foreground/60 text-right">سيتم تحويلك إلى واتساب لإرسال طلبك مباشرة.</p>
+              <p className="text-xs text-foreground/60 text-right">سيتم فتح واتساب في نفس الصفحة لتجنب حظر النوافذ المنبثقة وإرسال طلبك مباشرة.</p>
             </form>
           </div>
         </div>
