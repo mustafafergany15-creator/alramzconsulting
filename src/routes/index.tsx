@@ -361,7 +361,7 @@ function CTA() {
       toast.error("تعذّر إرسال الطلب. سيتم تحويلك إلى واتساب لإتمام الطلب.", {
         action: {
           label: "فتح واتساب",
-          onClick: () => { window.location.href = buildConsultationWhatsAppUrl(form); },
+          onClick: () => { window.open(buildConsultationWhatsAppUrl(form), "_blank", "noopener,noreferrer"); },
         },
       });
     } finally {
