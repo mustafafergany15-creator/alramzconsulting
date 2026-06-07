@@ -350,6 +350,9 @@ function CTA() {
       if (res.ok && (data.success === "true" || data.success === true)) {
         toast.success("تم إرسال طلبك بنجاح، سنتواصل معك قريباً");
         form.reset();
+      } else if (res.ok && typeof data?.message === "string" && data.message.toLowerCase().includes("activation")) {
+        toast.success("تم استلام طلبك. يرجى من إدارة الشركة تفعيل خدمة الإرسال من بريدها لمرة واحدة فقط لتصل الطلبات القادمة مباشرة.", { duration: 8000 });
+        form.reset();
       } else {
         throw new Error(data?.message || "Submission failed");
       }
