@@ -163,7 +163,7 @@ function Hero() {
             </div>
             <div className="absolute -bottom-4 -right-4 glass-card rounded-2xl px-5 py-3 shadow-gold">
               <div className="text-[10px] text-foreground/60">منذ</div>
-              <div className="font-display text-2xl font-bold text-emerald">2009</div>
+              <div className="font-display text-2xl font-bold text-emerald">2026</div>
             </div>
           </div>
         </div>
@@ -317,15 +317,35 @@ function CTA() {
               </div>
             </div>
 
-            <form className="glass-card rounded-3xl p-8 space-y-4" onSubmit={(e) => e.preventDefault()}>
+            <form
+              className="glass-card rounded-3xl p-8 space-y-4"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const f = e.currentTarget as HTMLFormElement;
+                const fd = new FormData(f);
+                const name = (fd.get("name") as string) || "";
+                const email = (fd.get("email") as string) || "";
+                const phone = (fd.get("phone") as string) || "";
+                const message = (fd.get("message") as string) || "";
+                const text =
+                  `طلب استشارة جديد من موقع الرمز المثالي%0A%0A` +
+                  `الاسم: ${name}%0A` +
+                  `البريد الإلكتروني: ${email}%0A` +
+                  `رقم الجوال: ${phone}%0A` +
+                  `الرسالة: ${message}`;
+                window.open(`https://wa.me/201204442060?text=${text}`, "_blank", "noopener,noreferrer");
+                f.reset();
+              }}
+            >
               <h3 className="font-display text-2xl font-bold text-emerald-deep text-right">أرسل لنا رسالة</h3>
-              <input className="w-full px-5 py-3.5 rounded-xl bg-white/80 border border-gold/30 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 text-right" placeholder="الاسم الكامل" />
-              <input className="w-full px-5 py-3.5 rounded-xl bg-white/80 border border-gold/30 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 text-right" placeholder="البريد الإلكتروني" type="email" />
-              <input className="w-full px-5 py-3.5 rounded-xl bg-white/80 border border-gold/30 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 text-right" placeholder="رقم الجوال" />
-              <textarea className="w-full px-5 py-3.5 rounded-xl bg-white/80 border border-gold/30 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 text-right min-h-28" placeholder="كيف يمكننا مساعدتك؟" />
-              <button className="w-full bg-emerald-gradient text-ivory font-bold py-4 rounded-xl shadow-luxury hover:shadow-gold transition">
+              <input name="name" required className="w-full px-5 py-3.5 rounded-xl bg-white/80 border border-gold/30 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 text-right" placeholder="الاسم الكامل" />
+              <input name="email" required className="w-full px-5 py-3.5 rounded-xl bg-white/80 border border-gold/30 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 text-right" placeholder="البريد الإلكتروني" type="email" />
+              <input name="phone" required className="w-full px-5 py-3.5 rounded-xl bg-white/80 border border-gold/30 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 text-right" placeholder="رقم الجوال" />
+              <textarea name="message" required className="w-full px-5 py-3.5 rounded-xl bg-white/80 border border-gold/30 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 text-right min-h-28" placeholder="كيف يمكننا مساعدتك؟" />
+              <button type="submit" className="w-full bg-emerald-gradient text-ivory font-bold py-4 rounded-xl shadow-luxury hover:shadow-gold transition">
                 إرسال الطلب
               </button>
+              <p className="text-xs text-foreground/60 text-right">سيتم تحويلك إلى واتساب لإرسال طلبك مباشرة.</p>
             </form>
           </div>
         </div>
