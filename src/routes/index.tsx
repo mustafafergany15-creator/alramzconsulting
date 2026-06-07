@@ -26,7 +26,7 @@ const SOCIAL = {
   instagram: "https://www.instagram.com/alramzalmethly?igsh=MXVuNjFjcDRramdpMA==",
   linkedin: "https://www.linkedin.com/company/al-ramz-al-methaly/posts/?feedView=all",
   whatsapp: "https://wa.me/201204442060",
-  whatsappDisplay: "+20 120 444 2060",
+  whatsappDisplay: "+20 120 4442060",
   email: "alramzalmethaly@gmail.com",
 };
 
