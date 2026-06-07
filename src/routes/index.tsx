@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { toast } from "sonner";
 import logo from "@/assets/logo.png";
 import heroBg from "@/assets/hero-bg.jpg";
 import {
