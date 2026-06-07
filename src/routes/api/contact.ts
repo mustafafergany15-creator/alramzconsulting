@@ -22,6 +22,7 @@ export const Route = createFileRoute("/api/contact")({
         }
 
         const { name, email, phone, message } = parsed.data;
+        const origin = request.headers.get("origin") || new URL(request.url).origin;
         const submittedAt = new Date().toLocaleString("ar-EG", {
           dateStyle: "full",
           timeStyle: "short",
@@ -33,6 +34,8 @@ export const Route = createFileRoute("/api/contact")({
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
+            Origin: origin,
+            Referer: origin,
           },
           body: JSON.stringify({
             _subject: "طلب استشارة جديد من موقع الرمز المثالي",
