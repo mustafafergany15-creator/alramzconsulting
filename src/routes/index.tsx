@@ -45,31 +45,6 @@ const services = [
   { icon: ShieldCheck, title: "إدارة المخاطر", desc: "أطر حوكمة وامتثال متكاملة لحماية أصولك واستدامة أعمالك." },
 ];
 
-const buildConsultationWhatsAppUrl = (form: HTMLFormElement) => {
-  const fd = new FormData(form);
-  const name = String(fd.get("name") || "").trim();
-  const email = String(fd.get("email") || "").trim();
-  const phone = String(fd.get("phone") || "").trim();
-  const message = String(fd.get("message") || "").trim();
-  const text = [
-    "طلب استشارة جديد من موقع الرمز المثالي",
-    "",
-    `الاسم: ${name}`,
-    `البريد الإلكتروني: ${email}`,
-    `رقم الجوال: ${phone}`,
-    `الرسالة: ${message}`,
-  ].join("\n");
-
-  const params = new URLSearchParams({
-    phone: "201204442060",
-    text,
-    type: "phone_number",
-    app_absent: "0",
-  });
-
-  return `https://api.whatsapp.com/send/?${params.toString()}`;
-};
-
 function TopBar() {
   return (
     <div className="bg-emerald-gradient text-ivory text-sm">
@@ -332,7 +307,7 @@ function CTA() {
     setSubmitting(true);
     const loadingId = toast.loading("جاري إرسال طلبك...");
     try {
-      const res = await fetch("https://formsubmit.co/ajax/alramzalmethaly@gmail.com", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
@@ -340,30 +315,19 @@ function CTA() {
           email,
           phone,
           message,
-          _subject: "طلب استشارة جديد من موقع الرمز المثالي",
-          _template: "table",
-          _captcha: "false",
         }),
       });
       const data = await res.json().catch(() => ({}));
       toast.dismiss(loadingId);
-      if (res.ok && (data.success === "true" || data.success === true)) {
+      if (res.ok && data.success === true) {
         toast.success("تم إرسال طلبك بنجاح، سنتواصل معك قريباً");
-        form.reset();
-      } else if (res.ok && typeof data?.message === "string" && data.message.toLowerCase().includes("activation")) {
-        toast.success("تم استلام طلبك. يرجى من إدارة الشركة تفعيل خدمة الإرسال من بريدها لمرة واحدة فقط لتصل الطلبات القادمة مباشرة.", { duration: 8000 });
         form.reset();
       } else {
         throw new Error(data?.message || "Submission failed");
       }
     } catch (err) {
       toast.dismiss(loadingId);
-      toast.error("تعذّر إرسال الطلب. سيتم تحويلك إلى واتساب لإتمام الطلب.", {
-        action: {
-          label: "فتح واتساب",
-          onClick: () => { window.open(buildConsultationWhatsAppUrl(form), "_blank", "noopener,noreferrer"); },
-        },
-      });
+      toast.error("تعذّر إرسال الطلب حالياً، يرجى المحاولة مرة أخرى بعد قليل.");
     } finally {
       setSubmitting(false);
     }
