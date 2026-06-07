@@ -313,6 +313,59 @@ function Services() {
 }
 
 function CTA() {
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const name = String(fd.get("name") || "").trim();
+    const email = String(fd.get("email") || "").trim();
+    const phone = String(fd.get("phone") || "").trim();
+    const message = String(fd.get("message") || "").trim();
+
+    if (!name || !email || !phone || !message) {
+      toast.error("يرجى تعبئة جميع الحقول");
+      return;
+    }
+
+    setSubmitting(true);
+    const loadingId = toast.loading("جاري إرسال طلبك...");
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/alramzalmethaly@gmail.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          message,
+          _subject: "طلب استشارة جديد من موقع الرمز المثالي",
+          _template: "table",
+          _captcha: "false",
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      toast.dismiss(loadingId);
+      if (res.ok && (data.success === "true" || data.success === true)) {
+        toast.success("تم إرسال طلبك بنجاح، سنتواصل معك قريباً");
+        form.reset();
+      } else {
+        throw new Error(data?.message || "Submission failed");
+      }
+    } catch (err) {
+      toast.dismiss(loadingId);
+      toast.error("تعذّر إرسال الطلب. سيتم تحويلك إلى واتساب لإتمام الطلب.", {
+        action: {
+          label: "فتح واتساب",
+          onClick: () => { window.location.href = buildConsultationWhatsAppUrl(form); },
+        },
+      });
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-24 bg-ivory">
       <div className="container mx-auto px-6">
@@ -346,21 +399,17 @@ function CTA() {
 
             <form
               className="glass-card rounded-3xl p-8 space-y-4"
-              onSubmit={(e) => {
-                e.preventDefault();
-                const form = e.currentTarget as HTMLFormElement;
-                window.location.href = buildConsultationWhatsAppUrl(form);
-              }}
+              onSubmit={handleSubmit}
             >
               <h3 className="font-display text-2xl font-bold text-emerald-deep text-right">أرسل لنا رسالة</h3>
               <input name="name" required className="w-full px-5 py-3.5 rounded-xl bg-white/80 border border-gold/30 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 text-right" placeholder="الاسم الكامل" />
               <input name="email" required className="w-full px-5 py-3.5 rounded-xl bg-white/80 border border-gold/30 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 text-right" placeholder="البريد الإلكتروني" type="email" />
               <input name="phone" required className="w-full px-5 py-3.5 rounded-xl bg-white/80 border border-gold/30 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 text-right" placeholder="رقم الجوال" type="tel" />
               <textarea name="message" required className="w-full px-5 py-3.5 rounded-xl bg-white/80 border border-gold/30 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 text-right min-h-28" placeholder="كيف يمكننا مساعدتك؟" />
-              <button type="submit" className="w-full bg-emerald-gradient text-ivory font-bold py-4 rounded-xl shadow-luxury hover:shadow-gold transition">
-                إرسال الطلب
+              <button type="submit" disabled={submitting} className="w-full bg-emerald-gradient text-ivory font-bold py-4 rounded-xl shadow-luxury hover:shadow-gold transition disabled:opacity-60 disabled:cursor-not-allowed">
+                {submitting ? "جاري الإرسال..." : "إرسال الطلب"}
               </button>
-              <p className="text-xs text-foreground/60 text-right">سيتم فتح واتساب في نفس الصفحة لتجنب حظر النوافذ المنبثقة وإرسال طلبك مباشرة.</p>
+              <p className="text-xs text-foreground/60 text-right">سيتم إرسال طلبك مباشرة إلى بريد الشركة دون مغادرة الصفحة.</p>
             </form>
           </div>
         </div>
