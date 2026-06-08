@@ -384,12 +384,8 @@ function Footer() {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-10 text-right">
           <div className="md:col-span-2">
-            <div className="flex items-center gap-3 justify-end">
-              <div className="leading-tight">
-                <div className="font-display text-2xl font-bold text-gold">الرمز المثالي</div>
-                <div className="text-[11px] tracking-widest text-ivory/60 uppercase">Al Ramz Al Methaly</div>
-              </div>
-              <img src={logo} alt="شعار" className="h-14 w-14 rounded-xl object-contain bg-white p-1 shadow-gold ring-1 ring-gold/20" width={56} height={56} loading="lazy" />
+            <div className="flex justify-end">
+              <img src={logoDark} alt="الرمز المثالي - للاستشارات المالية والإدارية" className="h-16 md:h-20 w-auto object-contain" loading="lazy" />
             </div>
             <p className="mt-5 text-ivory/70 leading-relaxed max-w-md mr-0 ml-auto">
               شركة الرمز المثالي للاستشارات المالية والإدارية — شركة مصرية ذات مسؤولية محدودة، تقدّم حلولاً متكاملة تمكّن منشآت المنطقة من النمو والاستدامة.
