@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { toast } from "sonner";
 import logo from "@/assets/logo.png";
+import logoDark from "@/assets/logo-dark.png";
 import heroBg from "@/assets/hero-bg.jpg";
 import {
   Phone, Mail, Users, Sparkles, Target, Award,
@@ -74,11 +75,7 @@ function Navbar() {
     <nav className="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-gold/20 shadow-soft">
       <div className="container mx-auto flex items-center justify-between px-6 py-3">
         <a href="#home" className="flex items-center gap-3">
-          <img src={logo} alt="الرمز المثالي" className="h-14 w-14 rounded-xl object-contain bg-white p-1 shadow-gold ring-1 ring-gold/20" width={56} height={56} />
-          <div className="leading-tight hidden sm:block">
-            <div className="font-display text-xl font-bold text-emerald">الرمز المثالي</div>
-            <div className="text-[11px] tracking-widest text-gold uppercase">Al Ramz Al Methaly</div>
-          </div>
+          <img src={logo} alt="الرمز المثالي - للاستشارات المالية والإدارية" className="h-12 md:h-14 w-auto object-contain" />
         </a>
         <ul className="hidden lg:flex items-center gap-8">
           {navItems.map((n) => (
@@ -152,18 +149,14 @@ function Hero() {
         {/* Logo left */}
         <div className="order-1 lg:order-2 flex justify-center lg:justify-start">
           <div className="relative">
-            <div className="absolute inset-0 bg-gold-gradient rounded-full blur-3xl opacity-30 scale-110" />
-            <div className="absolute inset-0 animate-spin-slow rounded-full border-2 border-dashed border-gold/40" style={{ animation: "spin 30s linear infinite" }} />
-            <div className="relative p-6 rounded-full bg-gradient-to-br from-white to-ivory shadow-luxury ring-1 ring-gold/30">
-              <img
-                src={logo}
-                alt="شعار الرمز المثالي"
-                className="h-72 w-72 md:h-[420px] md:w-[420px] rounded-2xl object-contain drop-shadow-2xl bg-white p-4"
-                width={420}
-                height={420}
-              />
-            </div>
-            <div className="absolute -bottom-4 -right-4 glass-card rounded-2xl px-5 py-3 shadow-gold">
+            <div className="absolute -inset-10 bg-gold-gradient rounded-full blur-3xl opacity-20" />
+            <img
+              src={logo}
+              alt="شعار الرمز المثالي"
+              className="relative w-[320px] md:w-[480px] h-auto object-contain"
+              style={{ filter: "drop-shadow(0 25px 40px rgba(1,67,45,0.18))" }}
+            />
+            <div className="absolute -bottom-2 -right-2 glass-card rounded-2xl px-5 py-3 shadow-gold">
               <div className="text-[10px] text-foreground/60">منذ</div>
               <div className="font-display text-2xl font-bold text-emerald">2026</div>
             </div>
@@ -391,12 +384,8 @@ function Footer() {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-10 text-right">
           <div className="md:col-span-2">
-            <div className="flex items-center gap-3 justify-end">
-              <div className="leading-tight">
-                <div className="font-display text-2xl font-bold text-gold">الرمز المثالي</div>
-                <div className="text-[11px] tracking-widest text-ivory/60 uppercase">Al Ramz Al Methaly</div>
-              </div>
-              <img src={logo} alt="شعار" className="h-14 w-14 rounded-xl object-contain bg-white p-1 shadow-gold ring-1 ring-gold/20" width={56} height={56} loading="lazy" />
+            <div className="flex justify-end">
+              <img src={logoDark} alt="الرمز المثالي - للاستشارات المالية والإدارية" className="h-16 md:h-20 w-auto object-contain" loading="lazy" />
             </div>
             <p className="mt-5 text-ivory/70 leading-relaxed max-w-md mr-0 ml-auto">
               شركة الرمز المثالي للاستشارات المالية والإدارية — شركة مصرية ذات مسؤولية محدودة، تقدّم حلولاً متكاملة تمكّن منشآت المنطقة من النمو والاستدامة.
