@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { toast } from "sonner";
 import logo from "@/assets/logo.png";
+import logoDark from "@/assets/logo-dark.png";
 import heroBg from "@/assets/hero-bg.jpg";
 import {
   Phone, Mail, Users, Sparkles, Target, Award,
