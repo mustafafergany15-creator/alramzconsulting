@@ -74,7 +74,7 @@ function Navbar() {
     <nav className="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-gold/20 shadow-soft">
       <div className="container mx-auto flex items-center justify-between px-6 py-3">
         <a href="#home" className="flex items-center gap-3">
-          <img src={logo} alt="الرمز المثالي" className="h-14 w-14 rounded-full shadow-gold" width={56} height={56} />
+          <img src={logo} alt="الرمز المثالي" className="h-14 w-14 rounded-xl object-contain bg-white p-1 shadow-gold ring-1 ring-gold/20" width={56} height={56} />
           <div className="leading-tight hidden sm:block">
             <div className="font-display text-xl font-bold text-emerald">الرمز المثالي</div>
             <div className="text-[11px] tracking-widest text-gold uppercase">Al Ramz Al Methaly</div>
@@ -158,7 +158,7 @@ function Hero() {
               <img
                 src={logo}
                 alt="شعار الرمز المثالي"
-                className="h-72 w-72 md:h-[420px] md:w-[420px] rounded-full object-contain drop-shadow-2xl"
+                className="h-72 w-72 md:h-[420px] md:w-[420px] rounded-2xl object-contain drop-shadow-2xl bg-white p-4"
                 width={420}
                 height={420}
               />
@@ -396,7 +396,7 @@ function Footer() {
                 <div className="font-display text-2xl font-bold text-gold">الرمز المثالي</div>
                 <div className="text-[11px] tracking-widest text-ivory/60 uppercase">Al Ramz Al Methaly</div>
               </div>
-              <img src={logo} alt="شعار" className="h-14 w-14 rounded-full shadow-gold" width={56} height={56} loading="lazy" />
+              <img src={logo} alt="شعار" className="h-14 w-14 rounded-xl object-contain bg-white p-1 shadow-gold ring-1 ring-gold/20" width={56} height={56} loading="lazy" />
             </div>
             <p className="mt-5 text-ivory/70 leading-relaxed max-w-md mr-0 ml-auto">
               شركة الرمز المثالي للاستشارات المالية والإدارية — شركة مصرية ذات مسؤولية محدودة، تقدّم حلولاً متكاملة تمكّن منشآت المنطقة من النمو والاستدامة.
