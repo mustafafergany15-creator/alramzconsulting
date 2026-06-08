@@ -148,18 +148,14 @@ function Hero() {
         {/* Logo left */}
         <div className="order-1 lg:order-2 flex justify-center lg:justify-start">
           <div className="relative">
-            <div className="absolute inset-0 bg-gold-gradient rounded-full blur-3xl opacity-30 scale-110" />
-            <div className="absolute inset-0 animate-spin-slow rounded-full border-2 border-dashed border-gold/40" style={{ animation: "spin 30s linear infinite" }} />
-            <div className="relative p-6 rounded-full bg-gradient-to-br from-white to-ivory shadow-luxury ring-1 ring-gold/30">
-              <img
-                src={logo}
-                alt="شعار الرمز المثالي"
-                className="h-72 w-72 md:h-[420px] md:w-[420px] rounded-2xl object-contain drop-shadow-2xl bg-white p-4"
-                width={420}
-                height={420}
-              />
-            </div>
-            <div className="absolute -bottom-4 -right-4 glass-card rounded-2xl px-5 py-3 shadow-gold">
+            <div className="absolute -inset-10 bg-gold-gradient rounded-full blur-3xl opacity-20" />
+            <img
+              src={logo}
+              alt="شعار الرمز المثالي"
+              className="relative w-[320px] md:w-[480px] h-auto object-contain"
+              style={{ filter: "drop-shadow(0 25px 40px rgba(1,67,45,0.18))" }}
+            />
+            <div className="absolute -bottom-2 -right-2 glass-card rounded-2xl px-5 py-3 shadow-gold">
               <div className="text-[10px] text-foreground/60">منذ</div>
               <div className="font-display text-2xl font-bold text-emerald">2026</div>
             </div>
