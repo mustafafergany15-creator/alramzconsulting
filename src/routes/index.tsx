@@ -74,11 +74,7 @@ function Navbar() {
     <nav className="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-gold/20 shadow-soft">
       <div className="container mx-auto flex items-center justify-between px-6 py-3">
         <a href="#home" className="flex items-center gap-3">
-          <img src={logo} alt="الرمز المثالي" className="h-14 w-14 rounded-xl object-contain bg-white p-1 shadow-gold ring-1 ring-gold/20" width={56} height={56} />
-          <div className="leading-tight hidden sm:block">
-            <div className="font-display text-xl font-bold text-emerald">الرمز المثالي</div>
-            <div className="text-[11px] tracking-widest text-gold uppercase">Al Ramz Al Methaly</div>
-          </div>
+          <img src={logo} alt="الرمز المثالي - للاستشارات المالية والإدارية" className="h-12 md:h-14 w-auto object-contain" />
         </a>
         <ul className="hidden lg:flex items-center gap-8">
           {navItems.map((n) => (
