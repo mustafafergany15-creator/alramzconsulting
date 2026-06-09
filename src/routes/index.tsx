@@ -75,7 +75,15 @@ function Navbar() {
     <nav className="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-gold/20 shadow-soft">
       <div className="container mx-auto flex items-center justify-between px-6 py-3">
         <a href="#home" className="flex items-center gap-3">
-          <img src={logo} alt="الرمز المثالي - للاستشارات المالية والإدارية" className="h-12 md:h-14 w-auto object-contain" />
+          <img
+            src={logo}
+            alt="الرمز المثالي - للاستشارات المالية والإدارية"
+            width={384}
+            height={210}
+            decoding="async"
+            fetchPriority="high"
+            className="h-11 md:h-12 w-auto object-contain"
+          />
         </a>
         <ul className="hidden lg:flex items-center gap-8">
           {navItems.map((n) => (
@@ -98,8 +106,8 @@ function Navbar() {
 function Hero() {
   return (
     <section id="home" className="relative overflow-hidden bg-ivory">
-      <div className="absolute inset-0 opacity-[0.08]">
-        <img src={heroBg} alt="" className="h-full w-full object-cover" width={1920} height={1080} />
+      <div className="absolute inset-0 opacity-[0.06] pointer-events-none">
+        <img src={heroBg} alt="" className="h-full w-full object-cover" width={1920} height={1080} loading="lazy" decoding="async" />
       </div>
       <div className="absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-gold-gradient opacity-20 blur-3xl" />
       <div className="absolute -bottom-40 -right-40 h-[500px] w-[500px] rounded-full bg-emerald-gradient opacity-15 blur-3xl" />
@@ -149,35 +157,29 @@ function Hero() {
         {/* Logo left */}
         <div className="order-1 lg:order-2 flex justify-center lg:justify-start">
           <div className="relative inline-block">
-            {/* Ambient glow — soft emerald + gold halo blends with page */}
+            {/* Calm gold halo that blends into the ivory background */}
             <div
               aria-hidden
-              className="absolute -inset-16 rounded-full blur-3xl opacity-60 pointer-events-none"
+              className="absolute -inset-20 rounded-full blur-3xl opacity-50 pointer-events-none"
               style={{
                 background:
-                  "radial-gradient(closest-side, color-mix(in oklab, var(--gold) 35%, transparent), transparent 70%), radial-gradient(closest-side, color-mix(in oklab, var(--emerald) 22%, transparent), transparent 75%)",
+                  "radial-gradient(closest-side, color-mix(in oklab, var(--gold) 22%, transparent), transparent 72%)",
               }}
-            />
-            {/* Decorative gold ring behind the mark */}
-            <div
-              aria-hidden
-              className="absolute inset-0 -m-6 rounded-full border border-gold/30"
-            />
-            <div
-              aria-hidden
-              className="absolute inset-0 -m-10 rounded-full border border-gold/15"
             />
             <img
               src={logo}
               alt="شعار الرمز المثالي"
-              className="relative w-[300px] md:w-[460px] h-auto object-contain"
+              width={384}
+              height={210}
+              decoding="async"
+              fetchPriority="high"
+              className="relative w-[280px] md:w-[440px] h-auto object-contain"
               style={{
                 filter:
-                  "drop-shadow(0 18px 28px rgba(1,67,45,0.22)) drop-shadow(0 4px 10px rgba(205,164,94,0.18))",
+                  "drop-shadow(0 14px 22px rgba(1,67,45,0.18)) drop-shadow(0 3px 6px rgba(205,164,94,0.12))",
               }}
             />
-            {/* Est. badge — pushed clearly outside the logo */}
-            <div className="absolute -bottom-8 -left-8 md:-bottom-10 md:-left-12 glass-card rounded-2xl px-5 py-3 shadow-gold flex items-center gap-3">
+            <div className="absolute -bottom-6 -left-4 md:-bottom-8 md:-left-8 glass-card rounded-2xl px-5 py-3 shadow-gold flex items-center gap-3">
               <div className="h-8 w-px bg-gold/40" />
               <div className="text-right">
                 <div className="text-[10px] tracking-widest text-foreground/60 uppercase">EST</div>

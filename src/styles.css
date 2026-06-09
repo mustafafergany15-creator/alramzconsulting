@@ -72,12 +72,12 @@
 :root {
   --radius: 1rem;
   /* Brand */
-  --emerald: oklch(0.36 0.09 158);          /* #01432D-ish */
-  --emerald-deep: oklch(0.28 0.08 158);
-  --navy: oklch(0.32 0.04 248);             /* #243447 */
-  --gold: oklch(0.74 0.11 78);              /* #CDA45E */
-  --gold-soft: oklch(0.86 0.07 82);
-  --ivory: oklch(0.96 0.018 88);            /* #F6F1E7 */
+  --emerald: oklch(0.38 0.085 158);
+  --emerald-deep: oklch(0.29 0.075 158);
+  --navy: oklch(0.32 0.04 248);
+  --gold: oklch(0.76 0.095 80);             /* softer, less saturated */
+  --gold-soft: oklch(0.88 0.055 84);
+  --ivory: oklch(0.965 0.014 86);           /* warm, calm */
 
   --background: var(--ivory);
   --foreground: oklch(0.22 0.03 248);
@@ -112,7 +112,7 @@
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
 
-  --gradient-gold: linear-gradient(135deg, oklch(0.82 0.1 82), oklch(0.68 0.12 75));
+  --gradient-gold: linear-gradient(135deg, oklch(0.84 0.085 84), oklch(0.7 0.1 76));
   --gradient-emerald: linear-gradient(135deg, var(--emerald), var(--emerald-deep));
   --shadow-luxury: 0 30px 80px -30px color-mix(in oklab, var(--emerald) 35%, transparent);
   --shadow-gold: 0 20px 50px -20px color-mix(in oklab, var(--gold) 55%, transparent);
