@@ -75,7 +75,15 @@ function Navbar() {
     <nav className="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-gold/20 shadow-soft">
       <div className="container mx-auto flex items-center justify-between px-6 py-3">
         <a href="#home" className="flex items-center gap-3">
-          <img src={logo} alt="الرمز المثالي - للاستشارات المالية والإدارية" className="h-12 md:h-14 w-auto object-contain" />
+          <img
+            src={logo}
+            alt="الرمز المثالي - للاستشارات المالية والإدارية"
+            width={384}
+            height={210}
+            decoding="async"
+            fetchPriority="high"
+            className="h-11 md:h-12 w-auto object-contain"
+          />
         </a>
         <ul className="hidden lg:flex items-center gap-8">
           {navItems.map((n) => (
