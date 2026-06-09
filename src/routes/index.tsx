@@ -27,7 +27,7 @@ const SOCIAL = {
   instagram: "https://www.instagram.com/alramzalmethly?igsh=MXVuNjFjcDRramdpMA==",
   linkedin: "https://www.linkedin.com/company/al-ramz-al-methaly/posts/?feedView=all",
   whatsapp: "https://wa.me/201204442060",
-  whatsappDisplay: "+20 120 4442060",
+  whatsappDisplay: "+20 120 444 2060",
   email: "alramzalmethaly@gmail.com",
 };
 
@@ -440,8 +440,9 @@ function Footer() {
             <h4 className="font-bold text-gold mb-4">تواصل</h4>
             <ul className="space-y-2 text-ivory/70 text-sm">
               <li>
-                <a href={SOCIAL.whatsapp} target="_blank" rel="noopener noreferrer" dir="ltr" className="block text-right hover:text-gold transition">
-                  واتساب: {SOCIAL.whatsappDisplay}
+                <a href={SOCIAL.whatsapp} target="_blank" rel="noopener noreferrer" className="block text-right hover:text-gold transition">
+                  <span>واتساب: </span>
+                  <bdi dir="ltr" style={{ unicodeBidi: "isolate" }}>{SOCIAL.whatsappDisplay}</bdi>
                 </a>
               </li>
               <li>
