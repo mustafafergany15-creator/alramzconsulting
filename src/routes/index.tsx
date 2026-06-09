@@ -98,8 +98,8 @@ function Navbar() {
 function Hero() {
   return (
     <section id="home" className="relative overflow-hidden bg-ivory">
-      <div className="absolute inset-0 opacity-[0.08]">
-        <img src={heroBg} alt="" className="h-full w-full object-cover" width={1920} height={1080} />
+      <div className="absolute inset-0 opacity-[0.06] pointer-events-none">
+        <img src={heroBg} alt="" className="h-full w-full object-cover" width={1920} height={1080} loading="lazy" decoding="async" />
       </div>
       <div className="absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-gold-gradient opacity-20 blur-3xl" />
       <div className="absolute -bottom-40 -right-40 h-[500px] w-[500px] rounded-full bg-emerald-gradient opacity-15 blur-3xl" />
