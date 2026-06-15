@@ -226,9 +226,9 @@ function Hero() {
 
           <div className="mt-12 grid grid-cols-3 gap-6 max-w-md mr-0 ml-auto">
             {[
-              { n: "+30", l: "عام خبرة" },
-              { n: "+250", l: "عميل ناجح" },
-              { n: "98%", l: "رضا العملاء" },
+              { n: "+30", l: "عام خبرة الفريق" },
+              { n: "2026", l: "عام التأسيس" },
+              { n: "IFRS", l: "معايير دولية" },
             ].map((s) => (
               <div key={s.l} className="text-center">
                 <div className="font-display text-3xl font-bold text-gold-gradient">{s.n}</div>
@@ -263,7 +263,7 @@ function Hero() {
                   "drop-shadow(0 14px 22px rgba(1,67,45,0.18)) drop-shadow(0 3px 6px rgba(205,164,94,0.12))",
               }}
             />
-            <div className="absolute -bottom-6 -left-4 md:-bottom-8 md:-left-8 glass-card rounded-2xl px-5 py-3 shadow-gold flex items-center gap-3">
+            <div className="absolute -bottom-14 -left-10 md:-bottom-16 md:-left-20 glass-card rounded-2xl px-5 py-3 shadow-gold flex items-center gap-3">
               <div className="h-8 w-px bg-gold/40" />
               <div className="text-right">
                 <div className="text-[10px] tracking-widest text-foreground/60 uppercase">EST</div>
@@ -338,19 +338,19 @@ function About() {
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-emerald-gradient rounded-3xl p-8 text-ivory shadow-luxury translate-y-8">
               <div className="font-display text-5xl font-bold text-gold">30+</div>
-              <div className="mt-2 text-sm opacity-90">عاماً من الخبرة الميدانية</div>
+              <div className="mt-2 text-sm opacity-90">عاماً من خبرة فريق العمل</div>
             </div>
             <div className="glass-card rounded-3xl p-8 shadow-gold">
-              <div className="font-display text-5xl font-bold text-gold-gradient">250+</div>
-              <div className="mt-2 text-sm text-foreground/70">عميل في المنطقة</div>
+              <div className="font-display text-5xl font-bold text-gold-gradient">2026</div>
+              <div className="mt-2 text-sm text-foreground/70">عام تأسيس الشركة</div>
             </div>
             <div className="glass-card rounded-3xl p-8 shadow-gold">
               <div className="font-display text-5xl font-bold text-gold-gradient">2</div>
-              <div className="mt-2 text-sm text-foreground/70">دولتان: مصر والسعودية</div>
+              <div className="mt-2 text-sm text-foreground/70">سوقان: مصر والسعودية</div>
             </div>
             <div className="bg-gold-gradient rounded-3xl p-8 text-emerald-deep shadow-gold translate-y-8">
-              <div className="font-display text-5xl font-bold">98%</div>
-              <div className="mt-2 text-sm font-semibold">نسبة رضا عملائنا</div>
+              <div className="font-display text-5xl font-bold">IFRS</div>
+              <div className="mt-2 text-sm font-semibold">وفق المعايير الدولية للتقارير المالية</div>
             </div>
           </div>
         </div>
