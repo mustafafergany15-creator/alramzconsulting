@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 import logo from "@/assets/logo.png";
 import logoDark from "@/assets/logo-dark.png";
@@ -16,6 +16,63 @@ import {
 export const Route = createFileRoute("/")({
   component: Index,
 });
+
+function AnimatedNumber({
+  value,
+  duration = 1600,
+  suffix = "",
+  prefix = "",
+}: {
+  value: number;
+  duration?: number;
+  suffix?: string;
+  prefix?: string;
+}) {
+  const ref = useRef<HTMLSpanElement | null>(null);
+  const [display, setDisplay] = useState(0);
+  const started = useRef(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const reduce =
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) {
+      setDisplay(value);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting || started.current) return;
+          started.current = true;
+          const start = performance.now();
+          const from = 0;
+          const tick = (now: number) => {
+            const p = Math.min(1, (now - start) / duration);
+            const eased = 1 - Math.pow(1 - p, 3);
+            setDisplay(Math.round(from + (value - from) * eased));
+            if (p < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+          io.disconnect();
+        });
+      },
+      { threshold: 0.35 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [value, duration]);
+
+  return (
+    <span ref={ref} className="tabular-nums">
+      {prefix}
+      {display.toLocaleString("en-US")}
+      {suffix}
+    </span>
+  );
+}
 
 const navItems = [
   { label: "الرئيسية", href: "#home" },
@@ -224,22 +281,24 @@ function Hero() {
             </a>
           </div>
 
-          <div className="mt-12 grid grid-cols-3 gap-6 max-w-md mr-0 ml-auto">
+          <div className="mt-12 grid grid-cols-3 gap-4 sm:gap-6 max-w-md mr-0 ml-auto">
             {[
-              { n: "+30", l: "عام خبرة الفريق" },
-              { n: "2026", l: "عام التأسيس" },
-              { n: "IFRS", l: "معايير دولية" },
-            ].map((s) => (
-              <div key={s.l} className="text-center">
-                <div className="font-display text-3xl font-bold text-gold-gradient">{s.n}</div>
-                <div className="text-xs text-foreground/60 mt-1">{s.l}</div>
+              { v: 30, suffix: "+", l: "عام خبرة الفريق" },
+              { v: 2026, l: "عام التأسيس" },
+              { v: null as number | null, text: "IFRS", l: "معايير دولية" },
+            ].map((s, i) => (
+              <div key={i} className="text-center">
+                <div className="font-display text-2xl sm:text-3xl font-bold text-gold-gradient tabular-nums tracking-tight">
+                  {s.v === null ? s.text : <AnimatedNumber value={s.v} suffix={s.suffix} />}
+                </div>
+                <div className="text-[11px] sm:text-xs text-foreground/60 mt-1 leading-snug">{s.l}</div>
               </div>
             ))}
           </div>
         </div>
 
         {/* Logo left */}
-        <div className="order-1 lg:order-2 flex justify-center lg:justify-start">
+        <div className="order-1 lg:order-2 flex justify-center lg:justify-start pb-16 md:pb-20 lg:pb-0">
           <div className="relative inline-block">
             {/* Calm gold halo that blends into the ivory background */}
             <div
@@ -257,17 +316,17 @@ function Hero() {
               height={210}
               decoding="async"
               fetchPriority="high"
-              className="relative w-[280px] md:w-[440px] h-auto object-contain"
+              className="relative w-[240px] sm:w-[300px] md:w-[440px] h-auto object-contain"
               style={{
                 filter:
                   "drop-shadow(0 14px 22px rgba(1,67,45,0.18)) drop-shadow(0 3px 6px rgba(205,164,94,0.12))",
               }}
             />
-            <div className="absolute -bottom-14 -left-10 md:-bottom-16 md:-left-20 glass-card rounded-2xl px-5 py-3 shadow-gold flex items-center gap-3">
-              <div className="h-8 w-px bg-gold/40" />
+            <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 md:left-auto md:-translate-x-0 md:-bottom-16 md:-left-20 glass-card rounded-2xl px-4 py-2.5 md:px-5 md:py-3 shadow-gold flex items-center gap-3 whitespace-nowrap">
+              <div className="h-7 md:h-8 w-px bg-gold/40" />
               <div className="text-right">
                 <div className="text-[10px] tracking-widest text-foreground/60 uppercase">EST</div>
-                <div className="font-display text-2xl font-bold text-emerald leading-none">2026</div>
+                <div className="font-display text-xl md:text-2xl font-bold text-emerald leading-none tabular-nums">2026</div>
               </div>
             </div>
           </div>
@@ -337,15 +396,21 @@ function About() {
         <div className="relative">
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-emerald-gradient rounded-3xl p-8 text-ivory shadow-luxury translate-y-8">
-              <div className="font-display text-5xl font-bold text-gold">30+</div>
+              <div className="font-display text-5xl font-bold text-gold tabular-nums">
+                <AnimatedNumber value={30} suffix="+" />
+              </div>
               <div className="mt-2 text-sm opacity-90">عاماً من خبرة فريق العمل</div>
             </div>
             <div className="glass-card rounded-3xl p-8 shadow-gold">
-              <div className="font-display text-5xl font-bold text-gold-gradient">2026</div>
+              <div className="font-display text-5xl font-bold text-gold-gradient tabular-nums">
+                <AnimatedNumber value={2026} duration={2000} />
+              </div>
               <div className="mt-2 text-sm text-foreground/70">عام تأسيس الشركة</div>
             </div>
             <div className="glass-card rounded-3xl p-8 shadow-gold">
-              <div className="font-display text-5xl font-bold text-gold-gradient">2</div>
+              <div className="font-display text-5xl font-bold text-gold-gradient tabular-nums">
+                <AnimatedNumber value={2} />
+              </div>
               <div className="mt-2 text-sm text-foreground/70">سوقان: مصر والسعودية</div>
             </div>
             <div className="bg-gold-gradient rounded-3xl p-8 text-emerald-deep shadow-gold translate-y-8">
