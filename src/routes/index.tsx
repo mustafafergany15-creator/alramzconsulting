@@ -17,6 +17,63 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+function AnimatedNumber({
+  value,
+  duration = 1600,
+  suffix = "",
+  prefix = "",
+}: {
+  value: number;
+  duration?: number;
+  suffix?: string;
+  prefix?: string;
+}) {
+  const ref = useRef<HTMLSpanElement | null>(null);
+  const [display, setDisplay] = useState(0);
+  const started = useRef(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const reduce =
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) {
+      setDisplay(value);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting || started.current) return;
+          started.current = true;
+          const start = performance.now();
+          const from = 0;
+          const tick = (now: number) => {
+            const p = Math.min(1, (now - start) / duration);
+            const eased = 1 - Math.pow(1 - p, 3);
+            setDisplay(Math.round(from + (value - from) * eased));
+            if (p < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+          io.disconnect();
+        });
+      },
+      { threshold: 0.35 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [value, duration]);
+
+  return (
+    <span ref={ref} className="tabular-nums">
+      {prefix}
+      {display.toLocaleString("en-US")}
+      {suffix}
+    </span>
+  );
+}
+
 const navItems = [
   { label: "الرئيسية", href: "#home" },
   { label: "من نحن", href: "#about" },
