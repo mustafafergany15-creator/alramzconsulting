@@ -396,15 +396,21 @@ function About() {
         <div className="relative">
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-emerald-gradient rounded-3xl p-8 text-ivory shadow-luxury translate-y-8">
-              <div className="font-display text-5xl font-bold text-gold">30+</div>
+              <div className="font-display text-5xl font-bold text-gold tabular-nums">
+                <AnimatedNumber value={30} suffix="+" />
+              </div>
               <div className="mt-2 text-sm opacity-90">عاماً من خبرة فريق العمل</div>
             </div>
             <div className="glass-card rounded-3xl p-8 shadow-gold">
-              <div className="font-display text-5xl font-bold text-gold-gradient">2026</div>
+              <div className="font-display text-5xl font-bold text-gold-gradient tabular-nums">
+                <AnimatedNumber value={2026} duration={2000} />
+              </div>
               <div className="mt-2 text-sm text-foreground/70">عام تأسيس الشركة</div>
             </div>
             <div className="glass-card rounded-3xl p-8 shadow-gold">
-              <div className="font-display text-5xl font-bold text-gold-gradient">2</div>
+              <div className="font-display text-5xl font-bold text-gold-gradient tabular-nums">
+                <AnimatedNumber value={2} />
+              </div>
               <div className="mt-2 text-sm text-foreground/70">سوقان: مصر والسعودية</div>
             </div>
             <div className="bg-gold-gradient rounded-3xl p-8 text-emerald-deep shadow-gold translate-y-8">
