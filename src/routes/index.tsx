@@ -224,22 +224,24 @@ function Hero() {
             </a>
           </div>
 
-          <div className="mt-12 grid grid-cols-3 gap-6 max-w-md mr-0 ml-auto">
+          <div className="mt-12 grid grid-cols-3 gap-4 sm:gap-6 max-w-md mr-0 ml-auto">
             {[
-              { n: "+30", l: "عام خبرة الفريق" },
-              { n: "2026", l: "عام التأسيس" },
-              { n: "IFRS", l: "معايير دولية" },
-            ].map((s) => (
-              <div key={s.l} className="text-center">
-                <div className="font-display text-3xl font-bold text-gold-gradient">{s.n}</div>
-                <div className="text-xs text-foreground/60 mt-1">{s.l}</div>
+              { v: 30, suffix: "+", l: "عام خبرة الفريق" },
+              { v: 2026, l: "عام التأسيس" },
+              { v: null as number | null, text: "IFRS", l: "معايير دولية" },
+            ].map((s, i) => (
+              <div key={i} className="text-center">
+                <div className="font-display text-2xl sm:text-3xl font-bold text-gold-gradient tabular-nums tracking-tight">
+                  {s.v === null ? s.text : <AnimatedNumber value={s.v} suffix={s.suffix} />}
+                </div>
+                <div className="text-[11px] sm:text-xs text-foreground/60 mt-1 leading-snug">{s.l}</div>
               </div>
             ))}
           </div>
         </div>
 
         {/* Logo left */}
-        <div className="order-1 lg:order-2 flex justify-center lg:justify-start">
+        <div className="order-1 lg:order-2 flex justify-center lg:justify-start pb-16 md:pb-20 lg:pb-0">
           <div className="relative inline-block">
             {/* Calm gold halo that blends into the ivory background */}
             <div
@@ -257,17 +259,17 @@ function Hero() {
               height={210}
               decoding="async"
               fetchPriority="high"
-              className="relative w-[280px] md:w-[440px] h-auto object-contain"
+              className="relative w-[240px] sm:w-[300px] md:w-[440px] h-auto object-contain"
               style={{
                 filter:
                   "drop-shadow(0 14px 22px rgba(1,67,45,0.18)) drop-shadow(0 3px 6px rgba(205,164,94,0.12))",
               }}
             />
-            <div className="absolute -bottom-14 -left-10 md:-bottom-16 md:-left-20 glass-card rounded-2xl px-5 py-3 shadow-gold flex items-center gap-3">
-              <div className="h-8 w-px bg-gold/40" />
+            <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 md:left-auto md:-translate-x-0 md:-bottom-16 md:-left-20 glass-card rounded-2xl px-4 py-2.5 md:px-5 md:py-3 shadow-gold flex items-center gap-3 whitespace-nowrap">
+              <div className="h-7 md:h-8 w-px bg-gold/40" />
               <div className="text-right">
                 <div className="text-[10px] tracking-widest text-foreground/60 uppercase">EST</div>
-                <div className="font-display text-2xl font-bold text-emerald leading-none">2026</div>
+                <div className="font-display text-xl md:text-2xl font-bold text-emerald leading-none tabular-nums">2026</div>
               </div>
             </div>
           </div>
