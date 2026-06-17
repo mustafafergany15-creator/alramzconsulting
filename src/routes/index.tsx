@@ -201,10 +201,9 @@ function TopBar() {
             {SOCIAL.email}
           </a>
         </div>
-        <div className="flex items-center gap-3">
-          <span className="opacity-80">فروعنا:</span>
-          <span className="flex items-center gap-1.5 text-base" title="مصر">🇪🇬</span>
-          <span className="flex items-center gap-1.5 text-base" title="السعودية">🇸🇦</span>
+        <div className="hidden md:flex items-center gap-2 opacity-90">
+          <span className="text-gold">●</span>
+          <span>الأحد - الخميس · 9:00 ص - 5:00 م</span>
         </div>
       </div>
     </div>
