@@ -293,7 +293,7 @@ function Hero() {
         </div>
 
         {/* Logo left */}
-        <div className="order-1 lg:order-2 flex justify-center lg:justify-start pb-16 md:pb-20 lg:pb-0">
+        <div className="order-1 lg:order-2 flex justify-center lg:justify-start pb-24 md:pb-24 lg:pb-0">
           <div className="relative inline-block">
             {/* Calm gold halo that blends into the ivory background */}
             <div
@@ -317,7 +317,7 @@ function Hero() {
                   "drop-shadow(0 14px 22px rgba(1,67,45,0.18)) drop-shadow(0 3px 6px rgba(205,164,94,0.12))",
               }}
             />
-            <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 md:left-auto md:-translate-x-0 md:-bottom-16 md:-left-20 glass-card rounded-2xl px-4 py-2.5 md:px-5 md:py-3 shadow-gold flex items-center gap-3 whitespace-nowrap">
+            <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 md:left-auto md:-translate-x-0 md:-bottom-16 md:-left-20 glass-card rounded-2xl px-4 py-2.5 md:px-5 md:py-3 shadow-gold flex items-center gap-3 whitespace-nowrap">
               <div className="h-7 md:h-8 w-px bg-gold/40" />
               <div className="text-right">
                 <div className="text-[10px] tracking-widest text-foreground/60 uppercase">EST</div>
