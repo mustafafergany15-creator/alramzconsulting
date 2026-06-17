@@ -190,7 +190,7 @@ const comparisonRows = [
 function TopBar() {
   return (
     <div className="bg-emerald-gradient text-ivory text-sm">
-      <div className="container mx-auto flex flex-wrap items-center justify-between gap-3 px-6 py-2.5">
+      <div className="container mx-auto flex flex-wrap items-center gap-6 px-6 py-2.5">
         <div className="flex items-center gap-6">
           <a href={SOCIAL.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-gold transition">
             <Phone className="h-3.5 w-3.5 text-gold" />
@@ -200,10 +200,6 @@ function TopBar() {
             <Mail className="h-3.5 w-3.5 text-gold" />
             {SOCIAL.email}
           </a>
-        </div>
-        <div className="hidden md:flex items-center gap-2 opacity-90">
-          <span className="text-gold">●</span>
-          <span>الأحد - الخميس · 9:00 ص - 5:00 م</span>
         </div>
       </div>
     </div>
