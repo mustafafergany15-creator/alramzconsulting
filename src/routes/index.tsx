@@ -192,11 +192,11 @@ function TopBar() {
     <div className="bg-emerald-gradient text-ivory text-sm">
       <div className="container mx-auto flex flex-wrap items-center gap-6 px-6 py-2.5">
         <div className="flex items-center gap-6">
-          <a href={SOCIAL.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-gold transition">
+          <a href={SOCIAL.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-ivory transition">
             <Phone className="h-3.5 w-3.5 text-gold" />
             <span dir="ltr">{SOCIAL.whatsappDisplay}</span>
           </a>
-          <a href={`mailto:${SOCIAL.email}`} className="hidden sm:flex items-center gap-2 hover:text-gold transition">
+          <a href={`mailto:${SOCIAL.email}`} className="hidden sm:flex items-center gap-2 hover:text-ivory transition">
             <Mail className="h-3.5 w-3.5 text-gold" />
             {SOCIAL.email}
           </a>
@@ -863,11 +863,11 @@ function CTA() {
                 احجز استشارتك الأولى مجاناً وتعرّف على الحلول التي نقدّمها لمنشأتك بكل احترافية وسرية تامة.
               </p>
               <div className="mt-8 space-y-3">
-                <a href={SOCIAL.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 justify-end hover:text-gold transition">
+                <a href={SOCIAL.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 justify-end hover:text-ivory transition">
                   <span dir="ltr">{SOCIAL.whatsappDisplay}</span>
                   <Phone className="h-5 w-5 text-gold" />
                 </a>
-                <a href={`mailto:${SOCIAL.email}`} className="flex items-center gap-3 justify-end hover:text-gold transition">
+                <a href={`mailto:${SOCIAL.email}`} className="flex items-center gap-3 justify-end hover:text-ivory transition">
                   <span>{SOCIAL.email}</span>
                   <Mail className="h-5 w-5 text-gold" />
                 </a>
@@ -927,7 +927,7 @@ function Footer() {
             <h4 className="font-bold text-gold-soft mb-4">روابط سريعة</h4>
             <ul className="space-y-2 text-ivory/70 text-sm">
               {navItems.map((n) => (
-                <li key={n.href}><a href={n.href} className="hover:text-gold transition">{n.label}</a></li>
+                <li key={n.href}><a href={n.href} className="hover:text-ivory transition">{n.label}</a></li>
               ))}
             </ul>
           </div>
@@ -935,13 +935,13 @@ function Footer() {
             <h4 className="font-bold text-gold-soft mb-4">تواصل</h4>
             <ul className="space-y-2 text-ivory/70 text-sm">
               <li>
-                <a href={SOCIAL.whatsapp} target="_blank" rel="noopener noreferrer" className="block text-right hover:text-gold transition">
+                <a href={SOCIAL.whatsapp} target="_blank" rel="noopener noreferrer" className="block text-right hover:text-ivory transition">
                   <span>واتساب: </span>
                   <bdi dir="ltr" style={{ unicodeBidi: "isolate" }}>{SOCIAL.whatsappDisplay}</bdi>
                 </a>
               </li>
               <li>
-                <a href={`mailto:${SOCIAL.email}`} className="hover:text-gold transition break-all">{SOCIAL.email}</a>
+                <a href={`mailto:${SOCIAL.email}`} className="hover:text-ivory transition break-all">{SOCIAL.email}</a>
               </li>
               <li>جمهورية مصر العربية</li>
             </ul>
