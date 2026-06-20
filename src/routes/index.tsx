@@ -257,7 +257,7 @@ function Hero() {
           </span>
           <h1 className="mt-6 font-display text-5xl md:text-7xl font-bold text-emerald-deep leading-[1.1]">
             نحو نجاح
-            <span className="block text-gold-gradient">مستدام</span>
+            <span className="block text-emerald-gradient">مستدام</span>
           </h1>
           <p className="mt-5 text-2xl md:text-3xl font-semibold text-gold">
             لحلول مالية وإدارية متكاملة
@@ -283,7 +283,7 @@ function Hero() {
               { v: null as number | null, text: "IFRS", l: "معايير دولية" },
             ].map((s, i) => (
               <div key={i} className="text-center">
-                <div className="font-display text-2xl sm:text-3xl font-bold text-gold-gradient tabular-nums tracking-tight">
+                <div className="font-display text-2xl sm:text-3xl font-bold text-emerald-gradient tabular-nums tracking-tight">
                   {s.v === null ? s.text : <AnimatedNumber value={s.v} suffix={s.suffix} />}
                 </div>
                 <div className="text-[11px] sm:text-xs text-foreground/60 mt-1 leading-snug">{s.l}</div>
@@ -370,7 +370,7 @@ function About() {
         <div className="text-right">
           <span className="text-gold font-semibold tracking-widest text-sm">من نحن</span>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-emerald-deep mt-3 leading-tight">
-            شركاؤكم نحو <span className="text-gold-gradient">التميّز المؤسسي</span>
+            شركاؤكم نحو <span className="text-emerald-gradient">التميّز المؤسسي</span>
           </h2>
           <p className="mt-6 text-lg text-foreground/75 leading-loose">
             <strong className="text-emerald">شركة الرمز المثالي للاستشارات المالية والإدارية</strong> — شركة مصرية ذات مسؤولية محدودة خاضعة لأحكام القانون رقم 159 لسنة 1981، ومسجلة بالسجل التجاري برقم 55295، ويقع مقرها الرئيسي بالجيزة — جمهورية مصر العربية. نلتزم بتقديم خدمات استشارية محاسبية وإدارية عالية الجودة وذات قيمة مضافة وفقاً للمعايير الدولية للتقارير المالية لتلبية احتياجات عملائنا.
@@ -397,13 +397,13 @@ function About() {
               <div className="mt-2 text-sm opacity-90">عاماً من خبرة فريق العمل</div>
             </div>
             <div className="glass-card rounded-3xl p-8 shadow-gold">
-              <div className="font-display text-5xl font-bold text-gold-gradient tabular-nums">
+              <div className="font-display text-5xl font-bold text-emerald-gradient tabular-nums">
                 <AnimatedNumber value={2026} duration={2000} />
               </div>
               <div className="mt-2 text-sm text-foreground/70">عام تأسيس الشركة</div>
             </div>
             <div className="glass-card rounded-3xl p-8 shadow-gold">
-              <div className="font-display text-5xl font-bold text-gold-gradient tabular-nums">
+              <div className="font-display text-5xl font-bold text-emerald-gradient tabular-nums">
                 <AnimatedNumber value={2} />
               </div>
               <div className="mt-2 text-sm text-foreground/70">سوقان: مصر والسعودية</div>
@@ -440,7 +440,7 @@ function About() {
         <div className="text-right max-w-4xl">
           <span className="text-gold font-semibold tracking-widest text-sm">دورنا</span>
           <h3 className="font-display text-3xl md:text-4xl font-bold text-emerald-deep mt-3">
-            الفرق بيننا وبين <span className="text-gold-gradient">مكاتب المراجعة القانونية</span>
+            الفرق بيننا وبين <span className="text-emerald-gradient">مكاتب المراجعة القانونية</span>
           </h3>
           <p className="mt-5 text-foreground/75 leading-loose text-lg">
             مكاتب المراجعة القانونية ينصبّ تركيزها على فحص واعتماد القوائم المالية بعد انتهاء العام لتقديم تقرير محايد يخدم الأطراف الخارجية. أما نحن فنعمل كشريك استراتيجي داخل المنشأة من بناء شجرة الحسابات وتدقيق القيود يومياً حتى إعداد القوائم المالية، مع أنظمة تكاليف ورقابة ذكية وتحليل فوري للانحرافات.
@@ -709,7 +709,7 @@ function Team() {
         <div className="text-right max-w-3xl mb-12">
           <span className="text-gold font-semibold tracking-widest text-sm">فريق العمل</span>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-emerald-deep mt-3 leading-tight">
-            خبرة تمتد لأكثر من <span className="text-gold-gradient">30 عاماً</span>
+            خبرة تمتد لأكثر من <span className="text-emerald-gradient">30 عاماً</span>
           </h2>
           <p className="mt-5 text-lg text-foreground/75 leading-loose">
             مسيرة مهنية ميدانية وقيادية في الإدارة المالية والتدقيق وتطوير الأنظمة الرقابية، ساهم فريقنا فيها بصياغة النجاح المالي والإداري لكيانات اقتصادية بارزة في مصر والمملكة العربية السعودية.
@@ -791,7 +791,7 @@ function Advantages() {
         <div className="grid md:grid-cols-2 gap-5">
           {advantages.map((a, i) => (
             <div key={a} className="flex items-start gap-4 bg-ivory border border-gold/20 rounded-2xl p-6 hover:border-gold/50 hover:shadow-luxury transition-all text-right">
-              <div className="font-display text-2xl font-bold text-gold-gradient shrink-0 w-10 text-center">0{i + 1}</div>
+              <div className="font-display text-2xl font-bold text-emerald-gradient shrink-0 w-10 text-center">0{i + 1}</div>
               <p className="text-foreground/85 leading-relaxed">{a}</p>
             </div>
           ))}
@@ -857,7 +857,7 @@ function CTA() {
             <div className="text-right text-ivory">
               <span className="text-gold font-semibold tracking-widest text-sm">ابدأ اليوم</span>
               <h2 className="font-display text-4xl md:text-5xl font-bold mt-3 leading-tight">
-                جاهزون لمرافقتك نحو <span className="text-gold-gradient">القمة</span>
+                جاهزون لمرافقتك نحو <span className="text-emerald-gradient">القمة</span>
               </h2>
               <p className="mt-5 text-lg opacity-90">
                 احجز استشارتك الأولى مجاناً وتعرّف على الحلول التي نقدّمها لمنشأتك بكل احترافية وسرية تامة.
