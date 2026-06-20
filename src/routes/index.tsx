@@ -192,11 +192,11 @@ function TopBar() {
     <div className="bg-emerald-gradient text-ivory text-sm">
       <div className="container mx-auto flex flex-wrap items-center gap-6 px-6 py-2.5">
         <div className="flex items-center gap-6">
-          <a href={SOCIAL.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-gold transition">
+          <a href={SOCIAL.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-ivory transition">
             <Phone className="h-3.5 w-3.5 text-gold" />
             <span dir="ltr">{SOCIAL.whatsappDisplay}</span>
           </a>
-          <a href={`mailto:${SOCIAL.email}`} className="hidden sm:flex items-center gap-2 hover:text-gold transition">
+          <a href={`mailto:${SOCIAL.email}`} className="hidden sm:flex items-center gap-2 hover:text-ivory transition">
             <Mail className="h-3.5 w-3.5 text-gold" />
             {SOCIAL.email}
           </a>
@@ -257,9 +257,9 @@ function Hero() {
           </span>
           <h1 className="mt-6 font-display text-5xl md:text-7xl font-bold text-emerald-deep leading-[1.1]">
             نحو نجاح
-            <span className="block text-gold-gradient">مستدام</span>
+            <span className="block text-emerald-gradient">مستدام</span>
           </h1>
-          <p className="mt-5 text-2xl md:text-3xl font-semibold text-gold">
+          <p className="mt-5 text-2xl md:text-3xl font-semibold text-emerald">
             لحلول مالية وإدارية متكاملة
           </p>
           <p className="mt-6 text-lg text-foreground/75 leading-relaxed max-w-xl mr-0 ml-auto">
@@ -283,7 +283,7 @@ function Hero() {
               { v: null as number | null, text: "IFRS", l: "معايير دولية" },
             ].map((s, i) => (
               <div key={i} className="text-center">
-                <div className="font-display text-2xl sm:text-3xl font-bold text-gold-gradient tabular-nums tracking-tight">
+                <div className="font-display text-2xl sm:text-3xl font-bold text-emerald-gradient tabular-nums tracking-tight">
                   {s.v === null ? s.text : <AnimatedNumber value={s.v} suffix={s.suffix} />}
                 </div>
                 <div className="text-[11px] sm:text-xs text-foreground/60 mt-1 leading-snug">{s.l}</div>
@@ -336,7 +336,7 @@ function Features() {
     <section id="features" className="py-24 bg-white relative">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-gold font-semibold tracking-widest text-sm">لماذا الرمز المثالي</span>
+          <span className="text-emerald font-semibold tracking-widest text-sm">لماذا الرمز المثالي</span>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-emerald-deep mt-3">
             مميزات تصنع الفارق
           </h2>
@@ -350,7 +350,7 @@ function Features() {
                 <div className="h-16 w-16 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury group-hover:scale-110 transition">
                   <f.icon className="h-8 w-8 text-gold" />
                 </div>
-                <div className="absolute top-0 left-0 font-display text-5xl font-bold text-gold/15">0{i + 1}</div>
+                <div className="absolute top-0 left-0 font-display text-5xl font-bold text-emerald/15">0{i + 1}</div>
               </div>
               <h3 className="mt-6 font-bold text-xl text-emerald-deep">{f.title}</h3>
               <p className="mt-3 text-sm text-foreground/70 leading-relaxed">{f.desc}</p>
@@ -368,9 +368,9 @@ function About() {
       <div className="absolute top-0 right-0 h-[400px] w-[400px] bg-emerald-gradient opacity-10 blur-3xl rounded-full" />
       <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative">
         <div className="text-right">
-          <span className="text-gold font-semibold tracking-widest text-sm">من نحن</span>
+          <span className="text-emerald font-semibold tracking-widest text-sm">من نحن</span>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-emerald-deep mt-3 leading-tight">
-            شركاؤكم نحو <span className="text-gold-gradient">التميّز المؤسسي</span>
+            شركاؤكم نحو <span className="text-emerald-gradient">التميّز المؤسسي</span>
           </h2>
           <p className="mt-6 text-lg text-foreground/75 leading-loose">
             <strong className="text-emerald">شركة الرمز المثالي للاستشارات المالية والإدارية</strong> — شركة مصرية ذات مسؤولية محدودة خاضعة لأحكام القانون رقم 159 لسنة 1981، ومسجلة بالسجل التجاري برقم 55295، ويقع مقرها الرئيسي بالجيزة — جمهورية مصر العربية. نلتزم بتقديم خدمات استشارية محاسبية وإدارية عالية الجودة وذات قيمة مضافة وفقاً للمعايير الدولية للتقارير المالية لتلبية احتياجات عملائنا.
@@ -381,9 +381,9 @@ function About() {
               "خبرات فريق تمتد لأكثر من 30 عاماً في مصر والمملكة العربية السعودية",
               "خدمات وفق المعايير الدولية للتقارير المالية (IFRS)",
             ].map((t) => (
-              <li key={t} className="flex items-center gap-3 justify-end">
+              <li key={t} className="flex items-center gap-3">
+                <span className="h-7 w-7 rounded-full bg-emerald-gradient flex items-center justify-center text-ivory font-bold text-xs shrink-0">✓</span>
                 <span className="text-foreground/85">{t}</span>
-                <span className="h-7 w-7 rounded-full bg-gold-gradient flex items-center justify-center text-emerald-deep font-bold text-xs shrink-0">✓</span>
               </li>
             ))}
           </ul>
@@ -391,19 +391,19 @@ function About() {
         <div className="relative">
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-emerald-gradient rounded-3xl p-8 text-ivory shadow-luxury translate-y-8">
-              <div className="font-display text-5xl font-bold text-gold tabular-nums">
+              <div className="font-display text-5xl font-bold text-gold-soft tabular-nums">
                 <AnimatedNumber value={30} suffix="+" />
               </div>
               <div className="mt-2 text-sm opacity-90">عاماً من خبرة فريق العمل</div>
             </div>
             <div className="glass-card rounded-3xl p-8 shadow-gold">
-              <div className="font-display text-5xl font-bold text-gold-gradient tabular-nums">
+              <div className="font-display text-5xl font-bold text-emerald-gradient tabular-nums">
                 <AnimatedNumber value={2026} duration={2000} />
               </div>
               <div className="mt-2 text-sm text-foreground/70">عام تأسيس الشركة</div>
             </div>
             <div className="glass-card rounded-3xl p-8 shadow-gold">
-              <div className="font-display text-5xl font-bold text-gold-gradient tabular-nums">
+              <div className="font-display text-5xl font-bold text-emerald-gradient tabular-nums">
                 <AnimatedNumber value={2} />
               </div>
               <div className="mt-2 text-sm text-foreground/70">سوقان: مصر والسعودية</div>
@@ -419,7 +419,7 @@ function About() {
       {/* Founders' message */}
       <div className="container mx-auto px-6 mt-20">
         <div className="glass-card rounded-3xl p-8 md:p-12 text-right shadow-luxury">
-          <span className="text-gold font-semibold tracking-widest text-sm">كلمة المؤسسين</span>
+          <span className="text-emerald font-semibold tracking-widest text-sm">كلمة المؤسسين</span>
           <h3 className="font-display text-3xl md:text-4xl font-bold text-emerald-deep mt-3">لماذا تأسسنا؟</h3>
           <div className="mt-6 space-y-5 text-foreground/80 leading-loose text-lg">
             <p>
@@ -438,9 +438,9 @@ function About() {
       {/* Our role + comparison */}
       <div className="container mx-auto px-6 mt-16">
         <div className="text-right max-w-4xl">
-          <span className="text-gold font-semibold tracking-widest text-sm">دورنا</span>
+          <span className="text-emerald font-semibold tracking-widest text-sm">دورنا</span>
           <h3 className="font-display text-3xl md:text-4xl font-bold text-emerald-deep mt-3">
-            الفرق بيننا وبين <span className="text-gold-gradient">مكاتب المراجعة القانونية</span>
+            الفرق بيننا وبين <span className="text-emerald-gradient">مكاتب المراجعة القانونية</span>
           </h3>
           <p className="mt-5 text-foreground/75 leading-loose text-lg">
             مكاتب المراجعة القانونية ينصبّ تركيزها على فحص واعتماد القوائم المالية بعد انتهاء العام لتقديم تقرير محايد يخدم الأطراف الخارجية. أما نحن فنعمل كشريك استراتيجي داخل المنشأة من بناء شجرة الحسابات وتدقيق القيود يومياً حتى إعداد القوائم المالية، مع أنظمة تكاليف ورقابة ذكية وتحليل فوري للانحرافات.
@@ -478,7 +478,7 @@ function VisionMission() {
       <div className="absolute -bottom-32 -left-32 h-[400px] w-[400px] bg-gold-gradient opacity-10 blur-3xl rounded-full" />
       <div className="container mx-auto px-6 relative">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="text-gold font-semibold tracking-widest text-sm">توجّهنا</span>
+          <span className="text-emerald font-semibold tracking-widest text-sm">توجّهنا</span>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-emerald-deep mt-3">
             الرؤية والرسالة والأهداف
           </h2>
@@ -492,7 +492,7 @@ function VisionMission() {
               <div className="h-14 w-14 rounded-2xl bg-gold-gradient flex items-center justify-center shadow-gold">
                 <Eye className="h-7 w-7 text-emerald-deep" />
               </div>
-              <h3 className="mt-5 font-display text-3xl font-bold text-gold">الرؤية</h3>
+              <h3 className="mt-5 font-display text-3xl font-bold text-ivory">الرؤية</h3>
               <p className="mt-4 leading-loose text-ivory/90">
                 أن نكون الشريك الاستراتيجي الأكثر موثوقية في صياغة المستقبل المالي والإداري للشركات، من خلال تحويل الأنظمة المحاسبية التقليدية إلى أدوات ذكية لصناعة القرار وتقديم حلول مبتكرة تضمن الجودة والنجاح والاستدامة.
               </p>
@@ -506,14 +506,14 @@ function VisionMission() {
               </div>
               <h3 className="mt-5 font-display text-3xl font-bold text-emerald-deep">الرسالة</h3>
               <p className="mt-4 leading-loose text-foreground/80">
-                تمكين قطاع الأعمال عبر تقديم حلول استشارية مالية وإدارية متكاملة تجمع بين الدقة التقنية والمعايير المالية الدولية، مع التركيز على الابتكار في إدارة التكاليف والعمليات لضمان استدامة ونمو أعمال عملائنا في بيئة اقتصادية متغيرة.
+                تمكين قطاع الأعمال عبر تقديم حلول استشارية مالية وإدارية متكاملة تجمع بين الدقة التقنية والمعايير المالية الدولية، مع التركيز على الابتكار في إدارة التكاليف والعمليات التشغيلية لضمان استدامة ونمو أعمال عملائنا في بيئة اقتصادية متغيرة، إلى جانب تقديم حلول إدارية متطورة واستراتيجيات موارد بشرية عالية القيمة.
               </p>
             </div>
           </div>
         </div>
 
         <div className="mt-16 text-right max-w-2xl">
-          <span className="text-gold font-semibold tracking-widest text-sm">الأهداف الاستراتيجية</span>
+          <span className="text-emerald font-semibold tracking-widest text-sm">الأهداف الاستراتيجية</span>
           <h3 className="font-display text-3xl md:text-4xl font-bold text-emerald-deep mt-3">ست ركائز نقود بها التحوّل</h3>
         </div>
         <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -521,7 +521,7 @@ function VisionMission() {
             <div key={g.title} className="group relative bg-ivory rounded-3xl p-8 border border-gold/20 hover:border-gold/50 transition-all hover:-translate-y-2 hover:shadow-luxury overflow-hidden text-right">
               <div className="absolute -top-10 -left-10 h-32 w-32 rounded-full bg-gold-gradient opacity-0 group-hover:opacity-20 blur-2xl transition" />
               <div className="relative flex items-start justify-between gap-3">
-                <div className="font-display text-4xl font-bold text-gold/20">0{i + 1}</div>
+                <div className="font-display text-4xl font-bold text-emerald/20">0{i + 1}</div>
                 <div className="h-14 w-14 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury shrink-0">
                   <g.icon className="h-7 w-7 text-gold" />
                 </div>
@@ -534,9 +534,9 @@ function VisionMission() {
 
         <div className="mt-16 grid md:grid-cols-2 gap-6 text-right">
           <div className="bg-ivory rounded-3xl p-8 border border-gold/20">
-            <div className="flex items-center gap-3 justify-end">
-              <h4 className="font-bold text-xl text-emerald-deep">مجالات العمل</h4>
+            <div className="flex items-center gap-3">
               <Building2 className="h-6 w-6 text-gold" />
+              <h4 className="font-bold text-xl text-emerald-deep">مجالات العمل</h4>
             </div>
             <ul className="mt-5 space-y-3 text-foreground/80">
               {[
@@ -545,22 +545,22 @@ function VisionMission() {
                 "استشارات مالية ومحاسبية للشركات والمؤسسات.",
                 "استشارات إدارية للشركات والمؤسسات.",
               ].map((t) => (
-                <li key={t} className="flex items-start gap-2 justify-end">
+                <li key={t} className="flex items-start gap-2">
+                  <CheckCircle2 className="h-5 w-5 text-emerald shrink-0 mt-0.5" />
                   <span>{t}</span>
-                  <CheckCircle2 className="h-5 w-5 text-gold shrink-0 mt-0.5" />
                 </li>
               ))}
             </ul>
           </div>
           <div className="bg-emerald-deep text-ivory rounded-3xl p-8 shadow-luxury">
-            <div className="flex items-center gap-3 justify-end">
-              <h4 className="font-bold text-xl text-gold">فروقات جوهرية إضافية</h4>
-              <Scale className="h-6 w-6 text-gold" />
+            <div className="flex items-center gap-3">
+              <Scale className="h-6 w-6 text-gold-soft" />
+              <h4 className="font-bold text-xl text-ivory">فروقات جوهرية إضافية</h4>
             </div>
             <ul className="mt-5 space-y-4 text-ivory/85 text-sm leading-relaxed">
-              <li><strong className="text-gold">الاستقلالية مقابل التدخل التشغيلي:</strong> نحن مهندسو النظام — نصمم الدورة المستندية ونشرف على تطبيق الـ ERP ونضع لائحة الصلاحيات المالية.</li>
-              <li><strong className="text-gold">هندسة التكاليف والتسعير:</strong> نحلل الانحراف بين التكلفة المعيارية والفعلية، ونحدد نقاط الهدر، ونضع استراتيجيات التسعير ونقاط التعادل (Break-even).</li>
-              <li><strong className="text-gold">الوقاية واستشراف المستقبل:</strong> نضع أدوات رقابة وقائية لمنع الخطأ قبل حدوثه، ونُعدّ موازنات تقديرية لضمان عدم الانحراف خلال العام.</li>
+              <li><strong className="text-gold-soft">الاستقلالية مقابل التدخل التشغيلي:</strong> نحن مهندسو النظام — نصمم الدورة المستندية، ونختار ونشرف على تطبيق أنظمة الـ ERP (مثل أودو ودفترة)، ونضع لائحة الصلاحيات المالية.</li>
+              <li><strong className="text-gold-soft">هندسة التكاليف والتسعير:</strong> نحلل الانحراف بين التكلفة المعيارية والفعلية، ونحدد نقاط الهدر في المواد الخام، ونضع استراتيجيات التسعير بناءً على هوامش الربح المستهدفة ونقاط التعادل (Break-even Point).</li>
+              <li><strong className="text-gold-soft">الوقاية واستشراف المستقبل:</strong> نضع أدوات الرقابة الوقائية لمنع الأخطاء قبل وقوعها، ونُعدّ الموازنات التقديرية لضمان عدم انحراف الشركة عن مستهدفاتها خلال العام.</li>
             </ul>
           </div>
         </div>
@@ -574,7 +574,7 @@ function Services() {
     <section id="services" className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-gold font-semibold tracking-widest text-sm">خدماتنا</span>
+          <span className="text-emerald font-semibold tracking-widest text-sm">خدماتنا</span>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-emerald-deep mt-3">
             باقة استشارية متكاملة
           </h2>
@@ -591,7 +591,7 @@ function Services() {
                 </div>
                 <h3 className={`mt-6 font-bold text-2xl ${i === 0 ? "text-ivory" : "text-emerald-deep"}`}>{s.title}</h3>
                 <p className={`mt-3 leading-relaxed ${i === 0 ? "text-ivory/85" : "text-foreground/70"}`}>{s.desc}</p>
-                <a href="#contact" className={`mt-6 inline-flex items-center gap-2 font-semibold text-sm ${i === 0 ? "text-gold" : "text-emerald"}`}>
+                <a href="#contact" className={`mt-6 inline-flex items-center gap-2 font-semibold text-sm ${i === 0 ? "text-gold-soft" : "text-emerald"}`}>
                   اعرف المزيد <ArrowLeft className="h-4 w-4" />
                 </a>
               </div>
@@ -602,35 +602,35 @@ function Services() {
         {/* Detailed service lists */}
         <div className="mt-16 grid lg:grid-cols-2 gap-8">
           <div className="bg-ivory rounded-3xl p-8 md:p-10 border border-gold/20 text-right shadow-soft">
-            <div className="flex items-center gap-3 justify-end">
-              <h3 className="font-display text-2xl md:text-3xl font-bold text-emerald-deep">أولاً: الاستشارات المالية</h3>
+            <div className="flex items-center gap-3">
               <div className="h-12 w-12 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury">
                 <BarChart3 className="h-6 w-6 text-gold" />
               </div>
+              <h3 className="font-display text-2xl md:text-3xl font-bold text-emerald-deep">أولاً: الاستشارات المالية</h3>
             </div>
             <p className="mt-3 text-foreground/70">الكفاءة المحاسبية والربحية — بناء نظام مالي سليم وضمان الاستغلال الأمثل للموارد.</p>
             <ul className="mt-6 space-y-3">
               {financialServices.map((t) => (
-                <li key={t} className="flex items-start gap-3 justify-end text-foreground/85 leading-relaxed">
+                <li key={t} className="flex items-start gap-3 text-foreground/85 leading-relaxed">
+                  <CheckCircle2 className="h-5 w-5 text-emerald shrink-0 mt-1" />
                   <span>{t}</span>
-                  <CheckCircle2 className="h-5 w-5 text-gold shrink-0 mt-1" />
                 </li>
               ))}
             </ul>
           </div>
           <div className="bg-ivory rounded-3xl p-8 md:p-10 border border-gold/20 text-right shadow-soft">
-            <div className="flex items-center gap-3 justify-end">
-              <h3 className="font-display text-2xl md:text-3xl font-bold text-emerald-deep">ثانياً: الاستشارات الإدارية</h3>
+            <div className="flex items-center gap-3">
               <div className="h-12 w-12 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury">
                 <ListChecks className="h-6 w-6 text-gold" />
               </div>
+              <h3 className="font-display text-2xl md:text-3xl font-bold text-emerald-deep">ثانياً: الاستشارات الإدارية</h3>
             </div>
             <p className="mt-3 text-foreground/70">الحوكمة والهيكل التنظيمي — تحسين الكفاءة التشغيلية وهيكلة الإدارة لزيادة الفاعلية.</p>
             <ul className="mt-6 space-y-3">
               {adminServices.map((t) => (
-                <li key={t} className="flex items-start gap-3 justify-end text-foreground/85 leading-relaxed">
+                <li key={t} className="flex items-start gap-3 text-foreground/85 leading-relaxed">
+                  <CheckCircle2 className="h-5 w-5 text-emerald shrink-0 mt-1" />
                   <span>{t}</span>
-                  <CheckCircle2 className="h-5 w-5 text-gold shrink-0 mt-1" />
                 </li>
               ))}
             </ul>
@@ -647,7 +647,7 @@ function Methodology() {
       <div className="absolute top-0 left-0 h-[400px] w-[400px] bg-gold-gradient opacity-10 blur-3xl rounded-full" />
       <div className="container mx-auto px-6 relative">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-gold font-semibold tracking-widest text-sm">منهجية العمل</span>
+          <span className="text-emerald font-semibold tracking-widest text-sm">منهجية العمل</span>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-emerald-deep mt-3">
             خمس خطوات نحو النجاح
           </h2>
@@ -679,7 +679,7 @@ function Values() {
     <section id="values" className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-gold font-semibold tracking-widest text-sm">قيمنا الجوهرية</span>
+          <span className="text-emerald font-semibold tracking-widest text-sm">قيمنا الجوهرية</span>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-emerald-deep mt-3">
             مبادئ نلتزم بها كل يوم
           </h2>
@@ -707,9 +707,9 @@ function Team() {
       <div className="absolute -top-32 -right-32 h-[400px] w-[400px] bg-emerald-gradient opacity-10 blur-3xl rounded-full" />
       <div className="container mx-auto px-6 relative">
         <div className="text-right max-w-3xl mb-12">
-          <span className="text-gold font-semibold tracking-widest text-sm">فريق العمل</span>
+          <span className="text-emerald font-semibold tracking-widest text-sm">فريق العمل</span>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-emerald-deep mt-3 leading-tight">
-            خبرة تمتد لأكثر من <span className="text-gold-gradient">30 عاماً</span>
+            خبرة تمتد لأكثر من <span className="text-emerald-gradient">30 عاماً</span>
           </h2>
           <p className="mt-5 text-lg text-foreground/75 leading-loose">
             مسيرة مهنية ميدانية وقيادية في الإدارة المالية والتدقيق وتطوير الأنظمة الرقابية، ساهم فريقنا فيها بصياغة النجاح المالي والإداري لكيانات اقتصادية بارزة في مصر والمملكة العربية السعودية.
@@ -718,9 +718,9 @@ function Team() {
 
         <div className="grid lg:grid-cols-2 gap-6">
           <div className="bg-white rounded-3xl p-8 border border-gold/20 shadow-soft text-right">
-            <div className="flex items-center gap-3 justify-end">
-              <h3 className="font-display text-2xl font-bold text-emerald-deep">المؤهلات الأكاديمية والمهنية</h3>
+            <div className="flex items-center gap-3">
               <GraduationCap className="h-7 w-7 text-gold" />
+              <h3 className="font-display text-2xl font-bold text-emerald-deep">المؤهلات الأكاديمية والمهنية</h3>
             </div>
             <ul className="mt-6 space-y-3 text-foreground/80">
               {[
@@ -731,18 +731,18 @@ function Team() {
                 "المعايير الدولية للتقارير المالية ونظم المعلومات المحاسبية (IFRS & AIS).",
                 "نظام تحليل المخاطر ونقاط التحكم الحرجة (HACCP).",
               ].map((t) => (
-                <li key={t} className="flex items-start gap-2 justify-end">
+                <li key={t} className="flex items-start gap-2">
+                  <CheckCircle2 className="h-5 w-5 text-emerald shrink-0 mt-0.5" />
                   <span>{t}</span>
-                  <CheckCircle2 className="h-5 w-5 text-gold shrink-0 mt-0.5" />
                 </li>
               ))}
             </ul>
           </div>
 
           <div className="bg-white rounded-3xl p-8 border border-gold/20 shadow-soft text-right">
-            <div className="flex items-center gap-3 justify-end">
-              <h3 className="font-display text-2xl font-bold text-emerald-deep">إنجازات ومهارات محورية</h3>
+            <div className="flex items-center gap-3">
               <Award className="h-7 w-7 text-gold" />
+              <h3 className="font-display text-2xl font-bold text-emerald-deep">إنجازات ومهارات محورية</h3>
             </div>
             <ul className="mt-6 space-y-4 text-foreground/80 text-sm leading-relaxed">
               <li><strong className="text-emerald">هيكلة الأنظمة:</strong> الريادة في بناء الأنظمة المالية والرقابية وتكاليف التصنيع باستخدام أحدث برامج الـ ERP.</li>
@@ -760,12 +760,12 @@ function Team() {
         <div className="mt-8 grid md:grid-cols-3 gap-6">
           {sectorExperience.map((sec) => (
             <div key={sec.title} className="bg-emerald-deep text-ivory rounded-3xl p-7 shadow-luxury text-right">
-              <h4 className="font-bold text-lg text-gold">{sec.title}</h4>
+              <h4 className="font-bold text-lg text-gold-soft">{sec.title}</h4>
               <ul className="mt-4 space-y-3 text-ivory/85 text-sm leading-relaxed">
                 {sec.items.map((i) => (
-                  <li key={i} className="flex items-start gap-2 justify-end">
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-gold-soft mt-2 shrink-0" />
                     <span>{i}</span>
-                    <span className="h-1.5 w-1.5 rounded-full bg-gold mt-2 shrink-0" />
                   </li>
                 ))}
               </ul>
@@ -782,7 +782,7 @@ function Advantages() {
     <section className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="text-gold font-semibold tracking-widest text-sm">مزايانا التنافسية</span>
+          <span className="text-emerald font-semibold tracking-widest text-sm">مزايانا التنافسية</span>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-emerald-deep mt-3">
             لماذا تختار الرمز المثالي؟
           </h2>
@@ -791,7 +791,7 @@ function Advantages() {
         <div className="grid md:grid-cols-2 gap-5">
           {advantages.map((a, i) => (
             <div key={a} className="flex items-start gap-4 bg-ivory border border-gold/20 rounded-2xl p-6 hover:border-gold/50 hover:shadow-luxury transition-all text-right">
-              <div className="font-display text-2xl font-bold text-gold-gradient shrink-0 w-10 text-center">0{i + 1}</div>
+              <div className="font-display text-2xl font-bold text-emerald-gradient shrink-0 w-10 text-center">0{i + 1}</div>
               <p className="text-foreground/85 leading-relaxed">{a}</p>
             </div>
           ))}
@@ -855,19 +855,19 @@ function CTA() {
           <div className="absolute -bottom-20 -left-20 h-80 w-80 rounded-full bg-gold-gradient opacity-15 blur-3xl" />
           <div className="relative grid lg:grid-cols-2 gap-10 items-center">
             <div className="text-right text-ivory">
-              <span className="text-gold font-semibold tracking-widest text-sm">ابدأ اليوم</span>
+              <span className="text-gold-soft font-semibold tracking-widest text-sm">ابدأ اليوم</span>
               <h2 className="font-display text-4xl md:text-5xl font-bold mt-3 leading-tight">
-                جاهزون لمرافقتك نحو <span className="text-gold-gradient">القمة</span>
+                جاهزون لمرافقتك نحو <span className="text-gold-soft">القمة</span>
               </h2>
               <p className="mt-5 text-lg opacity-90">
                 احجز استشارتك الأولى مجاناً وتعرّف على الحلول التي نقدّمها لمنشأتك بكل احترافية وسرية تامة.
               </p>
               <div className="mt-8 space-y-3">
-                <a href={SOCIAL.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 justify-end hover:text-gold transition">
+                <a href={SOCIAL.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 justify-end hover:text-ivory transition">
                   <span dir="ltr">{SOCIAL.whatsappDisplay}</span>
                   <Phone className="h-5 w-5 text-gold" />
                 </a>
-                <a href={`mailto:${SOCIAL.email}`} className="flex items-center gap-3 justify-end hover:text-gold transition">
+                <a href={`mailto:${SOCIAL.email}`} className="flex items-center gap-3 justify-end hover:text-ivory transition">
                   <span>{SOCIAL.email}</span>
                   <Mail className="h-5 w-5 text-gold" />
                 </a>
@@ -924,24 +924,24 @@ function Footer() {
             </div>
           </div>
           <div>
-            <h4 className="font-bold text-gold mb-4">روابط سريعة</h4>
+            <h4 className="font-bold text-gold-soft mb-4">روابط سريعة</h4>
             <ul className="space-y-2 text-ivory/70 text-sm">
               {navItems.map((n) => (
-                <li key={n.href}><a href={n.href} className="hover:text-gold transition">{n.label}</a></li>
+                <li key={n.href}><a href={n.href} className="hover:text-ivory transition">{n.label}</a></li>
               ))}
             </ul>
           </div>
           <div>
-            <h4 className="font-bold text-gold mb-4">تواصل</h4>
+            <h4 className="font-bold text-gold-soft mb-4">تواصل</h4>
             <ul className="space-y-2 text-ivory/70 text-sm">
               <li>
-                <a href={SOCIAL.whatsapp} target="_blank" rel="noopener noreferrer" className="block text-right hover:text-gold transition">
+                <a href={SOCIAL.whatsapp} target="_blank" rel="noopener noreferrer" className="block text-right hover:text-ivory transition">
                   <span>واتساب: </span>
                   <bdi dir="ltr" style={{ unicodeBidi: "isolate" }}>{SOCIAL.whatsappDisplay}</bdi>
                 </a>
               </li>
               <li>
-                <a href={`mailto:${SOCIAL.email}`} className="hover:text-gold transition break-all">{SOCIAL.email}</a>
+                <a href={`mailto:${SOCIAL.email}`} className="hover:text-ivory transition break-all">{SOCIAL.email}</a>
               </li>
               <li>جمهورية مصر العربية</li>
             </ul>

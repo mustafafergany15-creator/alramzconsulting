@@ -177,6 +177,13 @@
   color: transparent;
 }
 
+@utility text-emerald-gradient {
+  background: linear-gradient(135deg, var(--emerald), var(--emerald-deep));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 @utility bg-gold-gradient {
   background: var(--gradient-gold);
 }
