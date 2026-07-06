@@ -375,18 +375,6 @@ function About() {
           <p className="mt-6 text-lg text-foreground/75 leading-loose">
             <strong className="text-emerald">شركة الرمز المثالي للاستشارات المالية والإدارية</strong> — شركة مصرية ذات مسؤولية محدودة خاضعة لأحكام القانون رقم 159 لسنة 1981، ومسجلة بالسجل التجاري برقم 55295، ويقع مقرها الرئيسي بالجيزة — جمهورية مصر العربية. نلتزم بتقديم خدمات استشارية محاسبية وإدارية عالية الجودة وذات قيمة مضافة وفقاً للمعايير الدولية للتقارير المالية لتلبية احتياجات عملائنا.
           </p>
-          <ul className="mt-8 space-y-3">
-            {[
-              "مسجّلة وفق القانون المصري رقم 159 لسنة 1981 — سجل تجاري 55295",
-              "خبرات فريق تمتد لأكثر من 30 عاماً في مصر والمملكة العربية السعودية",
-              "خدمات وفق المعايير الدولية للتقارير المالية (IFRS)",
-            ].map((t) => (
-              <li key={t} className="flex items-center gap-3">
-                <span className="h-7 w-7 rounded-full bg-emerald-gradient flex items-center justify-center text-ivory font-bold text-xs shrink-0">✓</span>
-                <span className="text-foreground/85">{t}</span>
-              </li>
-            ))}
-          </ul>
         </div>
         <div className="relative">
           <div className="grid grid-cols-2 gap-4">
