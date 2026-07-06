@@ -178,14 +178,6 @@ const sectorExperience = [
   { title: "القطاعات الخدمية والتجارية", items: ["شركة استشارات مهنية لتقييم الأصول بالرياض من الكبرى المعتمدة في المملكة.", "مجموعة قابضة من أكبر العلامات التجارية في الأدوية البيطرية بمصر.", "شركات استثمار وتطوير عقاري."] },
 ];
 
-const comparisonRows = [
-  { label: "الهدف الأساسي", us: "تطوير الأداء المالي والتشغيلي وتوليد القيمة (بناء وتطوير).", them: "إبداء رأي محايد حول عدالة القوائم المالية (امتثال وتدقيق تاريخي)." },
-  { label: "المستفيد الأول", us: "أطراف داخلية: مجلس الإدارة، الإدارة التنفيذية، الملاك.", them: "أطراف خارجية: الجهات الحكومية، البنوك، المستثمرون." },
-  { label: "نطاق الزمن", us: "مستقبلي (Proactive): تخطيط، موازنات، تنبؤ.", them: "تاريخي: بعد إغلاق الحسابات." },
-  { label: "مستوى التفاصيل", us: "تحليلي ودقيق: ربحية المنتج، تكلفة الهدر، هندسة المنيو، كفاءة الفروع.", them: "إجمالي ومجمع وفق المعايير الدولية (IFRS)." },
-  { label: "العلاقة بالمنشأة", us: "شراكة وتكامل: تدخل مباشر في هيكلة الأنظمة وتوجيه الإدارة.", them: "علاقة تعاقدية مستقلة ومحايدة." },
-  { label: "التقارير الصادرة", us: "تقارير إدارية مخصصة وتحليل انحرافات ودراسات جدوى.", them: "تقرير المراجع القانوني السنوي." },
-];
 
 function TopBar() {
   return (
@@ -375,18 +367,6 @@ function About() {
           <p className="mt-6 text-lg text-foreground/75 leading-loose">
             <strong className="text-emerald">شركة الرمز المثالي للاستشارات المالية والإدارية</strong> — شركة مصرية ذات مسؤولية محدودة خاضعة لأحكام القانون رقم 159 لسنة 1981، ومسجلة بالسجل التجاري برقم 55295، ويقع مقرها الرئيسي بالجيزة — جمهورية مصر العربية. نلتزم بتقديم خدمات استشارية محاسبية وإدارية عالية الجودة وذات قيمة مضافة وفقاً للمعايير الدولية للتقارير المالية لتلبية احتياجات عملائنا.
           </p>
-          <ul className="mt-8 space-y-3">
-            {[
-              "مسجّلة وفق القانون المصري رقم 159 لسنة 1981 — سجل تجاري 55295",
-              "خبرات فريق تمتد لأكثر من 30 عاماً في مصر والمملكة العربية السعودية",
-              "خدمات وفق المعايير الدولية للتقارير المالية (IFRS)",
-            ].map((t) => (
-              <li key={t} className="flex items-center gap-3">
-                <span className="h-7 w-7 rounded-full bg-emerald-gradient flex items-center justify-center text-ivory font-bold text-xs shrink-0">✓</span>
-                <span className="text-foreground/85">{t}</span>
-              </li>
-            ))}
-          </ul>
         </div>
         <div className="relative">
           <div className="grid grid-cols-2 gap-4">
@@ -432,40 +412,6 @@ function About() {
               ومن هنا، واعتزازاً بخبرات فريقنا الممتدة لأكثر من ثلاثين عاماً في مختلف الأنشطة الاقتصادية، جئنا لنَسُد الفجوة بين الإمكانات المتاحة للمنشأة وتطلعات إدارتها. نعمل على تحويل الطموحات إلى واقع من خلال توفير البيانات الدقيقة والتحليلات المالية العميقة وهيكلة الأعمال وفق أسس علمية، لنمنح الإدارة الركيزة الأساسية لاتخاذ قرارات استراتيجية صائبة بأقل تكلفة ممكنة.
             </p>
           </div>
-        </div>
-      </div>
-
-      {/* Our role + comparison */}
-      <div className="container mx-auto px-6 mt-16">
-        <div className="text-right max-w-4xl">
-          <span className="text-emerald font-semibold tracking-widest text-sm">دورنا</span>
-          <h3 className="font-display text-3xl md:text-4xl font-bold text-emerald-deep mt-3">
-            الفرق بيننا وبين <span className="text-emerald-gradient">مكاتب المراجعة القانونية</span>
-          </h3>
-          <p className="mt-5 text-foreground/75 leading-loose text-lg">
-            مكاتب المراجعة القانونية ينصبّ تركيزها على فحص واعتماد القوائم المالية بعد انتهاء العام لتقديم تقرير محايد يخدم الأطراف الخارجية. أما نحن فنعمل كشريك استراتيجي داخل المنشأة من بناء شجرة الحسابات وتدقيق القيود يومياً حتى إعداد القوائم المالية، مع أنظمة تكاليف ورقابة ذكية وتحليل فوري للانحرافات.
-          </p>
-        </div>
-
-        <div className="mt-10 overflow-x-auto rounded-3xl border border-gold/20 shadow-soft bg-white">
-          <table className="w-full text-right text-sm md:text-base">
-            <thead>
-              <tr className="bg-emerald-gradient text-ivory">
-                <th className="p-4 font-bold">وجه المقارنة</th>
-                <th className="p-4 font-bold">شركتنا الاستشارية</th>
-                <th className="p-4 font-bold">مكاتب المراجعة القانونية</th>
-              </tr>
-            </thead>
-            <tbody>
-              {comparisonRows.map((r, i) => (
-                <tr key={r.label} className={i % 2 === 0 ? "bg-ivory" : "bg-white"}>
-                  <td className="p-4 font-semibold text-emerald-deep align-top whitespace-nowrap">{r.label}</td>
-                  <td className="p-4 text-foreground/80 align-top">{r.us}</td>
-                  <td className="p-4 text-foreground/70 align-top">{r.them}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
         </div>
       </div>
     </section>
