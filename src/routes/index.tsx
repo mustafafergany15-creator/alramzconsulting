@@ -435,40 +435,6 @@ function About() {
         </div>
       </div>
 
-      {/* Our role + comparison */}
-      <div className="container mx-auto px-6 mt-16">
-        <div className="text-right max-w-4xl">
-          <span className="text-emerald font-semibold tracking-widest text-sm">دورنا</span>
-          <h3 className="font-display text-3xl md:text-4xl font-bold text-emerald-deep mt-3">
-            الفرق بيننا وبين <span className="text-emerald-gradient">مكاتب المراجعة القانونية</span>
-          </h3>
-          <p className="mt-5 text-foreground/75 leading-loose text-lg">
-            مكاتب المراجعة القانونية ينصبّ تركيزها على فحص واعتماد القوائم المالية بعد انتهاء العام لتقديم تقرير محايد يخدم الأطراف الخارجية. أما نحن فنعمل كشريك استراتيجي داخل المنشأة من بناء شجرة الحسابات وتدقيق القيود يومياً حتى إعداد القوائم المالية، مع أنظمة تكاليف ورقابة ذكية وتحليل فوري للانحرافات.
-          </p>
-        </div>
-
-        <div className="mt-10 overflow-x-auto rounded-3xl border border-gold/20 shadow-soft bg-white">
-          <table className="w-full text-right text-sm md:text-base">
-            <thead>
-              <tr className="bg-emerald-gradient text-ivory">
-                <th className="p-4 font-bold">وجه المقارنة</th>
-                <th className="p-4 font-bold">شركتنا الاستشارية</th>
-                <th className="p-4 font-bold">مكاتب المراجعة القانونية</th>
-              </tr>
-            </thead>
-            <tbody>
-              {comparisonRows.map((r, i) => (
-                <tr key={r.label} className={i % 2 === 0 ? "bg-ivory" : "bg-white"}>
-                  <td className="p-4 font-semibold text-emerald-deep align-top whitespace-nowrap">{r.label}</td>
-                  <td className="p-4 text-foreground/80 align-top">{r.us}</td>
-                  <td className="p-4 text-foreground/70 align-top">{r.them}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
   );
 }
 
