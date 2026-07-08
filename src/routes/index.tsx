@@ -603,14 +603,21 @@ function Services() {
               <h3 className="font-display text-2xl md:text-3xl font-bold text-emerald-deep">أولاً: الاستشارات المالية</h3>
             </div>
             <p className="mt-3 text-foreground/70">الكفاءة المحاسبية والربحية — بناء نظام مالي سليم وضمان الاستغلال الأمثل للموارد.</p>
-            <ul className="mt-6 space-y-3">
-              {financialServices.map((t) => (
-                <li key={t} className="flex items-start gap-3 text-foreground/85 leading-relaxed">
-                  <CheckCircle2 className="h-5 w-5 text-emerald shrink-0 mt-1" />
-                  <span>{t}</span>
-                </li>
+            <div className="mt-6 space-y-6">
+              {financialServices.map((group) => (
+                <div key={group.title}>
+                  <h4 className="font-bold text-emerald-deep text-lg mb-3">{group.title}</h4>
+                  <ul className="space-y-2 pr-2">
+                    {group.items.map((t) => (
+                      <li key={t} className="flex items-start gap-3 text-foreground/85 leading-relaxed">
+                        <CheckCircle2 className="h-5 w-5 text-emerald shrink-0 mt-1" />
+                        <span>{t}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
           <div className="bg-ivory rounded-3xl p-8 md:p-10 border border-gold/20 text-right shadow-soft">
             <div className="flex items-center gap-3">
@@ -620,14 +627,21 @@ function Services() {
               <h3 className="font-display text-2xl md:text-3xl font-bold text-emerald-deep">ثانياً: الاستشارات الإدارية</h3>
             </div>
             <p className="mt-3 text-foreground/70">الحوكمة والهيكل التنظيمي — تحسين الكفاءة التشغيلية وهيكلة الإدارة لزيادة الفاعلية.</p>
-            <ul className="mt-6 space-y-3">
-              {adminServices.map((t) => (
-                <li key={t} className="flex items-start gap-3 text-foreground/85 leading-relaxed">
-                  <CheckCircle2 className="h-5 w-5 text-emerald shrink-0 mt-1" />
-                  <span>{t}</span>
-                </li>
+            <div className="mt-6 space-y-6">
+              {adminServices.map((group) => (
+                <div key={group.title}>
+                  <h4 className="font-bold text-emerald-deep text-lg mb-3">{group.title}</h4>
+                  <ul className="space-y-2 pr-2">
+                    {group.items.map((t) => (
+                      <li key={t} className="flex items-start gap-3 text-foreground/85 leading-relaxed">
+                        <CheckCircle2 className="h-5 w-5 text-emerald shrink-0 mt-1" />
+                        <span>{t}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       </div>
