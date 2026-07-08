@@ -77,6 +77,7 @@ function AnimatedNumber({
 const navItems = [
   { label: "الرئيسية", href: "#home" },
   { label: "من نحن", href: "#about" },
+  { label: "دورنا", href: "#role" },
   { label: "الرؤية والرسالة", href: "#vision" },
   { label: "خدماتنا", href: "#services" },
   { label: "منهجيتنا", href: "#methodology" },
@@ -467,6 +468,39 @@ function About() {
 }
 
 function VisionMission() {
+  return null;
+}
+
+function OurRole() {
+  return (
+    <section id="role" className="py-24 bg-white relative overflow-hidden">
+      <div className="absolute -top-32 -left-32 h-[400px] w-[400px] bg-emerald-gradient opacity-10 blur-3xl rounded-full" />
+      <div className="container mx-auto px-6 relative">
+        <div className="text-right max-w-3xl mb-10">
+          <span className="text-emerald font-semibold tracking-widest text-sm">دورنا</span>
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-emerald-deep mt-3 leading-tight">
+            الفرق بيننا وبين <span className="text-emerald-gradient">مكاتب المراجعة القانونية</span>
+          </h2>
+          <div className="mt-4 h-1 w-24 bg-gold-gradient rounded-full mr-0" />
+        </div>
+
+        <div className="glass-card rounded-3xl p-8 md:p-12 text-right shadow-luxury space-y-6 text-foreground/85 leading-loose text-lg">
+          <p>
+            هناك خلط شائع بين دور مكاتب المحاسبة والمراجعة القانونية، وبين ما نقدمه في شركات الاستشارات المالية والإدارية.
+          </p>
+          <p>
+            إن مكاتب المراجعة القانونية ينصبّ تركيزها الأساسي على فحص واعتماد القوائم المالية بعد انتهاء العام؛ لتقديم تقرير فني محايد يخدم الأطراف الخارجية بالمقام الأول (كالجهات الحكومية، والبنوك، والمستثمرين). وتُعرض النتائج لديهم في صياغة رقمية مجمعة دون الدخول في التفاصيل التشغيلية؛ كأن يُذكر إجمالي المبيعات السنوية في رقم واحد، دون بيان تفاصيل السلع، ومعدلات الدوران، ومساهمة كل صنف في الربحية، أو التغيرات الموسمية.
+          </p>
+          <p>
+            أما نحن، فنعمل معك كشريك استراتيجي داخل المنشأة؛ تبدأ رحلتنا معك من بناء شجرة الحسابات وتدقيق القيود والمستندات يومياً، والاهتمام بأدق التفاصيل التشغيلية حتى إعداد مسودة القوائم المالية. نحن لا ننتظر نهاية العام لنخبرك بما حدث، بل نضع أنظمة التكاليف والرقابة الذكية، ونحلل الانحرافات فوراً لتقديم تقارير دورية تخدم (الإدارة الداخلية) وتدعم صناعة القرار في الوقت المناسب.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function VisionMissionSection() {
   return (
     <section id="vision" className="py-24 bg-white relative overflow-hidden">
       <div className="absolute -bottom-32 -left-32 h-[400px] w-[400px] bg-gold-gradient opacity-10 blur-3xl rounded-full" />
