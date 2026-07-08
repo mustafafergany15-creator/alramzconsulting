@@ -1002,6 +1002,7 @@ function Index() {
         <Hero />
         <Features />
         <About />
+        <OurRole />
         <VisionMission />
         <Services />
         <Methodology />
