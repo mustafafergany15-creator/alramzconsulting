@@ -467,10 +467,6 @@ function About() {
   );
 }
 
-function VisionMission() {
-  return null;
-}
-
 function OurRole() {
   return (
     <section id="role" className="py-24 bg-white relative overflow-hidden">
@@ -500,7 +496,7 @@ function OurRole() {
   );
 }
 
-function VisionMissionReal() {
+function VisionMission() {
   return (
     <section id="vision" className="py-24 bg-white relative overflow-hidden">
       <div className="absolute -bottom-32 -left-32 h-[400px] w-[400px] bg-gold-gradient opacity-10 blur-3xl rounded-full" />
