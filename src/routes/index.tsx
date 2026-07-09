@@ -627,15 +627,13 @@ function VisionMission() {
               <Building2 className="h-6 w-6 text-gold" />
               <h4 className="font-bold text-xl text-emerald-deep">مجالات العمل</h4>
             </div>
-            <p className="mt-4 text-foreground/70 leading-relaxed">
-              أحد فريقنا متخصص في تأسيس وتشغيل وإدارة الحسابات في القطاعات التالية:
-            </p>
             <ul className="mt-5 space-y-3 text-foreground/80">
               {[
                 "إدارة حسابات الشركات والمؤسسات المتوسطة وصغيرة الحجم عن بُعد.",
                 "تأسيس وتشغيل وإدارة حسابات شركات المطاعم والكافيهات.",
                 "الاستشارات المالية والخدمات المحاسبية للشركات والمؤسسات.",
                 "استشارات إدارية للشركات والمؤسسات.",
+                "أحد فريقنا متخصص في تأسيس وتشغيل وإدارة الحسابات شركات المطاعم والكافيهات.",
               ].map((t) => (
                 <li key={t} className="flex items-start gap-2">
                   <CheckCircle2 className="h-5 w-5 text-emerald shrink-0 mt-0.5" />
