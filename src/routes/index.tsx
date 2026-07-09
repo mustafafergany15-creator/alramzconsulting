@@ -771,7 +771,15 @@ function Methodology() {
                 <step.icon className="h-7 w-7 text-gold" />
               </div>
               <h3 className="mt-5 font-bold text-lg text-emerald-deep">{step.title}</h3>
-              <p className="mt-3 text-sm text-foreground/70 leading-relaxed">{step.desc}</p>
+              <p className="mt-3 text-sm text-foreground/80 leading-relaxed font-semibold">{step.lead}</p>
+              <ul className="mt-3 space-y-2 text-sm text-foreground/70 leading-relaxed">
+                {step.items.map((it) => (
+                  <li key={it} className="flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-emerald shrink-0 mt-1" />
+                    <span>{it}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
