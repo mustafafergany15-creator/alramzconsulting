@@ -312,7 +312,31 @@ function TopBar() {
   );
 }
 
+function useActiveSection(ids: string[]) {
+  const [active, setActive] = useState<string>(ids[0] ?? "");
+  useEffect(() => {
+    const elements = ids
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => !!el);
+    if (!elements.length) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (visible[0]) setActive(visible[0].target.id);
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] },
+    );
+    elements.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, [ids]);
+  return active;
+}
+
 function Navbar() {
+  const ids = navItems.map((n) => n.href.replace("#", ""));
+  const active = useActiveSection(ids);
   return (
     <nav className="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-gold/20 shadow-soft">
       <div className="container mx-auto flex items-center justify-between px-6 py-3">
@@ -324,20 +348,33 @@ function Navbar() {
             height={210}
             decoding="async"
             fetchPriority="high"
-            className="h-11 md:h-12 w-auto object-contain"
+            className="h-14 md:h-16 w-auto object-contain"
           />
         </a>
-        <ul className="hidden lg:flex items-center gap-8">
-          {navItems.map((n) => (
-            <li key={n.href}>
-              <a href={n.href} className="text-foreground/85 hover:text-emerald font-medium transition relative group">
-                {n.label}
-                <span className="absolute -bottom-1 right-0 h-0.5 w-0 bg-gold-gradient transition-all group-hover:w-full" />
-              </a>
-            </li>
-          ))}
+        <ul className="hidden lg:flex items-center gap-6">
+          {navItems.map((n) => {
+            const id = n.href.replace("#", "");
+            const isActive = active === id;
+            return (
+              <li key={n.href}>
+                <a
+                  href={n.href}
+                  className={`font-medium transition relative group ${
+                    isActive ? "text-gold" : "text-foreground/85 hover:text-gold"
+                  }`}
+                >
+                  {n.label}
+                  <span
+                    className={`absolute -bottom-1 right-0 h-0.5 bg-gold-gradient transition-all ${
+                      isActive ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                  />
+                </a>
+              </li>
+            );
+          })}
         </ul>
-        <a href="#contact" className="bg-emerald-gradient text-ivory px-6 py-2.5 rounded-full text-sm font-semibold shadow-luxury hover:shadow-gold transition-all hover:-translate-y-0.5">
+        <a href="#contact" className="bg-emerald-gradient text-ivory px-6 py-2.5 rounded-full text-sm font-semibold shadow-luxury transition-all hover:shadow-gold hover:-translate-y-0.5 hover:scale-[1.03]">
           احجز استشارة
         </a>
       </div>
@@ -348,11 +385,11 @@ function Navbar() {
 function Hero() {
   return (
     <section id="home" className="relative overflow-hidden bg-ivory">
-      <div className="absolute inset-0 opacity-[0.06] pointer-events-none">
+      <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
         <img src={heroBg} alt="" className="h-full w-full object-cover" width={1920} height={1080} loading="lazy" decoding="async" />
       </div>
-      <div className="absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-gold-gradient opacity-20 blur-3xl" />
-      <div className="absolute -bottom-40 -right-40 h-[500px] w-[500px] rounded-full bg-emerald-gradient opacity-15 blur-3xl" />
+      <div className="absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-gold-gradient opacity-[0.16] blur-2xl" />
+      <div className="absolute -bottom-40 -right-40 h-[500px] w-[500px] rounded-full bg-emerald-gradient opacity-[0.12] blur-2xl" />
 
       <div className="container relative mx-auto grid lg:grid-cols-2 gap-12 items-center px-6 py-20 lg:py-28">
         {/* Text right (RTL natural) */}
@@ -361,23 +398,23 @@ function Hero() {
             <span className="h-2 w-2 rounded-full bg-gold-gradient" />
             شركة استشارات مالية وإدارية رائدة
           </span>
-          <h1 className="mt-6 font-display text-5xl md:text-7xl font-bold text-emerald-deep leading-[1.1]">
+          <h1 className="mt-6 font-display text-5xl md:text-7xl font-bold text-emerald-deep leading-[1.25]">
             نحو نجاح
             <span className="block text-emerald-gradient">مستدام</span>
           </h1>
           <p className="mt-5 text-2xl md:text-3xl font-semibold text-emerald">
             لحلول مالية وإدارية متكاملة
           </p>
-          <p className="mt-6 text-lg text-foreground/75 leading-relaxed max-w-xl mr-0 ml-auto">
+          <p className="mt-6 text-lg text-foreground/75 leading-relaxed max-w-[54ch] mr-0 ml-auto">
             في <strong className="text-emerald">الرمز المثالي</strong> نقدّم استشارات احترافية تجمع بين الخبرة المحلية والمعايير العالمية،
             لنرسم معك خارطة طريق واضحة نحو نمو منشأتك واستدامة أعمالها في الأسواق العربية.
           </p>
           <div className="mt-9 flex flex-wrap gap-4 justify-end">
-            <a href="#contact" className="group bg-emerald-gradient text-ivory px-8 py-4 rounded-full font-bold shadow-luxury hover:shadow-gold transition-all hover:-translate-y-1 flex items-center gap-2">
+            <a href="#contact" className="group bg-emerald-gradient text-ivory px-8 py-4 rounded-full font-bold shadow-luxury transition-all hover:shadow-gold hover:-translate-y-1 hover:scale-[1.03] flex items-center gap-2">
               تواصل معنا
               <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition" />
             </a>
-            <a href="#services" className="bg-gold-gradient text-emerald-deep px-8 py-4 rounded-full font-bold shadow-gold hover:shadow-luxury transition-all hover:-translate-y-1">
+            <a href="#services" className="bg-gold-gradient text-emerald-deep px-8 py-4 rounded-full font-bold shadow-gold transition-all hover:shadow-luxury hover:-translate-y-1 hover:scale-[1.03] hover:brightness-105">
               استكشف خدماتنا
             </a>
           </div>
@@ -417,7 +454,7 @@ function Hero() {
               height={210}
               decoding="async"
               fetchPriority="high"
-              className="relative w-[240px] sm:w-[300px] md:w-[440px] h-auto object-contain"
+              className="relative w-[260px] sm:w-[325px] md:w-[475px] h-auto object-contain"
               style={{
                 filter:
                   "drop-shadow(0 14px 22px rgba(1,67,45,0.18)) drop-shadow(0 3px 6px rgba(205,164,94,0.12))",
@@ -450,16 +487,16 @@ function Features() {
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((f, i) => (
-            <div key={f.title} className="group relative bg-ivory rounded-3xl p-8 border border-gold/15 hover:border-gold/50 transition-all hover:-translate-y-2 hover:shadow-luxury overflow-hidden">
+            <div key={f.title} className="group relative bg-ivory rounded-3xl p-8 border border-gold/15 hover:border-gold/60 transition-all hover:-translate-y-2 hover:shadow-luxury overflow-hidden flex flex-col">
               <div className="absolute -top-10 -left-10 h-32 w-32 rounded-full bg-gold-gradient opacity-0 group-hover:opacity-20 blur-2xl transition" />
               <div className="relative">
-                <div className="h-16 w-16 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury group-hover:scale-110 transition">
-                  <f.icon className="h-8 w-8 text-gold" />
+                <div className="h-14 w-14 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury group-hover:scale-110 transition">
+                  <f.icon className="h-7 w-7 text-gold" />
                 </div>
-                <div className="absolute top-0 left-0 font-display text-5xl font-bold text-emerald/15">0{i + 1}</div>
+                <div className="absolute -top-1 left-0 font-display text-[3.5rem] leading-none font-bold text-emerald/25 tabular-nums">0{i + 1}</div>
               </div>
-              <h3 className="mt-6 font-bold text-xl text-emerald-deep">{f.title}</h3>
-              <p className="mt-3 text-sm text-foreground/70 leading-relaxed">{f.desc}</p>
+              <h3 className="mt-6 font-bold text-xl text-emerald-deep min-h-[3.5rem] leading-[1.6]">{f.title}</h3>
+              <p className="mt-3 text-sm text-foreground/70 leading-[1.85]">{f.desc}</p>
             </div>
           ))}
         </div>
@@ -491,7 +528,7 @@ function About() {
               <div className="mt-2 text-sm opacity-90">عاماً من خبرة فريق العمل</div>
             </div>
             <div className="glass-card rounded-3xl p-8 shadow-gold">
-              <div className="font-display text-5xl font-bold text-emerald-gradient tabular-nums">
+              <div className="font-display text-4xl md:text-[2.75rem] font-bold text-emerald-gradient tabular-nums">
                 <AnimatedNumber value={2026} duration={2000} />
               </div>
               <div className="mt-2 text-sm text-foreground/70">عام تأسيس الشركة</div>
@@ -607,7 +644,7 @@ function VisionMission() {
         </div>
         <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {strategicGoals.map((g, i) => (
-            <div key={g.title} className="group relative bg-ivory rounded-3xl p-8 border border-gold/20 hover:border-gold/50 transition-all hover:-translate-y-2 hover:shadow-luxury overflow-hidden text-right">
+            <div key={g.title} className="group relative bg-ivory rounded-3xl p-7 lg:p-6 border border-gold/20 hover:border-gold/50 transition-all hover:-translate-y-2 hover:shadow-luxury overflow-hidden text-right">
               <div className="absolute -top-10 -left-10 h-32 w-32 rounded-full bg-gold-gradient opacity-0 group-hover:opacity-20 blur-2xl transition" />
               <div className="relative flex items-start justify-between gap-3">
                 <div className="font-display text-4xl font-bold text-emerald/20">0{i + 1}</div>
@@ -637,7 +674,7 @@ function VisionMission() {
                 "الاستشارات المالية والخدمات المحاسبية للشركات والمؤسسات.",
                 "استشارات إدارية للشركات والمؤسسات.",
               ].map((t) => (
-                <li key={t} className="flex items-start gap-2">
+                <li key={t} className="grid grid-cols-[1.25rem_1fr] gap-x-2 items-start">
                   <CheckCircle2 className="h-5 w-5 text-emerald shrink-0 mt-0.5" />
                   <span>{t}</span>
                 </li>
@@ -707,7 +744,7 @@ function Services() {
                   <h4 className="font-bold text-emerald-deep text-lg mb-3">{group.title}</h4>
                   <ul className="space-y-2 pr-2">
                     {group.items.map((t) => (
-                      <li key={t} className="flex items-start gap-3 text-foreground/85 leading-relaxed">
+                      <li key={t} className="grid grid-cols-[1.25rem_1fr] gap-x-3 items-start text-foreground/85 leading-relaxed">
                         <CheckCircle2 className="h-5 w-5 text-emerald shrink-0 mt-1" />
                         <span>{t}</span>
                       </li>
@@ -731,7 +768,7 @@ function Services() {
                   <h4 className="font-bold text-emerald-deep text-lg mb-3">{group.title}</h4>
                   <ul className="space-y-2 pr-2">
                     {group.items.map((t) => (
-                      <li key={t} className="flex items-start gap-3 text-foreground/85 leading-relaxed">
+                      <li key={t} className="grid grid-cols-[1.25rem_1fr] gap-x-3 items-start text-foreground/85 leading-relaxed">
                         <CheckCircle2 className="h-5 w-5 text-emerald shrink-0 mt-1" />
                         <span>{t}</span>
                       </li>
@@ -774,7 +811,7 @@ function Methodology() {
               <p className="mt-3 text-sm text-foreground/80 leading-relaxed font-semibold">{step.lead}</p>
               <ul className="mt-3 space-y-2 text-sm text-foreground/70 leading-relaxed">
                 {step.items.map((it) => (
-                  <li key={it} className="flex items-start gap-2">
+                  <li key={it} className="grid grid-cols-[1.25rem_1fr] gap-x-2 items-start">
                     <CheckCircle2 className="h-4 w-4 text-emerald shrink-0 mt-1" />
                     <span>{it}</span>
                   </li>
@@ -845,7 +882,7 @@ function Team() {
                 "المعايير الدولية للتقارير المالية ونظم المعلومات المحاسبية (IFRS & AIS).",
                 "نظام تحليل المخاطر ونقاط التحكم الحرجة (HACCP).",
               ].map((t) => (
-                <li key={t} className="flex items-start gap-2">
+                <li key={t} className="grid grid-cols-[1.25rem_1fr] gap-x-2 items-start">
                   <CheckCircle2 className="h-5 w-5 text-emerald shrink-0 mt-0.5" />
                   <span>{t}</span>
                 </li>
@@ -877,7 +914,7 @@ function Team() {
               <h4 className="font-bold text-lg text-gold-soft">{sec.title}</h4>
               <ul className="mt-4 space-y-3 text-ivory/85 text-sm leading-relaxed">
                 {sec.items.map((i) => (
-                  <li key={i} className="flex items-start gap-2">
+                  <li key={i} className="grid grid-cols-[1.25rem_1fr] gap-x-2 items-start">
                     <span className="h-1.5 w-1.5 rounded-full bg-gold-soft mt-2 shrink-0" />
                     <span>{i}</span>
                   </li>
