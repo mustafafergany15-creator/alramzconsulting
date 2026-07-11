@@ -487,16 +487,16 @@ function Features() {
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((f, i) => (
-            <div key={f.title} className="group relative bg-ivory rounded-3xl p-8 border border-gold/15 hover:border-gold/50 transition-all hover:-translate-y-2 hover:shadow-luxury overflow-hidden">
+            <div key={f.title} className="group relative bg-ivory rounded-3xl p-8 border border-gold/15 hover:border-gold/60 transition-all hover:-translate-y-2 hover:shadow-luxury overflow-hidden flex flex-col">
               <div className="absolute -top-10 -left-10 h-32 w-32 rounded-full bg-gold-gradient opacity-0 group-hover:opacity-20 blur-2xl transition" />
               <div className="relative">
-                <div className="h-16 w-16 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury group-hover:scale-110 transition">
-                  <f.icon className="h-8 w-8 text-gold" />
+                <div className="h-14 w-14 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury group-hover:scale-110 transition">
+                  <f.icon className="h-7 w-7 text-gold" />
                 </div>
-                <div className="absolute top-0 left-0 font-display text-5xl font-bold text-emerald/15">0{i + 1}</div>
+                <div className="absolute -top-1 left-0 font-display text-[3.5rem] leading-none font-bold text-emerald/25 tabular-nums">0{i + 1}</div>
               </div>
-              <h3 className="mt-6 font-bold text-xl text-emerald-deep">{f.title}</h3>
-              <p className="mt-3 text-sm text-foreground/70 leading-relaxed">{f.desc}</p>
+              <h3 className="mt-6 font-bold text-xl text-emerald-deep min-h-[3.5rem] leading-[1.6]">{f.title}</h3>
+              <p className="mt-3 text-sm text-foreground/70 leading-[1.85]">{f.desc}</p>
             </div>
           ))}
         </div>
@@ -528,7 +528,7 @@ function About() {
               <div className="mt-2 text-sm opacity-90">عاماً من خبرة فريق العمل</div>
             </div>
             <div className="glass-card rounded-3xl p-8 shadow-gold">
-              <div className="font-display text-5xl font-bold text-emerald-gradient tabular-nums">
+              <div className="font-display text-4xl md:text-[2.75rem] font-bold text-emerald-gradient tabular-nums">
                 <AnimatedNumber value={2026} duration={2000} />
               </div>
               <div className="mt-2 text-sm text-foreground/70">عام تأسيس الشركة</div>
@@ -644,7 +644,7 @@ function VisionMission() {
         </div>
         <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {strategicGoals.map((g, i) => (
-            <div key={g.title} className="group relative bg-ivory rounded-3xl p-8 border border-gold/20 hover:border-gold/50 transition-all hover:-translate-y-2 hover:shadow-luxury overflow-hidden text-right">
+            <div key={g.title} className="group relative bg-ivory rounded-3xl p-7 lg:p-6 border border-gold/20 hover:border-gold/50 transition-all hover:-translate-y-2 hover:shadow-luxury overflow-hidden text-right">
               <div className="absolute -top-10 -left-10 h-32 w-32 rounded-full bg-gold-gradient opacity-0 group-hover:opacity-20 blur-2xl transition" />
               <div className="relative flex items-start justify-between gap-3">
                 <div className="font-display text-4xl font-bold text-emerald/20">0{i + 1}</div>
