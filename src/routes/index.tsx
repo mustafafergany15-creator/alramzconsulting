@@ -312,7 +312,31 @@ function TopBar() {
   );
 }
 
+function useActiveSection(ids: string[]) {
+  const [active, setActive] = useState<string>(ids[0] ?? "");
+  useEffect(() => {
+    const elements = ids
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => !!el);
+    if (!elements.length) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (visible[0]) setActive(visible[0].target.id);
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] },
+    );
+    elements.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, [ids]);
+  return active;
+}
+
 function Navbar() {
+  const ids = navItems.map((n) => n.href.replace("#", ""));
+  const active = useActiveSection(ids);
   return (
     <nav className="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-gold/20 shadow-soft">
       <div className="container mx-auto flex items-center justify-between px-6 py-3">
@@ -324,20 +348,33 @@ function Navbar() {
             height={210}
             decoding="async"
             fetchPriority="high"
-            className="h-11 md:h-12 w-auto object-contain"
+            className="h-14 md:h-16 w-auto object-contain"
           />
         </a>
-        <ul className="hidden lg:flex items-center gap-8">
-          {navItems.map((n) => (
-            <li key={n.href}>
-              <a href={n.href} className="text-foreground/85 hover:text-emerald font-medium transition relative group">
-                {n.label}
-                <span className="absolute -bottom-1 right-0 h-0.5 w-0 bg-gold-gradient transition-all group-hover:w-full" />
-              </a>
-            </li>
-          ))}
+        <ul className="hidden lg:flex items-center gap-6">
+          {navItems.map((n) => {
+            const id = n.href.replace("#", "");
+            const isActive = active === id;
+            return (
+              <li key={n.href}>
+                <a
+                  href={n.href}
+                  className={`font-medium transition relative group ${
+                    isActive ? "text-gold" : "text-foreground/85 hover:text-gold"
+                  }`}
+                >
+                  {n.label}
+                  <span
+                    className={`absolute -bottom-1 right-0 h-0.5 bg-gold-gradient transition-all ${
+                      isActive ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                  />
+                </a>
+              </li>
+            );
+          })}
         </ul>
-        <a href="#contact" className="bg-emerald-gradient text-ivory px-6 py-2.5 rounded-full text-sm font-semibold shadow-luxury hover:shadow-gold transition-all hover:-translate-y-0.5">
+        <a href="#contact" className="bg-emerald-gradient text-ivory px-6 py-2.5 rounded-full text-sm font-semibold shadow-luxury transition-all hover:shadow-gold hover:-translate-y-0.5 hover:scale-[1.03]">
           احجز استشارة
         </a>
       </div>
@@ -348,11 +385,11 @@ function Navbar() {
 function Hero() {
   return (
     <section id="home" className="relative overflow-hidden bg-ivory">
-      <div className="absolute inset-0 opacity-[0.06] pointer-events-none">
+      <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
         <img src={heroBg} alt="" className="h-full w-full object-cover" width={1920} height={1080} loading="lazy" decoding="async" />
       </div>
-      <div className="absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-gold-gradient opacity-20 blur-3xl" />
-      <div className="absolute -bottom-40 -right-40 h-[500px] w-[500px] rounded-full bg-emerald-gradient opacity-15 blur-3xl" />
+      <div className="absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-gold-gradient opacity-[0.16] blur-2xl" />
+      <div className="absolute -bottom-40 -right-40 h-[500px] w-[500px] rounded-full bg-emerald-gradient opacity-[0.12] blur-2xl" />
 
       <div className="container relative mx-auto grid lg:grid-cols-2 gap-12 items-center px-6 py-20 lg:py-28">
         {/* Text right (RTL natural) */}
@@ -361,23 +398,23 @@ function Hero() {
             <span className="h-2 w-2 rounded-full bg-gold-gradient" />
             شركة استشارات مالية وإدارية رائدة
           </span>
-          <h1 className="mt-6 font-display text-5xl md:text-7xl font-bold text-emerald-deep leading-[1.1]">
+          <h1 className="mt-6 font-display text-5xl md:text-7xl font-bold text-emerald-deep leading-[1.25]">
             نحو نجاح
             <span className="block text-emerald-gradient">مستدام</span>
           </h1>
           <p className="mt-5 text-2xl md:text-3xl font-semibold text-emerald">
             لحلول مالية وإدارية متكاملة
           </p>
-          <p className="mt-6 text-lg text-foreground/75 leading-relaxed max-w-xl mr-0 ml-auto">
+          <p className="mt-6 text-lg text-foreground/75 leading-relaxed max-w-[54ch] mr-0 ml-auto">
             في <strong className="text-emerald">الرمز المثالي</strong> نقدّم استشارات احترافية تجمع بين الخبرة المحلية والمعايير العالمية،
             لنرسم معك خارطة طريق واضحة نحو نمو منشأتك واستدامة أعمالها في الأسواق العربية.
           </p>
           <div className="mt-9 flex flex-wrap gap-4 justify-end">
-            <a href="#contact" className="group bg-emerald-gradient text-ivory px-8 py-4 rounded-full font-bold shadow-luxury hover:shadow-gold transition-all hover:-translate-y-1 flex items-center gap-2">
+            <a href="#contact" className="group bg-emerald-gradient text-ivory px-8 py-4 rounded-full font-bold shadow-luxury transition-all hover:shadow-gold hover:-translate-y-1 hover:scale-[1.03] flex items-center gap-2">
               تواصل معنا
               <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition" />
             </a>
-            <a href="#services" className="bg-gold-gradient text-emerald-deep px-8 py-4 rounded-full font-bold shadow-gold hover:shadow-luxury transition-all hover:-translate-y-1">
+            <a href="#services" className="bg-gold-gradient text-emerald-deep px-8 py-4 rounded-full font-bold shadow-gold transition-all hover:shadow-luxury hover:-translate-y-1 hover:scale-[1.03] hover:brightness-105">
               استكشف خدماتنا
             </a>
           </div>
@@ -417,7 +454,7 @@ function Hero() {
               height={210}
               decoding="async"
               fetchPriority="high"
-              className="relative w-[240px] sm:w-[300px] md:w-[440px] h-auto object-contain"
+              className="relative w-[260px] sm:w-[325px] md:w-[475px] h-auto object-contain"
               style={{
                 filter:
                   "drop-shadow(0 14px 22px rgba(1,67,45,0.18)) drop-shadow(0 3px 6px rgba(205,164,94,0.12))",
