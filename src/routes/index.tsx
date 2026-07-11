@@ -674,7 +674,7 @@ function VisionMission() {
                 "الاستشارات المالية والخدمات المحاسبية للشركات والمؤسسات.",
                 "استشارات إدارية للشركات والمؤسسات.",
               ].map((t) => (
-                <li key={t} className="flex items-start gap-2">
+                <li key={t} className="grid grid-cols-[1.25rem_1fr] gap-x-2 items-start">
                   <CheckCircle2 className="h-5 w-5 text-emerald shrink-0 mt-0.5" />
                   <span>{t}</span>
                 </li>
@@ -744,7 +744,7 @@ function Services() {
                   <h4 className="font-bold text-emerald-deep text-lg mb-3">{group.title}</h4>
                   <ul className="space-y-2 pr-2">
                     {group.items.map((t) => (
-                      <li key={t} className="flex items-start gap-3 text-foreground/85 leading-relaxed">
+                      <li key={t} className="grid grid-cols-[1.25rem_1fr] gap-x-3 items-start text-foreground/85 leading-relaxed">
                         <CheckCircle2 className="h-5 w-5 text-emerald shrink-0 mt-1" />
                         <span>{t}</span>
                       </li>
@@ -768,7 +768,7 @@ function Services() {
                   <h4 className="font-bold text-emerald-deep text-lg mb-3">{group.title}</h4>
                   <ul className="space-y-2 pr-2">
                     {group.items.map((t) => (
-                      <li key={t} className="flex items-start gap-3 text-foreground/85 leading-relaxed">
+                      <li key={t} className="grid grid-cols-[1.25rem_1fr] gap-x-3 items-start text-foreground/85 leading-relaxed">
                         <CheckCircle2 className="h-5 w-5 text-emerald shrink-0 mt-1" />
                         <span>{t}</span>
                       </li>
@@ -811,7 +811,7 @@ function Methodology() {
               <p className="mt-3 text-sm text-foreground/80 leading-relaxed font-semibold">{step.lead}</p>
               <ul className="mt-3 space-y-2 text-sm text-foreground/70 leading-relaxed">
                 {step.items.map((it) => (
-                  <li key={it} className="flex items-start gap-2">
+                  <li key={it} className="grid grid-cols-[1.25rem_1fr] gap-x-2 items-start">
                     <CheckCircle2 className="h-4 w-4 text-emerald shrink-0 mt-1" />
                     <span>{it}</span>
                   </li>
@@ -882,7 +882,7 @@ function Team() {
                 "المعايير الدولية للتقارير المالية ونظم المعلومات المحاسبية (IFRS & AIS).",
                 "نظام تحليل المخاطر ونقاط التحكم الحرجة (HACCP).",
               ].map((t) => (
-                <li key={t} className="flex items-start gap-2">
+                <li key={t} className="grid grid-cols-[1.25rem_1fr] gap-x-2 items-start">
                   <CheckCircle2 className="h-5 w-5 text-emerald shrink-0 mt-0.5" />
                   <span>{t}</span>
                 </li>
@@ -914,7 +914,7 @@ function Team() {
               <h4 className="font-bold text-lg text-gold-soft">{sec.title}</h4>
               <ul className="mt-4 space-y-3 text-ivory/85 text-sm leading-relaxed">
                 {sec.items.map((i) => (
-                  <li key={i} className="flex items-start gap-2">
+                  <li key={i} className="grid grid-cols-[1.25rem_1fr] gap-x-2 items-start">
                     <span className="h-1.5 w-1.5 rounded-full bg-gold-soft mt-2 shrink-0" />
                     <span>{i}</span>
                   </li>
