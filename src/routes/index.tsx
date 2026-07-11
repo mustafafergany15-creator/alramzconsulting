@@ -493,7 +493,7 @@ function Features() {
                 <div className="h-14 w-14 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury group-hover:scale-110 transition">
                   <f.icon className="h-7 w-7 text-gold" />
                 </div>
-                <div className="absolute -top-1 left-0 font-display text-[3.5rem] leading-none font-bold text-emerald/25 tabular-nums">0{i + 1}</div>
+                <div className="absolute -top-1 left-0 font-display text-[3.5rem] leading-none font-bold text-gold-soft tabular-nums">0{i + 1}</div>
               </div>
               <h3 className="mt-6 font-bold text-xl text-emerald-deep min-h-[3.5rem] leading-[1.6]">{f.title}</h3>
               <p className="mt-3 text-sm text-foreground/70 leading-[1.85]">{f.desc}</p>
@@ -647,7 +647,7 @@ function VisionMission() {
             <div key={g.title} className="group relative bg-ivory rounded-3xl p-7 lg:p-6 border border-gold/20 hover:border-gold/50 transition-all hover:-translate-y-2 hover:shadow-luxury overflow-hidden text-right">
               <div className="absolute -top-10 -left-10 h-32 w-32 rounded-full bg-gold-gradient opacity-0 group-hover:opacity-20 blur-2xl transition" />
               <div className="relative flex items-start justify-between gap-3">
-                <div className="font-display text-4xl font-bold text-emerald/20">0{i + 1}</div>
+                <div className="font-display text-4xl font-bold text-gold-soft">0{i + 1}</div>
                 <div className="h-14 w-14 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury shrink-0">
                   <g.icon className="h-7 w-7 text-gold" />
                 </div>
@@ -664,13 +664,10 @@ function VisionMission() {
               <Building2 className="h-6 w-6 text-gold" />
               <h4 className="font-bold text-xl text-emerald-deep">مجالات العمل</h4>
             </div>
-            <p className="mt-4 text-foreground/70 leading-relaxed">
-              أحد فريقنا متخصص في تأسيس وتشغيل وإدارة الحسابات في القطاعات التالية:
-            </p>
             <ul className="mt-5 space-y-3 text-foreground/80">
               {[
                 "إدارة حسابات الشركات والمؤسسات المتوسطة وصغيرة الحجم عن بُعد.",
-                "تأسيس وتشغيل وإدارة حسابات شركات المطاعم والكافيهات.",
+                "أحد فريقنا متخصص في تأسيس وتشغيل وإدارة الحسابات شركات المطاعم والكافيهات.",
                 "الاستشارات المالية والخدمات المحاسبية للشركات والمؤسسات.",
                 "استشارات إدارية للشركات والمؤسسات.",
               ].map((t) => (
