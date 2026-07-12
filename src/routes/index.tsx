@@ -121,7 +121,7 @@ const strategicGoals = [
 
 const financialServices = [
   {
-    title: "1- التحليل والتقييم المالي",
+    title: "التحليل والتقييم المالي",
     items: [
       "دراسة شاملة للوضع المالي الحالي للعميل لتحديد نقاط القوة والضعف والمخاطر.",
       "اعداد ومراجعة وتحليل القوائم والتقارير المالية لإدارة الشركة.",
@@ -129,28 +129,28 @@ const financialServices = [
     ],
   },
   {
-    title: "2- التخطيط الاستراتيجي والتشغيلي",
+    title: "التخطيط الاستراتيجي والتشغيلي",
     items: [
       "إعداد الخطط المالية طويلة وقصيرة المدى والموازنات التقديرية.",
       "تحديد هيكل رأس المال الأمثل واختيار مصادر التمويل المناسبة.",
     ],
   },
   {
-    title: "3- إدارة المخاطر والامتثال",
+    title: "إدارة المخاطر والامتثال",
     items: [
       "وضع استراتيجيات لتقليل المخاطر المالية المحتملة.",
       "تقديم استشارات حول الضرائب والزكاة لضمان الامتثال القانوني.",
     ],
   },
   {
-    title: "4- دعم القرارات الاستثمارية",
+    title: "دعم القرارات الاستثمارية",
     items: [
       "إجراء دراسات الجدوى الاقتصادية لتقييم المشاريع والفرص الجديدة.",
       "اختيار أفضل الطرق الاستثمارية.",
     ],
   },
   {
-    title: "5- المحاسبة والإشراف",
+    title: "المحاسبة والإشراف",
     items: [
       "المساعدة في اختيار برنامج محاسبي متكامل (ERP).",
       "تصميم وتطبيق الأنظمة المحاسبية ودورات العمل المستندية المتكاملة.",
@@ -164,7 +164,7 @@ const financialServices = [
 
 const adminServices = [
   {
-    title: "1- التنظيم والهيكلة",
+    title: "التنظيم والهيكلة",
     items: [
       "إعادة هيكلة المؤسسة وتصميم الهياكل التنظيمية التي تتناسب مع الأهداف الاستراتيجية.",
       "توصيف وتحديد صلاحيات ومسؤوليات الوظائف والمستويات الإدارية.",
@@ -172,21 +172,21 @@ const adminServices = [
     ],
   },
   {
-    title: "2- تطوير العمليات والسياسات",
+    title: "تطوير العمليات والسياسات",
     items: [
       "وضع وتطوير السياسات والإجراءات الإدارية والتشغيلية الموحدة (SOPs).",
       "تحسين كفاءة العمليات التشغيلية (مثل المشتريات، الإنتاج، المخازن) لخفض التكاليف وزيادة الجودة.",
     ],
   },
   {
-    title: "3- التخطيط الاستراتيجي",
+    title: "التخطيط الاستراتيجي",
     items: [
       "صياغة الرؤية والرسالة والقيم وتحديد الأهداف الاستراتيجية.",
       "بناء خطط العمل التفصيلية ومؤشرات الأداء الرئيسية (KPIs) لمتابعة التنفيذ.",
     ],
   },
   {
-    title: "4- إدارة الأداء والموارد البشرية",
+    title: "إدارة الأداء والموارد البشرية",
     items: [
       "تطوير أنظمة لتقييم أداء الموظفين ورفع الكفاءات القيادية والإدارية.",
       "تقديم حلول لتحسين رضا الموظفين وإدارة التغيير داخل المنظمة.",
@@ -391,38 +391,37 @@ function Hero() {
       <div className="absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-gold-gradient opacity-[0.16] blur-2xl" />
       <div className="absolute -bottom-40 -right-40 h-[500px] w-[500px] rounded-full bg-emerald-gradient opacity-[0.12] blur-2xl" />
 
-      <div className="container relative mx-auto grid lg:grid-cols-2 gap-12 items-center px-6 py-20 lg:py-28">
+      <div className="container relative mx-auto grid lg:grid-cols-2 gap-10 lg:gap-12 items-center px-6 py-14 md:py-20 lg:py-28">
         {/* Text right (RTL natural) */}
         <div className="order-2 lg:order-1 text-right">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card text-xs font-semibold text-emerald tracking-wide">
             <span className="h-2 w-2 rounded-full bg-gold-gradient" />
             شركة استشارات مالية وإدارية رائدة
           </span>
-          <h1 className="mt-6 font-display text-5xl md:text-7xl font-bold text-emerald-deep leading-[1.25]">
+          <h1 className="mt-6 font-display text-4xl sm:text-5xl md:text-7xl font-bold text-emerald-deep leading-[1.25]">
             نحو نجاح
             <span className="block text-emerald-gradient">مستدام</span>
           </h1>
-          <p className="mt-5 text-2xl md:text-3xl font-semibold text-emerald">
+          <p className="mt-5 text-xl sm:text-2xl md:text-3xl font-semibold text-emerald">
             لحلول مالية وإدارية متكاملة
           </p>
-          <p className="mt-6 text-lg text-foreground/75 leading-relaxed max-w-[54ch] mr-0 ml-auto">
+          <p className="mt-6 text-base sm:text-lg text-foreground/75 leading-relaxed max-w-[54ch] mr-0 ml-auto">
             في <strong className="text-emerald">الرمز المثالي</strong> نقدّم استشارات احترافية تجمع بين الخبرة المحلية والمعايير العالمية،
             لنرسم معك خارطة طريق واضحة نحو نمو منشأتك واستدامة أعمالها في الأسواق العربية.
           </p>
-          <div className="mt-9 flex flex-wrap gap-4 justify-end">
-            <a href="#contact" className="group bg-emerald-gradient text-ivory px-8 py-4 rounded-full font-bold shadow-luxury transition-all hover:shadow-gold hover:-translate-y-1 hover:scale-[1.03] flex items-center gap-2">
+          <div className="mt-8 flex flex-wrap gap-3 sm:gap-4 justify-end">
+            <a href="#contact" className="group bg-emerald-gradient text-ivory px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold shadow-luxury transition-all hover:shadow-gold hover:-translate-y-1 hover:scale-[1.03] flex items-center gap-2">
               تواصل معنا
               <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition" />
             </a>
-            <a href="#services" className="bg-gold-gradient text-emerald-deep px-8 py-4 rounded-full font-bold shadow-gold transition-all hover:shadow-luxury hover:-translate-y-1 hover:scale-[1.03] hover:brightness-105">
+            <a href="#services" className="bg-gold-gradient text-emerald-deep px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold shadow-gold transition-all hover:shadow-luxury hover:-translate-y-1 hover:scale-[1.03] hover:brightness-105">
               استكشف خدماتنا
             </a>
           </div>
 
-          <div className="mt-12 grid grid-cols-3 gap-4 sm:gap-6 max-w-md mr-0 ml-auto">
+          <div className="mt-10 grid grid-cols-2 gap-4 sm:gap-6 max-w-md mr-0 ml-auto">
             {[
               { v: 30, suffix: "+", l: "عام خبرة الفريق" },
-              { v: 2026, l: "عام التأسيس" },
               { v: null as number | null, text: "IFRS", l: "معايير دولية" },
             ].map((s, i) => (
               <div key={i} className="text-center">
@@ -436,7 +435,7 @@ function Hero() {
         </div>
 
         {/* Logo left */}
-        <div className="order-1 lg:order-2 flex justify-center lg:justify-start pb-24 md:pb-24 lg:pb-0">
+        <div className="order-1 lg:order-2 flex justify-center lg:justify-start">
           <div className="relative inline-block">
             {/* Calm gold halo that blends into the ivory background */}
             <div
@@ -454,19 +453,12 @@ function Hero() {
               height={210}
               decoding="async"
               fetchPriority="high"
-              className="relative w-[260px] sm:w-[325px] md:w-[475px] h-auto object-contain"
+              className="relative w-[220px] sm:w-[300px] md:w-[420px] lg:w-[475px] h-auto object-contain"
               style={{
                 filter:
                   "drop-shadow(0 14px 22px rgba(1,67,45,0.18)) drop-shadow(0 3px 6px rgba(205,164,94,0.12))",
               }}
             />
-            <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 md:left-auto md:-translate-x-0 md:-bottom-16 md:-left-20 glass-card rounded-2xl px-4 py-2.5 md:px-5 md:py-3 shadow-gold flex items-center gap-3 whitespace-nowrap">
-              <div className="h-7 md:h-8 w-px bg-gold/40" />
-              <div className="text-right">
-                <div className="text-[10px] tracking-widest text-foreground/60 uppercase">EST</div>
-                <div className="font-display text-xl md:text-2xl font-bold text-emerald leading-none tabular-nums">2026</div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -476,11 +468,11 @@ function Hero() {
 
 function Features() {
   return (
-    <section id="features" className="py-24 bg-white relative">
+    <section id="features" className="py-16 md:py-24 bg-white relative">
       <div className="container mx-auto px-6">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
           <span className="text-emerald font-semibold tracking-widest text-sm">لماذا الرمز المثالي</span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-emerald-deep mt-3">
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-emerald-deep mt-3">
             مميزات تصنع الفارق
           </h2>
           <div className="mx-auto mt-4 h-1 w-24 bg-gold-gradient rounded-full" />
@@ -489,14 +481,14 @@ function Features() {
           {features.map((f, i) => (
             <div key={f.title} className="group relative bg-ivory rounded-3xl p-8 border border-gold/15 hover:border-gold/60 transition-all hover:-translate-y-2 hover:shadow-luxury overflow-hidden flex flex-col">
               <div className="absolute -top-10 -left-10 h-32 w-32 rounded-full bg-gold-gradient opacity-0 group-hover:opacity-20 blur-2xl transition" />
-              <div className="relative">
-                <div className="h-14 w-14 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury group-hover:scale-110 transition">
+              <div className="relative flex items-start justify-between gap-3">
+                <div className="font-display text-4xl font-bold text-gold tabular-nums">0{i + 1}</div>
+                <div className="h-14 w-14 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury group-hover:scale-110 transition shrink-0">
                   <f.icon className="h-7 w-7 text-gold" />
                 </div>
-                <div className="absolute -top-1 left-0 font-display text-[3.5rem] leading-none font-bold text-gold tabular-nums">0{i + 1}</div>
               </div>
-              <h3 className="mt-6 font-bold text-xl text-emerald-deep min-h-[3.5rem] leading-[1.6]">{f.title}</h3>
-              <p className="mt-3 text-sm text-foreground/70 leading-[1.85]">{f.desc}</p>
+              <h3 className="mt-5 font-bold text-xl text-emerald-deep leading-[1.6] text-right">{f.title}</h3>
+              <p className="mt-3 text-sm text-foreground/70 leading-[1.85] text-right">{f.desc}</p>
             </div>
           ))}
         </div>
@@ -507,7 +499,7 @@ function Features() {
 
 function About() {
   return (
-    <section id="about" className="py-24 bg-ivory relative overflow-hidden">
+    <section id="about" className="py-16 md:py-24 bg-ivory relative overflow-hidden">
       <div className="absolute top-0 right-0 h-[400px] w-[400px] bg-emerald-gradient opacity-10 blur-3xl rounded-full" />
       <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative">
         <div className="text-right">
@@ -521,26 +513,20 @@ function About() {
         </div>
         <div className="relative">
           <div className="grid grid-cols-2 gap-4">
-            <div className="bg-emerald-gradient rounded-3xl p-8 text-ivory shadow-luxury translate-y-8">
-              <div className="font-display text-5xl font-bold text-gold-soft tabular-nums">
+            <div className="bg-emerald-gradient rounded-3xl p-6 md:p-8 text-ivory shadow-luxury translate-y-8">
+              <div className="font-display text-4xl md:text-5xl font-bold text-gold-soft tabular-nums">
                 <AnimatedNumber value={30} suffix="+" />
               </div>
               <div className="mt-2 text-sm opacity-90">عاماً من خبرة فريق العمل</div>
             </div>
-            <div className="glass-card rounded-3xl p-8 shadow-gold">
-              <div className="font-display text-4xl md:text-[2.75rem] font-bold text-emerald-gradient tabular-nums">
-                <AnimatedNumber value={2026} duration={2000} />
-              </div>
-              <div className="mt-2 text-sm text-foreground/70">عام تأسيس الشركة</div>
-            </div>
-            <div className="glass-card rounded-3xl p-8 shadow-gold">
-              <div className="font-display text-5xl font-bold text-emerald-gradient tabular-nums">
+            <div className="glass-card rounded-3xl p-6 md:p-8 shadow-gold">
+              <div className="font-display text-4xl md:text-5xl font-bold text-emerald-gradient tabular-nums">
                 <AnimatedNumber value={2} />
               </div>
               <div className="mt-2 text-sm text-foreground/70">سوقان: مصر والسعودية</div>
             </div>
-            <div className="bg-gold-gradient rounded-3xl p-8 text-emerald-deep shadow-gold translate-y-8">
-              <div className="font-display text-5xl font-bold">IFRS</div>
+            <div className="bg-gold-gradient rounded-3xl p-6 md:p-8 text-emerald-deep shadow-gold col-span-2 text-center">
+              <div className="font-display text-4xl md:text-5xl font-bold">IFRS</div>
               <div className="mt-2 text-sm font-semibold">وفق المعايير الدولية للتقارير المالية</div>
             </div>
           </div>
@@ -571,7 +557,7 @@ function About() {
 
 function OurRole() {
   return (
-    <section id="role" className="py-24 bg-white relative overflow-hidden">
+    <section id="role" className="py-16 md:py-24 bg-white relative overflow-hidden">
       <div className="absolute -top-32 -left-32 h-[400px] w-[400px] bg-emerald-gradient opacity-10 blur-3xl rounded-full" />
       <div className="container mx-auto px-6 relative">
         <div className="text-right max-w-3xl mb-10">
@@ -600,7 +586,7 @@ function OurRole() {
 
 function VisionMission() {
   return (
-    <section id="vision" className="py-24 bg-white relative overflow-hidden">
+    <section id="vision" className="py-16 md:py-24 bg-white relative overflow-hidden">
       <div className="absolute -bottom-32 -left-32 h-[400px] w-[400px] bg-gold-gradient opacity-10 blur-3xl rounded-full" />
       <div className="container mx-auto px-6 relative">
         <div className="text-center max-w-2xl mx-auto mb-14">
@@ -697,7 +683,7 @@ function VisionMission() {
 
 function Services() {
   return (
-    <section id="services" className="py-24 bg-white">
+    <section id="services" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-emerald font-semibold tracking-widest text-sm">خدماتنا</span>
@@ -726,64 +712,83 @@ function Services() {
         </div>
 
         {/* Detailed service lists */}
-        <div className="mt-16 grid lg:grid-cols-2 gap-8">
-          <div className="bg-ivory rounded-3xl p-8 md:p-10 border border-gold/20 text-right shadow-soft">
-            <div className="flex items-center gap-3">
-              <div className="h-12 w-12 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury">
-                <BarChart3 className="h-6 w-6 text-gold" />
-              </div>
-              <h3 className="font-display text-2xl md:text-3xl font-bold text-emerald-deep">أولاً: الاستشارات المالية</h3>
-            </div>
-            <p className="mt-3 text-foreground/70">الكفاءة المحاسبية والربحية — بناء نظام مالي سليم وضمان الاستغلال الأمثل للموارد.</p>
-            <div className="mt-6 space-y-6">
-              {financialServices.map((group) => (
-                <div key={group.title}>
-                  <h4 className="font-bold text-emerald-deep text-lg mb-3">{group.title}</h4>
-                  <ul className="space-y-2 pr-2">
-                    {group.items.map((t) => (
-                      <li key={t} className="grid grid-cols-[1.25rem_1fr] gap-x-3 items-start text-foreground/85 leading-relaxed">
-                        <CheckCircle2 className="h-5 w-5 text-emerald shrink-0 mt-1" />
-                        <span>{t}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="bg-ivory rounded-3xl p-8 md:p-10 border border-gold/20 text-right shadow-soft">
-            <div className="flex items-center gap-3">
-              <div className="h-12 w-12 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury">
-                <ListChecks className="h-6 w-6 text-gold" />
-              </div>
-              <h3 className="font-display text-2xl md:text-3xl font-bold text-emerald-deep">ثانياً: الاستشارات الإدارية</h3>
-            </div>
-            <p className="mt-3 text-foreground/70">الحوكمة والهيكل التنظيمي — تحسين الكفاءة التشغيلية وهيكلة الإدارة لزيادة الفاعلية.</p>
-            <div className="mt-6 space-y-6">
-              {adminServices.map((group) => (
-                <div key={group.title}>
-                  <h4 className="font-bold text-emerald-deep text-lg mb-3">{group.title}</h4>
-                  <ul className="space-y-2 pr-2">
-                    {group.items.map((t) => (
-                      <li key={t} className="grid grid-cols-[1.25rem_1fr] gap-x-3 items-start text-foreground/85 leading-relaxed">
-                        <CheckCircle2 className="h-5 w-5 text-emerald shrink-0 mt-1" />
-                        <span>{t}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        <ServiceGroupBlock
+          eyebrow="أولاً"
+          title="الاستشارات المالية والخدمات المحاسبية"
+          subtitle="الكفاءة المحاسبية والربحية — بناء نظام مالي سليم وضمان الاستغلال الأمثل للموارد."
+          icon={BarChart3}
+          groups={financialServices}
+        />
+        <ServiceGroupBlock
+          eyebrow="ثانياً"
+          title="الاستشارات الإدارية"
+          subtitle="الحوكمة والهيكل التنظيمي — تحسين الكفاءة التشغيلية وهيكلة الإدارة لزيادة الفاعلية."
+          icon={ListChecks}
+          groups={adminServices}
+        />
       </div>
     </section>
   );
 }
 
+function ServiceGroupBlock({
+  eyebrow,
+  title,
+  subtitle,
+  icon: Icon,
+  groups,
+}: {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  icon: typeof BarChart3;
+  groups: { title: string; items: string[] }[];
+}) {
+  return (
+    <div className="mt-16">
+      <div className="text-right max-w-3xl mb-8">
+        <span className="text-emerald font-semibold tracking-widest text-sm">{eyebrow}</span>
+        <div className="mt-3 flex items-center gap-3 justify-start">
+          <div className="h-12 w-12 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury shrink-0">
+            <Icon className="h-6 w-6 text-gold" />
+          </div>
+          <h3 className="font-display text-2xl md:text-3xl font-bold text-emerald-deep">{title}</h3>
+        </div>
+        <p className="mt-3 text-foreground/70">{subtitle}</p>
+        <div className="mt-4 h-1 w-24 bg-gold-gradient rounded-full mr-0" />
+      </div>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {groups.map((g, i) => (
+          <div
+            key={g.title}
+            className="group relative bg-ivory rounded-3xl p-7 border border-gold/20 hover:border-gold/50 transition-all hover:-translate-y-2 hover:shadow-luxury overflow-hidden text-right flex flex-col"
+          >
+            <div className="absolute -top-10 -left-10 h-32 w-32 rounded-full bg-gold-gradient opacity-0 group-hover:opacity-20 blur-2xl transition" />
+            <div className="relative flex items-start justify-between gap-3">
+              <div className="font-display text-4xl font-bold text-gold tabular-nums">0{i + 1}</div>
+              <div className="h-12 w-12 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury shrink-0">
+                <CheckCircle2 className="h-6 w-6 text-gold" />
+              </div>
+            </div>
+            <h4 className="mt-5 font-bold text-lg text-emerald-deep leading-[1.6]">{g.title}</h4>
+            <ul className="mt-4 space-y-2 text-sm text-foreground/80 leading-relaxed">
+              {g.items.map((t) => (
+                <li key={t} className="grid grid-cols-[1.25rem_1fr] gap-x-2 items-start">
+                  <CheckCircle2 className="h-4 w-4 text-emerald shrink-0 mt-1" />
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function Methodology() {
   return (
-    <section id="methodology" className="py-24 bg-ivory relative overflow-hidden">
+    <section id="methodology" className="py-16 md:py-24 bg-ivory relative overflow-hidden">
       <div className="absolute top-0 left-0 h-[400px] w-[400px] bg-gold-gradient opacity-10 blur-3xl rounded-full" />
       <div className="container mx-auto px-6 relative">
         <div className="text-center max-w-2xl mx-auto mb-16">
@@ -798,11 +803,11 @@ function Methodology() {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
           {methodology.map((step, i) => (
             <div key={step.title} className="relative bg-white rounded-3xl p-7 border border-gold/20 hover:border-gold/50 hover:shadow-luxury transition-all hover:-translate-y-2 text-right">
-              <div className="absolute -top-4 -left-4 h-12 w-12 rounded-full bg-gold-gradient flex items-center justify-center text-emerald-deep font-display font-bold shadow-gold">
-                0{i + 1}
-              </div>
-              <div className="h-14 w-14 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury">
-                <step.icon className="h-7 w-7 text-gold" />
+              <div className="flex items-start justify-between gap-3">
+                <div className="font-display text-4xl font-bold text-gold tabular-nums">0{i + 1}</div>
+                <div className="h-14 w-14 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury shrink-0">
+                  <step.icon className="h-7 w-7 text-gold" />
+                </div>
               </div>
               <h3 className="mt-5 font-bold text-lg text-emerald-deep">{step.title}</h3>
               <p className="mt-3 text-sm text-foreground/80 leading-relaxed font-semibold">{step.lead}</p>
@@ -824,7 +829,7 @@ function Methodology() {
 
 function Values() {
   return (
-    <section id="values" className="py-24 bg-white">
+    <section id="values" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-emerald font-semibold tracking-widest text-sm">قيمنا الجوهرية</span>
@@ -851,7 +856,7 @@ function Values() {
 
 function Team() {
   return (
-    <section id="team" className="py-24 bg-ivory relative overflow-hidden">
+    <section id="team" className="py-16 md:py-24 bg-ivory relative overflow-hidden">
       <div className="absolute -top-32 -right-32 h-[400px] w-[400px] bg-emerald-gradient opacity-10 blur-3xl rounded-full" />
       <div className="container mx-auto px-6 relative">
         <div className="text-right max-w-3xl mb-12">
@@ -927,7 +932,7 @@ function Team() {
 
 function Advantages() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <span className="text-emerald font-semibold tracking-widest text-sm">مزايانا التنافسية</span>
@@ -996,7 +1001,7 @@ function CTA() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-ivory">
+    <section id="contact" className="py-16 md:py-24 bg-ivory">
       <div className="container mx-auto px-6">
         <div className="relative overflow-hidden rounded-[2.5rem] bg-emerald-gradient p-12 md:p-16 shadow-luxury">
           <div className="absolute -top-20 -right-20 h-80 w-80 rounded-full bg-gold-gradient opacity-20 blur-3xl" />
@@ -1052,11 +1057,9 @@ function Footer() {
     <footer className="bg-emerald-deep text-ivory pt-16 pb-6">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-10 text-right">
-          <div className="md:col-span-2">
-            <div className="flex justify-end">
-              <img src={logoDark} alt="الرمز المثالي - للاستشارات المالية والإدارية" className="h-16 md:h-20 w-auto object-contain" loading="lazy" />
-            </div>
-            <p className="mt-5 text-ivory/70 leading-relaxed max-w-md mr-0 ml-auto">
+          <div className="md:col-span-2 flex flex-col items-end">
+            <img src={logoDark} alt="الرمز المثالي - للاستشارات المالية والإدارية" className="h-16 md:h-20 w-auto object-contain" loading="lazy" />
+            <p className="mt-5 text-ivory/70 leading-relaxed max-w-md">
               شركة الرمز المثالي للاستشارات المالية والإدارية — شركة مصرية ذات مسؤولية محدودة، تقدّم حلولاً متكاملة تمكّن منشآت المنطقة من النمو والاستدامة.
             </p>
             <div className="mt-6 flex gap-3 justify-end">
@@ -1104,6 +1107,12 @@ function Footer() {
 }
 
 function Index() {
+  useEffect(() => {
+    // Ensure the page opens at the top when the route mounts.
+    if (typeof window !== "undefined" && !window.location.hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }
+  }, []);
   return (
     <div className="min-h-screen bg-ivory font-arabic" dir="rtl">
       <TopBar />
