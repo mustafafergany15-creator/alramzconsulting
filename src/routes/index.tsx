@@ -468,11 +468,11 @@ function Hero() {
 
 function Features() {
   return (
-    <section id="features" className="py-24 bg-white relative">
+    <section id="features" className="py-16 md:py-24 bg-white relative">
       <div className="container mx-auto px-6">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
           <span className="text-emerald font-semibold tracking-widest text-sm">لماذا الرمز المثالي</span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-emerald-deep mt-3">
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-emerald-deep mt-3">
             مميزات تصنع الفارق
           </h2>
           <div className="mx-auto mt-4 h-1 w-24 bg-gold-gradient rounded-full" />
@@ -481,14 +481,14 @@ function Features() {
           {features.map((f, i) => (
             <div key={f.title} className="group relative bg-ivory rounded-3xl p-8 border border-gold/15 hover:border-gold/60 transition-all hover:-translate-y-2 hover:shadow-luxury overflow-hidden flex flex-col">
               <div className="absolute -top-10 -left-10 h-32 w-32 rounded-full bg-gold-gradient opacity-0 group-hover:opacity-20 blur-2xl transition" />
-              <div className="relative">
-                <div className="h-14 w-14 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury group-hover:scale-110 transition">
+              <div className="relative flex items-start justify-between gap-3">
+                <div className="font-display text-4xl font-bold text-gold tabular-nums">0{i + 1}</div>
+                <div className="h-14 w-14 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury group-hover:scale-110 transition shrink-0">
                   <f.icon className="h-7 w-7 text-gold" />
                 </div>
-                <div className="absolute -top-1 left-0 font-display text-[3.5rem] leading-none font-bold text-gold tabular-nums">0{i + 1}</div>
               </div>
-              <h3 className="mt-6 font-bold text-xl text-emerald-deep min-h-[3.5rem] leading-[1.6]">{f.title}</h3>
-              <p className="mt-3 text-sm text-foreground/70 leading-[1.85]">{f.desc}</p>
+              <h3 className="mt-5 font-bold text-xl text-emerald-deep leading-[1.6] text-right">{f.title}</h3>
+              <p className="mt-3 text-sm text-foreground/70 leading-[1.85] text-right">{f.desc}</p>
             </div>
           ))}
         </div>
