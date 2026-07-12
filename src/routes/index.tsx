@@ -712,58 +712,77 @@ function Services() {
         </div>
 
         {/* Detailed service lists */}
-        <div className="mt-16 grid lg:grid-cols-2 gap-8">
-          <div className="bg-ivory rounded-3xl p-8 md:p-10 border border-gold/20 text-right shadow-soft">
-            <div className="flex items-center gap-3">
-              <div className="h-12 w-12 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury">
-                <BarChart3 className="h-6 w-6 text-gold" />
-              </div>
-              <h3 className="font-display text-2xl md:text-3xl font-bold text-emerald-deep">أولاً: الاستشارات المالية</h3>
-            </div>
-            <p className="mt-3 text-foreground/70">الكفاءة المحاسبية والربحية — بناء نظام مالي سليم وضمان الاستغلال الأمثل للموارد.</p>
-            <div className="mt-6 space-y-6">
-              {financialServices.map((group) => (
-                <div key={group.title}>
-                  <h4 className="font-bold text-emerald-deep text-lg mb-3">{group.title}</h4>
-                  <ul className="space-y-2 pr-2">
-                    {group.items.map((t) => (
-                      <li key={t} className="grid grid-cols-[1.25rem_1fr] gap-x-3 items-start text-foreground/85 leading-relaxed">
-                        <CheckCircle2 className="h-5 w-5 text-emerald shrink-0 mt-1" />
-                        <span>{t}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="bg-ivory rounded-3xl p-8 md:p-10 border border-gold/20 text-right shadow-soft">
-            <div className="flex items-center gap-3">
-              <div className="h-12 w-12 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury">
-                <ListChecks className="h-6 w-6 text-gold" />
-              </div>
-              <h3 className="font-display text-2xl md:text-3xl font-bold text-emerald-deep">ثانياً: الاستشارات الإدارية</h3>
-            </div>
-            <p className="mt-3 text-foreground/70">الحوكمة والهيكل التنظيمي — تحسين الكفاءة التشغيلية وهيكلة الإدارة لزيادة الفاعلية.</p>
-            <div className="mt-6 space-y-6">
-              {adminServices.map((group) => (
-                <div key={group.title}>
-                  <h4 className="font-bold text-emerald-deep text-lg mb-3">{group.title}</h4>
-                  <ul className="space-y-2 pr-2">
-                    {group.items.map((t) => (
-                      <li key={t} className="grid grid-cols-[1.25rem_1fr] gap-x-3 items-start text-foreground/85 leading-relaxed">
-                        <CheckCircle2 className="h-5 w-5 text-emerald shrink-0 mt-1" />
-                        <span>{t}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        <ServiceGroupBlock
+          eyebrow="أولاً"
+          title="الاستشارات المالية والخدمات المحاسبية"
+          subtitle="الكفاءة المحاسبية والربحية — بناء نظام مالي سليم وضمان الاستغلال الأمثل للموارد."
+          icon={BarChart3}
+          groups={financialServices}
+        />
+        <ServiceGroupBlock
+          eyebrow="ثانياً"
+          title="الاستشارات الإدارية"
+          subtitle="الحوكمة والهيكل التنظيمي — تحسين الكفاءة التشغيلية وهيكلة الإدارة لزيادة الفاعلية."
+          icon={ListChecks}
+          groups={adminServices}
+        />
       </div>
     </section>
+  );
+}
+
+function ServiceGroupBlock({
+  eyebrow,
+  title,
+  subtitle,
+  icon: Icon,
+  groups,
+}: {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  icon: typeof BarChart3;
+  groups: { title: string; items: string[] }[];
+}) {
+  return (
+    <div className="mt-16">
+      <div className="text-right max-w-3xl mb-8">
+        <span className="text-emerald font-semibold tracking-widest text-sm">{eyebrow}</span>
+        <div className="mt-3 flex items-center gap-3 justify-start">
+          <div className="h-12 w-12 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury shrink-0">
+            <Icon className="h-6 w-6 text-gold" />
+          </div>
+          <h3 className="font-display text-2xl md:text-3xl font-bold text-emerald-deep">{title}</h3>
+        </div>
+        <p className="mt-3 text-foreground/70">{subtitle}</p>
+        <div className="mt-4 h-1 w-24 bg-gold-gradient rounded-full mr-0" />
+      </div>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {groups.map((g, i) => (
+          <div
+            key={g.title}
+            className="group relative bg-ivory rounded-3xl p-7 border border-gold/20 hover:border-gold/50 transition-all hover:-translate-y-2 hover:shadow-luxury overflow-hidden text-right flex flex-col"
+          >
+            <div className="absolute -top-10 -left-10 h-32 w-32 rounded-full bg-gold-gradient opacity-0 group-hover:opacity-20 blur-2xl transition" />
+            <div className="relative flex items-start justify-between gap-3">
+              <div className="font-display text-4xl font-bold text-gold tabular-nums">0{i + 1}</div>
+              <div className="h-12 w-12 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury shrink-0">
+                <CheckCircle2 className="h-6 w-6 text-gold" />
+              </div>
+            </div>
+            <h4 className="mt-5 font-bold text-lg text-emerald-deep leading-[1.6]">{g.title}</h4>
+            <ul className="mt-4 space-y-2 text-sm text-foreground/80 leading-relaxed">
+              {g.items.map((t) => (
+                <li key={t} className="grid grid-cols-[1.25rem_1fr] gap-x-2 items-start">
+                  <CheckCircle2 className="h-4 w-4 text-emerald shrink-0 mt-1" />
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 
