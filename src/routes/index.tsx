@@ -499,7 +499,7 @@ function Features() {
 
 function About() {
   return (
-    <section id="about" className="py-24 bg-ivory relative overflow-hidden">
+    <section id="about" className="py-16 md:py-24 bg-ivory relative overflow-hidden">
       <div className="absolute top-0 right-0 h-[400px] w-[400px] bg-emerald-gradient opacity-10 blur-3xl rounded-full" />
       <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative">
         <div className="text-right">
@@ -557,7 +557,7 @@ function About() {
 
 function OurRole() {
   return (
-    <section id="role" className="py-24 bg-white relative overflow-hidden">
+    <section id="role" className="py-16 md:py-24 bg-white relative overflow-hidden">
       <div className="absolute -top-32 -left-32 h-[400px] w-[400px] bg-emerald-gradient opacity-10 blur-3xl rounded-full" />
       <div className="container mx-auto px-6 relative">
         <div className="text-right max-w-3xl mb-10">
@@ -586,7 +586,7 @@ function OurRole() {
 
 function VisionMission() {
   return (
-    <section id="vision" className="py-24 bg-white relative overflow-hidden">
+    <section id="vision" className="py-16 md:py-24 bg-white relative overflow-hidden">
       <div className="absolute -bottom-32 -left-32 h-[400px] w-[400px] bg-gold-gradient opacity-10 blur-3xl rounded-full" />
       <div className="container mx-auto px-6 relative">
         <div className="text-center max-w-2xl mx-auto mb-14">
@@ -683,7 +683,7 @@ function VisionMission() {
 
 function Services() {
   return (
-    <section id="services" className="py-24 bg-white">
+    <section id="services" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-emerald font-semibold tracking-widest text-sm">خدماتنا</span>
@@ -788,7 +788,7 @@ function ServiceGroupBlock({
 
 function Methodology() {
   return (
-    <section id="methodology" className="py-24 bg-ivory relative overflow-hidden">
+    <section id="methodology" className="py-16 md:py-24 bg-ivory relative overflow-hidden">
       <div className="absolute top-0 left-0 h-[400px] w-[400px] bg-gold-gradient opacity-10 blur-3xl rounded-full" />
       <div className="container mx-auto px-6 relative">
         <div className="text-center max-w-2xl mx-auto mb-16">
@@ -829,7 +829,7 @@ function Methodology() {
 
 function Values() {
   return (
-    <section id="values" className="py-24 bg-white">
+    <section id="values" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-emerald font-semibold tracking-widest text-sm">قيمنا الجوهرية</span>
@@ -856,7 +856,7 @@ function Values() {
 
 function Team() {
   return (
-    <section id="team" className="py-24 bg-ivory relative overflow-hidden">
+    <section id="team" className="py-16 md:py-24 bg-ivory relative overflow-hidden">
       <div className="absolute -top-32 -right-32 h-[400px] w-[400px] bg-emerald-gradient opacity-10 blur-3xl rounded-full" />
       <div className="container mx-auto px-6 relative">
         <div className="text-right max-w-3xl mb-12">
@@ -932,7 +932,7 @@ function Team() {
 
 function Advantages() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <span className="text-emerald font-semibold tracking-widest text-sm">مزايانا التنافسية</span>
@@ -1001,7 +1001,7 @@ function CTA() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-ivory">
+    <section id="contact" className="py-16 md:py-24 bg-ivory">
       <div className="container mx-auto px-6">
         <div className="relative overflow-hidden rounded-[2.5rem] bg-emerald-gradient p-12 md:p-16 shadow-luxury">
           <div className="absolute -top-20 -right-20 h-80 w-80 rounded-full bg-gold-gradient opacity-20 blur-3xl" />
