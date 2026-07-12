@@ -513,26 +513,20 @@ function About() {
         </div>
         <div className="relative">
           <div className="grid grid-cols-2 gap-4">
-            <div className="bg-emerald-gradient rounded-3xl p-8 text-ivory shadow-luxury translate-y-8">
-              <div className="font-display text-5xl font-bold text-gold-soft tabular-nums">
+            <div className="bg-emerald-gradient rounded-3xl p-6 md:p-8 text-ivory shadow-luxury translate-y-8">
+              <div className="font-display text-4xl md:text-5xl font-bold text-gold-soft tabular-nums">
                 <AnimatedNumber value={30} suffix="+" />
               </div>
               <div className="mt-2 text-sm opacity-90">عاماً من خبرة فريق العمل</div>
             </div>
-            <div className="glass-card rounded-3xl p-8 shadow-gold">
-              <div className="font-display text-4xl md:text-[2.75rem] font-bold text-emerald-gradient tabular-nums">
-                <AnimatedNumber value={2026} duration={2000} />
-              </div>
-              <div className="mt-2 text-sm text-foreground/70">عام تأسيس الشركة</div>
-            </div>
-            <div className="glass-card rounded-3xl p-8 shadow-gold">
-              <div className="font-display text-5xl font-bold text-emerald-gradient tabular-nums">
+            <div className="glass-card rounded-3xl p-6 md:p-8 shadow-gold">
+              <div className="font-display text-4xl md:text-5xl font-bold text-emerald-gradient tabular-nums">
                 <AnimatedNumber value={2} />
               </div>
               <div className="mt-2 text-sm text-foreground/70">سوقان: مصر والسعودية</div>
             </div>
-            <div className="bg-gold-gradient rounded-3xl p-8 text-emerald-deep shadow-gold translate-y-8">
-              <div className="font-display text-5xl font-bold">IFRS</div>
+            <div className="bg-gold-gradient rounded-3xl p-6 md:p-8 text-emerald-deep shadow-gold col-span-2 text-center">
+              <div className="font-display text-4xl md:text-5xl font-bold">IFRS</div>
               <div className="mt-2 text-sm font-semibold">وفق المعايير الدولية للتقارير المالية</div>
             </div>
           </div>
