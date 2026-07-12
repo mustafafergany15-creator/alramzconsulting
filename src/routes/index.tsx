@@ -803,11 +803,11 @@ function Methodology() {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
           {methodology.map((step, i) => (
             <div key={step.title} className="relative bg-white rounded-3xl p-7 border border-gold/20 hover:border-gold/50 hover:shadow-luxury transition-all hover:-translate-y-2 text-right">
-              <div className="absolute -top-4 -left-4 h-12 w-12 rounded-full bg-gold-gradient flex items-center justify-center text-emerald-deep font-display font-bold shadow-gold">
-                0{i + 1}
-              </div>
-              <div className="h-14 w-14 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury">
-                <step.icon className="h-7 w-7 text-gold" />
+              <div className="flex items-start justify-between gap-3">
+                <div className="font-display text-4xl font-bold text-gold tabular-nums">0{i + 1}</div>
+                <div className="h-14 w-14 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury shrink-0">
+                  <step.icon className="h-7 w-7 text-gold" />
+                </div>
               </div>
               <h3 className="mt-5 font-bold text-lg text-emerald-deep">{step.title}</h3>
               <p className="mt-3 text-sm text-foreground/80 leading-relaxed font-semibold">{step.lead}</p>
@@ -1057,11 +1057,9 @@ function Footer() {
     <footer className="bg-emerald-deep text-ivory pt-16 pb-6">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-10 text-right">
-          <div className="md:col-span-2">
-            <div className="flex justify-end">
-              <img src={logoDark} alt="الرمز المثالي - للاستشارات المالية والإدارية" className="h-16 md:h-20 w-auto object-contain" loading="lazy" />
-            </div>
-            <p className="mt-5 text-ivory/70 leading-relaxed max-w-md mr-0 ml-auto">
+          <div className="md:col-span-2 flex flex-col items-end">
+            <img src={logoDark} alt="الرمز المثالي - للاستشارات المالية والإدارية" className="h-16 md:h-20 w-auto object-contain" loading="lazy" />
+            <p className="mt-5 text-ivory/70 leading-relaxed max-w-md">
               شركة الرمز المثالي للاستشارات المالية والإدارية — شركة مصرية ذات مسؤولية محدودة، تقدّم حلولاً متكاملة تمكّن منشآت المنطقة من النمو والاستدامة.
             </p>
             <div className="mt-6 flex gap-3 justify-end">
@@ -1109,6 +1107,12 @@ function Footer() {
 }
 
 function Index() {
+  useEffect(() => {
+    // Ensure the page opens at the top when the route mounts.
+    if (typeof window !== "undefined" && !window.location.hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }
+  }, []);
   return (
     <div className="min-h-screen bg-ivory font-arabic" dir="rtl">
       <TopBar />
