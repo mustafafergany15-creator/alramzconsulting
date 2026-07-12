@@ -391,38 +391,37 @@ function Hero() {
       <div className="absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-gold-gradient opacity-[0.16] blur-2xl" />
       <div className="absolute -bottom-40 -right-40 h-[500px] w-[500px] rounded-full bg-emerald-gradient opacity-[0.12] blur-2xl" />
 
-      <div className="container relative mx-auto grid lg:grid-cols-2 gap-12 items-center px-6 py-20 lg:py-28">
+      <div className="container relative mx-auto grid lg:grid-cols-2 gap-10 lg:gap-12 items-center px-6 py-14 md:py-20 lg:py-28">
         {/* Text right (RTL natural) */}
         <div className="order-2 lg:order-1 text-right">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card text-xs font-semibold text-emerald tracking-wide">
             <span className="h-2 w-2 rounded-full bg-gold-gradient" />
             شركة استشارات مالية وإدارية رائدة
           </span>
-          <h1 className="mt-6 font-display text-5xl md:text-7xl font-bold text-emerald-deep leading-[1.25]">
+          <h1 className="mt-6 font-display text-4xl sm:text-5xl md:text-7xl font-bold text-emerald-deep leading-[1.25]">
             نحو نجاح
             <span className="block text-emerald-gradient">مستدام</span>
           </h1>
-          <p className="mt-5 text-2xl md:text-3xl font-semibold text-emerald">
+          <p className="mt-5 text-xl sm:text-2xl md:text-3xl font-semibold text-emerald">
             لحلول مالية وإدارية متكاملة
           </p>
-          <p className="mt-6 text-lg text-foreground/75 leading-relaxed max-w-[54ch] mr-0 ml-auto">
+          <p className="mt-6 text-base sm:text-lg text-foreground/75 leading-relaxed max-w-[54ch] mr-0 ml-auto">
             في <strong className="text-emerald">الرمز المثالي</strong> نقدّم استشارات احترافية تجمع بين الخبرة المحلية والمعايير العالمية،
             لنرسم معك خارطة طريق واضحة نحو نمو منشأتك واستدامة أعمالها في الأسواق العربية.
           </p>
-          <div className="mt-9 flex flex-wrap gap-4 justify-end">
-            <a href="#contact" className="group bg-emerald-gradient text-ivory px-8 py-4 rounded-full font-bold shadow-luxury transition-all hover:shadow-gold hover:-translate-y-1 hover:scale-[1.03] flex items-center gap-2">
+          <div className="mt-8 flex flex-wrap gap-3 sm:gap-4 justify-end">
+            <a href="#contact" className="group bg-emerald-gradient text-ivory px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold shadow-luxury transition-all hover:shadow-gold hover:-translate-y-1 hover:scale-[1.03] flex items-center gap-2">
               تواصل معنا
               <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition" />
             </a>
-            <a href="#services" className="bg-gold-gradient text-emerald-deep px-8 py-4 rounded-full font-bold shadow-gold transition-all hover:shadow-luxury hover:-translate-y-1 hover:scale-[1.03] hover:brightness-105">
+            <a href="#services" className="bg-gold-gradient text-emerald-deep px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold shadow-gold transition-all hover:shadow-luxury hover:-translate-y-1 hover:scale-[1.03] hover:brightness-105">
               استكشف خدماتنا
             </a>
           </div>
 
-          <div className="mt-12 grid grid-cols-3 gap-4 sm:gap-6 max-w-md mr-0 ml-auto">
+          <div className="mt-10 grid grid-cols-2 gap-4 sm:gap-6 max-w-md mr-0 ml-auto">
             {[
               { v: 30, suffix: "+", l: "عام خبرة الفريق" },
-              { v: 2026, l: "عام التأسيس" },
               { v: null as number | null, text: "IFRS", l: "معايير دولية" },
             ].map((s, i) => (
               <div key={i} className="text-center">
@@ -436,7 +435,7 @@ function Hero() {
         </div>
 
         {/* Logo left */}
-        <div className="order-1 lg:order-2 flex justify-center lg:justify-start pb-24 md:pb-24 lg:pb-0">
+        <div className="order-1 lg:order-2 flex justify-center lg:justify-start">
           <div className="relative inline-block">
             {/* Calm gold halo that blends into the ivory background */}
             <div
@@ -454,19 +453,12 @@ function Hero() {
               height={210}
               decoding="async"
               fetchPriority="high"
-              className="relative w-[260px] sm:w-[325px] md:w-[475px] h-auto object-contain"
+              className="relative w-[220px] sm:w-[300px] md:w-[420px] lg:w-[475px] h-auto object-contain"
               style={{
                 filter:
                   "drop-shadow(0 14px 22px rgba(1,67,45,0.18)) drop-shadow(0 3px 6px rgba(205,164,94,0.12))",
               }}
             />
-            <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 md:left-auto md:-translate-x-0 md:-bottom-16 md:-left-20 glass-card rounded-2xl px-4 py-2.5 md:px-5 md:py-3 shadow-gold flex items-center gap-3 whitespace-nowrap">
-              <div className="h-7 md:h-8 w-px bg-gold/40" />
-              <div className="text-right">
-                <div className="text-[10px] tracking-widest text-foreground/60 uppercase">EST</div>
-                <div className="font-display text-xl md:text-2xl font-bold text-emerald leading-none tabular-nums">2026</div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
