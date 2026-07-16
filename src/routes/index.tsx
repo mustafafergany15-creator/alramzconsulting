@@ -691,7 +691,30 @@ function Services() {
           <p className="mt-4 text-foreground/70">حلول مالية وإدارية مصممة لتُمكّن منشأتك من النمو والريادة.</p>
           <div className="mx-auto mt-4 h-1 w-24 bg-gold-gradient rounded-full" />
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        {/* Detailed service lists first (main pillars) */}
+        <ServiceGroupBlock
+          title="الاستشارات المالية والخدمات المحاسبية"
+          subtitle="الكفاءة المحاسبية والربحية — بناء نظام مالي سليم وضمان الاستغلال الأمثل للموارد."
+          icon={BarChart3}
+          groups={financialServices}
+        />
+        <ServiceGroupBlock
+          title="الاستشارات الإدارية"
+          subtitle="الحوكمة والهيكل التنظيمي — تحسين الكفاءة التشغيلية وهيكلة الإدارة لزيادة الفاعلية."
+          icon={ListChecks}
+          groups={adminServices}
+        />
+
+        {/* Complementary services */}
+        <div className="mt-20 text-center max-w-2xl mx-auto mb-12">
+          <span className="text-emerald font-semibold tracking-widest text-sm">خدمات مكمّلة</span>
+          <h3 className="font-display text-3xl md:text-4xl font-bold text-emerald-deep mt-3">
+            حلول متخصصة تعزّز أداء منشأتك
+          </h3>
+          <div className="mx-auto mt-4 h-1 w-24 bg-gold-gradient rounded-full" />
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((s, i) => (
             <div key={s.title} className={`group relative rounded-3xl p-8 transition-all hover:-translate-y-2 overflow-hidden ${i === 0 ? "bg-emerald-gradient text-ivory shadow-luxury" : "bg-ivory border border-gold/20 hover:shadow-luxury hover:border-gold/50"}`}>
               <div className="absolute -top-16 -left-16 h-40 w-40 rounded-full bg-gold/30 blur-3xl opacity-0 group-hover:opacity-100 transition" />
@@ -708,20 +731,6 @@ function Services() {
             </div>
           ))}
         </div>
-
-        {/* Detailed service lists */}
-        <ServiceGroupBlock
-          title="الاستشارات المالية والخدمات المحاسبية"
-          subtitle="الكفاءة المحاسبية والربحية — بناء نظام مالي سليم وضمان الاستغلال الأمثل للموارد."
-          icon={BarChart3}
-          groups={financialServices}
-        />
-        <ServiceGroupBlock
-          title="الاستشارات الإدارية"
-          subtitle="الحوكمة والهيكل التنظيمي — تحسين الكفاءة التشغيلية وهيكلة الإدارة لزيادة الفاعلية."
-          icon={ListChecks}
-          groups={adminServices}
-        />
       </div>
     </section>
   );
