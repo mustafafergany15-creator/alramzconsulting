@@ -102,8 +102,6 @@ const features = [
 ];
 
 const services = [
-  { icon: TrendingUp, title: "الاستشارات المالية والخدمات المحاسبية", desc: "تحليل مالي معمّق، تخطيط استراتيجي، وإدارة تدفقات نقدية لبناء نظام مالي سليم وضمان الاستغلال الأمثل للموارد." },
-  { icon: Briefcase, title: "الاستشارات الإدارية", desc: "إعادة هيكلة المؤسسات، تطوير السياسات والإجراءات، وبناء أنظمة الحوكمة لرفع الكفاءة التشغيلية." },
   { icon: FileSearch, title: "دراسات الجدوى", desc: "دراسات شاملة تكشف فرص النجاح وتقلل مخاطر القرارات الاستثمارية وتدعم اتخاذ القرار." },
   { icon: Calculator, title: "هندسة التكاليف", desc: "تحليل الانحرافات وتصميم أنظمة تكاليف متطورة لقطاع المطاعم والكافيهات والمصانع." },
   { icon: Cog, title: "تطبيق أنظمة الـ ERP", desc: "اختيار وتصميم وتطبيق برامج تخطيط موارد المؤسسات لضمان دقة وسرعة التقارير." },
@@ -693,7 +691,30 @@ function Services() {
           <p className="mt-4 text-foreground/70">حلول مالية وإدارية مصممة لتُمكّن منشأتك من النمو والريادة.</p>
           <div className="mx-auto mt-4 h-1 w-24 bg-gold-gradient rounded-full" />
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        {/* Detailed service lists first (main pillars) */}
+        <ServiceGroupBlock
+          title="الاستشارات المالية والخدمات المحاسبية"
+          subtitle="الكفاءة المحاسبية والربحية — بناء نظام مالي سليم وضمان الاستغلال الأمثل للموارد."
+          icon={BarChart3}
+          groups={financialServices}
+        />
+        <ServiceGroupBlock
+          title="الاستشارات الإدارية"
+          subtitle="الحوكمة والهيكل التنظيمي — تحسين الكفاءة التشغيلية وهيكلة الإدارة لزيادة الفاعلية."
+          icon={ListChecks}
+          groups={adminServices}
+        />
+
+        {/* Complementary services */}
+        <div className="mt-20 text-center max-w-2xl mx-auto mb-12">
+          <span className="text-emerald font-semibold tracking-widest text-sm">خدمات مكمّلة</span>
+          <h3 className="font-display text-3xl md:text-4xl font-bold text-emerald-deep mt-3">
+            حلول متخصصة تعزّز أداء منشأتك
+          </h3>
+          <div className="mx-auto mt-4 h-1 w-24 bg-gold-gradient rounded-full" />
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((s, i) => (
             <div key={s.title} className={`group relative rounded-3xl p-8 transition-all hover:-translate-y-2 overflow-hidden ${i === 0 ? "bg-emerald-gradient text-ivory shadow-luxury" : "bg-ivory border border-gold/20 hover:shadow-luxury hover:border-gold/50"}`}>
               <div className="absolute -top-16 -left-16 h-40 w-40 rounded-full bg-gold/30 blur-3xl opacity-0 group-hover:opacity-100 transition" />
@@ -710,20 +731,6 @@ function Services() {
             </div>
           ))}
         </div>
-
-        {/* Detailed service lists */}
-        <ServiceGroupBlock
-          title="الاستشارات المالية والخدمات المحاسبية"
-          subtitle="الكفاءة المحاسبية والربحية — بناء نظام مالي سليم وضمان الاستغلال الأمثل للموارد."
-          icon={BarChart3}
-          groups={financialServices}
-        />
-        <ServiceGroupBlock
-          title="الاستشارات الإدارية"
-          subtitle="الحوكمة والهيكل التنظيمي — تحسين الكفاءة التشغيلية وهيكلة الإدارة لزيادة الفاعلية."
-          icon={ListChecks}
-          groups={adminServices}
-        />
       </div>
     </section>
   );
@@ -743,11 +750,10 @@ function ServiceGroupBlock({
   return (
     <div className="mt-16">
       <div className="text-center max-w-3xl mx-auto mb-12">
-        <div className="inline-flex items-center gap-2 justify-center">
-          <Icon className="h-5 w-5 text-emerald" />
-          <span className="text-emerald font-semibold tracking-widest text-sm">خدماتنا</span>
+        <div className="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-emerald-gradient shadow-luxury">
+          <Icon className="h-7 w-7 text-gold" />
         </div>
-        <h3 className="mt-4 font-display text-3xl md:text-5xl font-bold text-emerald-deep leading-tight">
+        <h3 className="mt-5 font-display text-3xl md:text-4xl font-bold text-emerald-deep leading-tight">
           {title}
         </h3>
         <p className="mt-4 text-foreground/70 leading-relaxed">{subtitle}</p>
