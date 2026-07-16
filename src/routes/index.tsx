@@ -713,14 +713,12 @@ function Services() {
 
         {/* Detailed service lists */}
         <ServiceGroupBlock
-          eyebrow="أولاً"
           title="الاستشارات المالية والخدمات المحاسبية"
           subtitle="الكفاءة المحاسبية والربحية — بناء نظام مالي سليم وضمان الاستغلال الأمثل للموارد."
           icon={BarChart3}
           groups={financialServices}
         />
         <ServiceGroupBlock
-          eyebrow="ثانياً"
           title="الاستشارات الإدارية"
           subtitle="الحوكمة والهيكل التنظيمي — تحسين الكفاءة التشغيلية وهيكلة الإدارة لزيادة الفاعلية."
           icon={ListChecks}
@@ -732,13 +730,11 @@ function Services() {
 }
 
 function ServiceGroupBlock({
-  eyebrow,
   title,
   subtitle,
   icon: Icon,
   groups,
 }: {
-  eyebrow: string;
   title: string;
   subtitle: string;
   icon: typeof BarChart3;
@@ -746,16 +742,18 @@ function ServiceGroupBlock({
 }) {
   return (
     <div className="mt-16">
-      <div className="text-right max-w-3xl mb-8">
-        <span className="text-emerald font-semibold tracking-widest text-sm">{eyebrow}</span>
-        <div className="mt-3 flex items-center gap-3 justify-start">
-          <div className="h-12 w-12 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury shrink-0">
-            <Icon className="h-6 w-6 text-gold" />
+      <div className="relative bg-emerald-gradient rounded-3xl px-6 py-8 md:px-10 md:py-10 mb-10 shadow-luxury overflow-hidden text-right">
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_right,var(--color-gold),transparent_60%)]" />
+        <div className="relative flex items-center gap-4 justify-start">
+          <div className="h-14 w-14 md:h-16 md:w-16 rounded-2xl bg-ivory/10 border border-gold/40 flex items-center justify-center shrink-0">
+            <Icon className="h-7 w-7 md:h-8 md:w-8 text-gold" />
           </div>
-          <h3 className="font-display text-2xl md:text-3xl font-bold text-emerald-deep">{title}</h3>
+          <div>
+            <h3 className="font-display text-2xl md:text-3xl font-bold text-ivory leading-tight">{title}</h3>
+            <div className="mt-2 h-1 w-20 bg-gold-gradient rounded-full" />
+          </div>
         </div>
-        <p className="mt-3 text-foreground/70">{subtitle}</p>
-        <div className="mt-4 h-1 w-24 bg-gold-gradient rounded-full mr-0" />
+        <p className="relative mt-4 text-ivory/85 leading-relaxed max-w-3xl">{subtitle}</p>
       </div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {groups.map((g, i) => (
