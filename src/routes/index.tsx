@@ -584,7 +584,7 @@ function OurRole() {
 
 function VisionMission() {
   return (
-    <section id="vision" className="py-16 md:py-24 bg-white relative overflow-hidden">
+    <section id="vision" className="py-16 md:py-24 bg-ivory relative overflow-hidden">
       <div className="absolute -bottom-32 -left-32 h-[400px] w-[400px] bg-gold-gradient opacity-10 blur-3xl rounded-full" />
       <div className="container mx-auto px-6 relative">
         <div className="text-center max-w-2xl mx-auto mb-14">
