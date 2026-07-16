@@ -750,11 +750,10 @@ function ServiceGroupBlock({
   return (
     <div className="mt-16">
       <div className="text-center max-w-3xl mx-auto mb-12">
-        <div className="inline-flex items-center gap-2 justify-center">
-          <Icon className="h-5 w-5 text-emerald" />
-          <span className="text-emerald font-semibold tracking-widest text-sm">خدماتنا</span>
+        <div className="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-emerald-gradient shadow-luxury">
+          <Icon className="h-7 w-7 text-gold" />
         </div>
-        <h3 className="mt-4 font-display text-3xl md:text-5xl font-bold text-emerald-deep leading-tight">
+        <h3 className="mt-5 font-display text-3xl md:text-4xl font-bold text-emerald-deep leading-tight">
           {title}
         </h3>
         <p className="mt-4 text-foreground/70 leading-relaxed">{subtitle}</p>
