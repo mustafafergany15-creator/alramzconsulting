@@ -742,18 +742,16 @@ function ServiceGroupBlock({
 }) {
   return (
     <div className="mt-16">
-      <div className="relative bg-emerald-gradient rounded-3xl px-6 py-8 md:px-10 md:py-10 mb-10 shadow-luxury overflow-hidden text-right">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_right,var(--color-gold),transparent_60%)]" />
-        <div className="relative flex items-center gap-4 justify-start">
-          <div className="h-14 w-14 md:h-16 md:w-16 rounded-2xl bg-ivory/10 border border-gold/40 flex items-center justify-center shrink-0">
-            <Icon className="h-7 w-7 md:h-8 md:w-8 text-gold" />
-          </div>
-          <div>
-            <h3 className="font-display text-2xl md:text-3xl font-bold text-ivory leading-tight">{title}</h3>
-            <div className="mt-2 h-1 w-20 bg-gold-gradient rounded-full" />
-          </div>
+      <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="inline-flex items-center gap-2 justify-center">
+          <Icon className="h-5 w-5 text-emerald" />
+          <span className="text-emerald font-semibold tracking-widest text-sm">خدماتنا</span>
         </div>
-        <p className="relative mt-4 text-ivory/85 leading-relaxed max-w-3xl">{subtitle}</p>
+        <h3 className="mt-4 font-display text-3xl md:text-5xl font-bold text-emerald-deep leading-tight">
+          {title}
+        </h3>
+        <p className="mt-4 text-foreground/70 leading-relaxed">{subtitle}</p>
+        <div className="mt-6 h-1 w-24 bg-gold-gradient rounded-full mx-auto" />
       </div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {groups.map((g, i) => (
