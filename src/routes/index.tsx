@@ -1055,12 +1055,12 @@ function Footer() {
     <footer className="bg-emerald-deep text-ivory pt-16 pb-6">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-10 text-right">
-          <div className="md:col-span-2 flex flex-col items-end">
+          <div className="md:col-span-2 flex flex-col items-start">
             <img src={logoDark} alt="الرمز المثالي - للاستشارات المالية والإدارية" className="h-16 md:h-20 w-auto object-contain" loading="lazy" />
             <p className="mt-5 text-ivory/70 leading-relaxed max-w-md">
               شركة الرمز المثالي للاستشارات المالية والإدارية — شركة مصرية ذات مسؤولية محدودة، تقدّم حلولاً متكاملة تمكّن منشآت المنطقة من النمو والاستدامة.
             </p>
-            <div className="mt-6 flex gap-3 justify-end">
+            <div className="mt-6 flex gap-3 justify-start">
               {[
                 { Icon: Facebook, href: SOCIAL.facebook, label: "Facebook" },
                 { Icon: Linkedin, href: SOCIAL.linkedin, label: "LinkedIn" },
