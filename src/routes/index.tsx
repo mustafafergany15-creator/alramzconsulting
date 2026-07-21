@@ -358,7 +358,7 @@ function Navbar() {
                 <a
                   href={n.href}
                   className={`font-medium transition relative group ${
-                    isActive ? "text-gold" : "text-foreground/85 hover:text-gold"
+                    isActive ? "text-gold-ink" : "text-foreground/85 hover:text-gold-ink"
                   }`}
                 >
                   {n.label}
@@ -426,7 +426,7 @@ function Hero() {
                 <div className="font-display text-2xl sm:text-3xl font-bold text-emerald-gradient tabular-nums tracking-tight">
                   {s.v === null ? s.text : <AnimatedNumber value={s.v} suffix={s.suffix} />}
                 </div>
-                <div className="text-[11px] sm:text-xs text-foreground/60 mt-1 leading-snug">{s.l}</div>
+                <div className="text-[11px] sm:text-xs text-foreground/75 mt-1 leading-snug">{s.l}</div>
               </div>
             ))}
           </div>
@@ -480,13 +480,13 @@ function Features() {
             <div key={f.title} className="group relative bg-ivory rounded-3xl p-8 border border-gold/15 hover:border-gold/60 transition-all hover:-translate-y-2 hover:shadow-luxury overflow-hidden flex flex-col">
               <div className="absolute -top-10 -left-10 h-32 w-32 rounded-full bg-gold-gradient opacity-0 group-hover:opacity-20 blur-2xl transition" />
               <div className="relative flex items-start justify-between gap-3">
-                <div className="font-display text-4xl font-bold text-gold tabular-nums">0{i + 1}</div>
+                <div className="font-display text-4xl font-bold text-gold-ink tabular-nums">0{i + 1}</div>
                 <div className="h-14 w-14 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury group-hover:scale-110 transition shrink-0">
-                  <f.icon className="h-7 w-7 text-gold" />
+                  <f.icon className="h-7 w-7 text-gold-ink" />
                 </div>
               </div>
               <h3 className="mt-5 font-bold text-xl text-emerald-deep leading-[1.6] text-right">{f.title}</h3>
-              <p className="mt-3 text-sm text-foreground/70 leading-[1.85] text-right">{f.desc}</p>
+              <p className="mt-3 text-sm text-foreground/80 leading-[1.85] text-right">{f.desc}</p>
             </div>
           ))}
         </div>
@@ -521,7 +521,7 @@ function About() {
               <div className="font-display text-4xl md:text-5xl font-bold text-emerald-gradient tabular-nums">
                 <AnimatedNumber value={2} />
               </div>
-              <div className="mt-2 text-sm text-foreground/70">سوقان: مصر والسعودية</div>
+              <div className="mt-2 text-sm text-foreground/80">سوقان: مصر والسعودية</div>
             </div>
             <div className="bg-gold-gradient rounded-3xl p-6 md:p-8 text-emerald-deep shadow-gold col-span-2 text-center">
               <div className="font-display text-4xl md:text-5xl font-bold">IFRS</div>
@@ -631,13 +631,13 @@ function VisionMission() {
             <div key={g.title} className="group relative bg-ivory rounded-3xl p-7 lg:p-6 border border-gold/20 hover:border-gold/50 transition-all hover:-translate-y-2 hover:shadow-luxury overflow-hidden text-right">
               <div className="absolute -top-10 -left-10 h-32 w-32 rounded-full bg-gold-gradient opacity-0 group-hover:opacity-20 blur-2xl transition" />
               <div className="relative flex items-start justify-between gap-3">
-                <div className="font-display text-4xl font-bold text-gold">0{i + 1}</div>
+                <div className="font-display text-4xl font-bold text-gold-ink">0{i + 1}</div>
                 <div className="h-14 w-14 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury shrink-0">
-                  <g.icon className="h-7 w-7 text-gold" />
+                  <g.icon className="h-7 w-7 text-gold-ink" />
                 </div>
               </div>
               <h4 className="mt-5 font-bold text-xl text-emerald-deep">{g.title}</h4>
-              <p className="mt-3 text-sm text-foreground/70 leading-relaxed">{g.desc}</p>
+              <p className="mt-3 text-sm text-foreground/80 leading-relaxed">{g.desc}</p>
             </div>
           ))}
         </div>
@@ -645,7 +645,7 @@ function VisionMission() {
         <div className="mt-16 grid md:grid-cols-2 gap-6 text-right">
           <div className="bg-ivory rounded-3xl p-8 border border-gold/20">
             <div className="flex items-center gap-3">
-              <Building2 className="h-6 w-6 text-gold" />
+              <Building2 className="h-6 w-6 text-gold-ink" />
               <h4 className="font-bold text-xl text-emerald-deep">مجالات العمل</h4>
             </div>
             <ul className="mt-5 space-y-3 text-foreground/80">
@@ -688,7 +688,7 @@ function Services() {
           <h2 className="font-display text-4xl md:text-5xl font-bold text-emerald-deep mt-3">
             باقة استشارية متكاملة
           </h2>
-          <p className="mt-4 text-foreground/70">حلول مالية وإدارية مصممة لتُمكّن منشأتك من النمو والريادة.</p>
+          <p className="mt-4 text-foreground/80">حلول مالية وإدارية مصممة لتُمكّن منشأتك من النمو والريادة.</p>
           <div className="mx-auto mt-4 h-1 w-24 bg-gold-gradient rounded-full" />
         </div>
 
@@ -723,7 +723,7 @@ function Services() {
                   <s.icon className={`h-8 w-8 ${i === 0 ? "text-emerald-deep" : "text-gold"}`} />
                 </div>
                 <h3 className={`mt-6 font-bold text-2xl ${i === 0 ? "text-ivory" : "text-emerald-deep"}`}>{s.title}</h3>
-                <p className={`mt-3 leading-relaxed ${i === 0 ? "text-ivory/85" : "text-foreground/70"}`}>{s.desc}</p>
+                <p className={`mt-3 leading-relaxed ${i === 0 ? "text-ivory/90" : "text-foreground/80"}`}>{s.desc}</p>
                 <a href="#contact" className={`mt-6 inline-flex items-center gap-2 font-semibold text-sm ${i === 0 ? "text-gold-soft" : "text-emerald"}`}>
                   اعرف المزيد <ArrowLeft className="h-4 w-4" />
                 </a>
@@ -756,7 +756,7 @@ function ServiceGroupBlock({
         <h3 className="mt-5 font-display text-3xl md:text-4xl font-bold text-emerald-deep leading-tight">
           {title}
         </h3>
-        <p className="mt-4 text-foreground/70 leading-relaxed">{subtitle}</p>
+        <p className="mt-4 text-foreground/80 leading-relaxed">{subtitle}</p>
         <div className="mt-6 h-1 w-24 bg-gold-gradient rounded-full mx-auto" />
       </div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -767,7 +767,7 @@ function ServiceGroupBlock({
           >
             <div className="absolute -top-10 -left-10 h-32 w-32 rounded-full bg-gold-gradient opacity-0 group-hover:opacity-20 blur-2xl transition" />
             <div className="relative flex items-start justify-between gap-3">
-              <div className="font-display text-4xl font-bold text-gold tabular-nums">0{i + 1}</div>
+              <div className="font-display text-4xl font-bold text-gold-ink tabular-nums">0{i + 1}</div>
               <div className="h-12 w-12 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury shrink-0">
                 <CheckCircle2 className="h-6 w-6 text-gold" />
               </div>
@@ -798,7 +798,7 @@ function Methodology() {
           <h2 className="font-display text-4xl md:text-5xl font-bold text-emerald-deep mt-3">
             خمس خطوات نحو النجاح
           </h2>
-          <p className="mt-4 text-foreground/70">رحلة واضحة المعالم تبدأ بالاستماع وتنتهي بشراكة نمو مستدامة.</p>
+          <p className="mt-4 text-foreground/80">رحلة واضحة المعالم تبدأ بالاستماع وتنتهي بشراكة نمو مستدامة.</p>
           <div className="mx-auto mt-4 h-1 w-24 bg-gold-gradient rounded-full" />
         </div>
 
@@ -806,14 +806,14 @@ function Methodology() {
           {methodology.map((step, i) => (
             <div key={step.title} className="relative bg-white rounded-3xl p-7 border border-gold/20 hover:border-gold/50 hover:shadow-luxury transition-all hover:-translate-y-2 text-right">
               <div className="flex items-start justify-between gap-3">
-                <div className="font-display text-4xl font-bold text-gold tabular-nums">0{i + 1}</div>
+                <div className="font-display text-4xl font-bold text-gold-ink tabular-nums">0{i + 1}</div>
                 <div className="h-14 w-14 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury shrink-0">
                   <step.icon className="h-7 w-7 text-gold" />
                 </div>
               </div>
               <h3 className="mt-5 font-bold text-lg text-emerald-deep">{step.title}</h3>
               <p className="mt-3 text-sm text-foreground/80 leading-relaxed font-semibold">{step.lead}</p>
-              <ul className="mt-3 space-y-2 text-sm text-foreground/70 leading-relaxed">
+              <ul className="mt-3 space-y-2 text-sm text-foreground/80 leading-relaxed">
                 {step.items.map((it) => (
                   <li key={it} className="grid grid-cols-[1.25rem_1fr] gap-x-2 items-start">
                     <CheckCircle2 className="h-4 w-4 text-emerald shrink-0 mt-1" />
@@ -847,7 +847,7 @@ function Values() {
                 <v.icon className="h-7 w-7 text-emerald-deep" />
               </div>
               <h3 className="mt-5 font-bold text-xl text-emerald-deep">{v.title}</h3>
-              <p className="mt-3 text-sm text-foreground/70 leading-relaxed">{v.desc}</p>
+              <p className="mt-3 text-sm text-foreground/80 leading-relaxed">{v.desc}</p>
             </div>
           ))}
         </div>
@@ -910,7 +910,7 @@ function Team() {
 
         <div className="mt-10 text-right max-w-3xl">
           <h3 className="font-display text-2xl md:text-3xl font-bold text-emerald-deep">الخبرات العملية والقطاعات</h3>
-          <p className="mt-3 text-foreground/70">تولّى أعضاء الفريق مناصب قيادية في قطاعات حيوية متنوعة:</p>
+          <p className="mt-3 text-foreground/80">تولّى أعضاء الفريق مناصب قيادية في قطاعات حيوية متنوعة:</p>
         </div>
         <div className="mt-8 grid md:grid-cols-3 gap-6">
           {sectorExperience.map((sec) => (
@@ -1045,7 +1045,7 @@ function CTA() {
               <button type="submit" disabled={submitting} className="w-full bg-emerald-gradient text-ivory font-bold py-4 rounded-xl shadow-luxury hover:shadow-gold transition disabled:opacity-60 disabled:cursor-not-allowed">
                 {submitting ? "جاري الإرسال..." : "إرسال الطلب"}
               </button>
-              <p className="text-xs text-foreground/60 text-right">سيتم إرسال طلبك مباشرة إلى بريد الشركة دون مغادرة الصفحة.</p>
+              <p className="text-xs text-foreground/75 text-right">سيتم إرسال طلبك مباشرة إلى بريد الشركة دون مغادرة الصفحة.</p>
             </form>
           </div>
         </div>

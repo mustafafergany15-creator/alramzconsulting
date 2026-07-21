@@ -64,7 +64,12 @@
   --color-navy: var(--navy);
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
+  --color-gold-ink: var(--gold-ink);
   --color-ivory: var(--ivory);
+  --color-surface-base: var(--surface-base);
+  --color-surface-alt: var(--surface-alt);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-surface-dark: var(--surface-dark);
   --font-arabic: 'Tajawal', system-ui, sans-serif;
   --font-display: 'Amiri', 'Tajawal', serif;
 }
@@ -77,7 +82,16 @@
   --navy: oklch(0.32 0.04 248);
   --gold: oklch(0.76 0.095 80);             /* softer, less saturated */
   --gold-soft: oklch(0.88 0.055 84);
+  /* Accessible gold for text on light surfaces (WCAG AA ≥4.5:1 on ivory/white). */
+  --gold-ink: oklch(0.5 0.11 70);
   --ivory: oklch(0.965 0.014 86);           /* warm, calm */
+
+  /* Centralized section surfaces so backgrounds stay consistent across the app. */
+  --surface-base: var(--ivory);
+  --surface-alt: oklch(1 0 0);
+  --surface-elevated: oklch(0.99 0.008 86);
+  --surface-dark: var(--emerald-deep);
+  --hover-tint: color-mix(in oklab, var(--gold) 8%, transparent);
 
   --background: var(--ivory);
   --foreground: oklch(0.22 0.03 248);
