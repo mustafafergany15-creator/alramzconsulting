@@ -358,7 +358,7 @@ function Navbar() {
                 <a
                   href={n.href}
                   className={`font-medium transition relative group ${
-                    isActive ? "text-gold" : "text-foreground/85 hover:text-gold"
+                    isActive ? "text-gold-ink" : "text-foreground/85 hover:text-gold-ink"
                   }`}
                 >
                   {n.label}
@@ -426,7 +426,7 @@ function Hero() {
                 <div className="font-display text-2xl sm:text-3xl font-bold text-emerald-gradient tabular-nums tracking-tight">
                   {s.v === null ? s.text : <AnimatedNumber value={s.v} suffix={s.suffix} />}
                 </div>
-                <div className="text-[11px] sm:text-xs text-foreground/60 mt-1 leading-snug">{s.l}</div>
+                <div className="text-[11px] sm:text-xs text-foreground/75 mt-1 leading-snug">{s.l}</div>
               </div>
             ))}
           </div>
@@ -480,13 +480,13 @@ function Features() {
             <div key={f.title} className="group relative bg-ivory rounded-3xl p-8 border border-gold/15 hover:border-gold/60 transition-all hover:-translate-y-2 hover:shadow-luxury overflow-hidden flex flex-col">
               <div className="absolute -top-10 -left-10 h-32 w-32 rounded-full bg-gold-gradient opacity-0 group-hover:opacity-20 blur-2xl transition" />
               <div className="relative flex items-start justify-between gap-3">
-                <div className="font-display text-4xl font-bold text-gold tabular-nums">0{i + 1}</div>
+                <div className="font-display text-4xl font-bold text-gold-ink tabular-nums">0{i + 1}</div>
                 <div className="h-14 w-14 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury group-hover:scale-110 transition shrink-0">
-                  <f.icon className="h-7 w-7 text-gold" />
+                  <f.icon className="h-7 w-7 text-gold-ink" />
                 </div>
               </div>
               <h3 className="mt-5 font-bold text-xl text-emerald-deep leading-[1.6] text-right">{f.title}</h3>
-              <p className="mt-3 text-sm text-foreground/70 leading-[1.85] text-right">{f.desc}</p>
+              <p className="mt-3 text-sm text-foreground/80 leading-[1.85] text-right">{f.desc}</p>
             </div>
           ))}
         </div>
@@ -631,13 +631,13 @@ function VisionMission() {
             <div key={g.title} className="group relative bg-ivory rounded-3xl p-7 lg:p-6 border border-gold/20 hover:border-gold/50 transition-all hover:-translate-y-2 hover:shadow-luxury overflow-hidden text-right">
               <div className="absolute -top-10 -left-10 h-32 w-32 rounded-full bg-gold-gradient opacity-0 group-hover:opacity-20 blur-2xl transition" />
               <div className="relative flex items-start justify-between gap-3">
-                <div className="font-display text-4xl font-bold text-gold">0{i + 1}</div>
+                <div className="font-display text-4xl font-bold text-gold-ink">0{i + 1}</div>
                 <div className="h-14 w-14 rounded-2xl bg-emerald-gradient flex items-center justify-center shadow-luxury shrink-0">
-                  <g.icon className="h-7 w-7 text-gold" />
+                  <g.icon className="h-7 w-7 text-gold-ink" />
                 </div>
               </div>
               <h4 className="mt-5 font-bold text-xl text-emerald-deep">{g.title}</h4>
-              <p className="mt-3 text-sm text-foreground/70 leading-relaxed">{g.desc}</p>
+              <p className="mt-3 text-sm text-foreground/80 leading-relaxed">{g.desc}</p>
             </div>
           ))}
         </div>
@@ -645,7 +645,7 @@ function VisionMission() {
         <div className="mt-16 grid md:grid-cols-2 gap-6 text-right">
           <div className="bg-ivory rounded-3xl p-8 border border-gold/20">
             <div className="flex items-center gap-3">
-              <Building2 className="h-6 w-6 text-gold" />
+              <Building2 className="h-6 w-6 text-gold-ink" />
               <h4 className="font-bold text-xl text-emerald-deep">مجالات العمل</h4>
             </div>
             <ul className="mt-5 space-y-3 text-foreground/80">
