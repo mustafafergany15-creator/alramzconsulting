@@ -302,6 +302,10 @@ function TopBar() {
             <Phone className="h-3.5 w-3.5 text-gold" />
             <span dir="ltr">{SOCIAL.whatsappDisplay}</span>
           </a>
+          <a href={SOCIAL.whatsappSA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-ivory transition">
+            <Phone className="h-3.5 w-3.5 text-gold" />
+            <span dir="ltr">{SOCIAL.whatsappSADisplay}</span>
+          </a>
           <a href={`mailto:${SOCIAL.email}`} className="hidden sm:flex items-center gap-2 hover:text-ivory transition">
             <Mail className="h-3.5 w-3.5 text-gold" />
             {SOCIAL.email}
