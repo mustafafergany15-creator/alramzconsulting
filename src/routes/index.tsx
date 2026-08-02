@@ -1082,6 +1082,12 @@ function Footer() {
                 </a>
               </li>
               <li>
+                <a href={SOCIAL.whatsappSA} target="_blank" rel="noopener noreferrer" className="block text-right hover:text-ivory transition">
+                  <span>واتساب: </span>
+                  <bdi dir="ltr" style={{ unicodeBidi: "isolate" }}>{SOCIAL.whatsappSADisplay}</bdi>
+                </a>
+              </li>
+              <li>
                 <a href={`mailto:${SOCIAL.email}`} className="hover:text-ivory transition break-all">{SOCIAL.email}</a>
               </li>
               <li>جمهورية مصر العربية</li>
