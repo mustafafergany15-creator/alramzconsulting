@@ -1006,6 +1006,10 @@ function CTA() {
                   <span dir="ltr">{SOCIAL.whatsappDisplay}</span>
                   <Phone className="h-5 w-5 text-gold" />
                 </a>
+                <a href={SOCIAL.whatsappSA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 justify-end hover:text-ivory transition">
+                  <span dir="ltr">{SOCIAL.whatsappSADisplay}</span>
+                  <Phone className="h-5 w-5 text-gold" />
+                </a>
                 <a href={`mailto:${SOCIAL.email}`} className="flex items-center gap-3 justify-end hover:text-ivory transition">
                   <span>{SOCIAL.email}</span>
                   <Mail className="h-5 w-5 text-gold" />
