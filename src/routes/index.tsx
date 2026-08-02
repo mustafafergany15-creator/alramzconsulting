@@ -876,28 +876,6 @@ function Team() {
         <div className="grid lg:grid-cols-2 gap-6">
           <div className="bg-white rounded-3xl p-8 border border-gold/20 shadow-soft text-right">
             <div className="flex items-center gap-3">
-              <GraduationCap className="h-7 w-7 text-gold" />
-              <h3 className="font-display text-2xl font-bold text-emerald-deep">المؤهلات الأكاديمية والمهنية</h3>
-            </div>
-            <ul className="mt-6 space-y-3 text-foreground/80">
-              {[
-                "بكالوريوس التجارة — تخصص محاسبة.",
-                "بكالوريوس التجارة — تخصص إدارة أعمال.",
-                "دراسات عليا — تخصص محاسبة مالية.",
-                "برنامج المحاسب الإداري المعتمد (CMA).",
-                "المعايير الدولية للتقارير المالية ونظم المعلومات المحاسبية (IFRS & AIS).",
-                "نظام تحليل المخاطر ونقاط التحكم الحرجة (HACCP).",
-              ].map((t) => (
-                <li key={t} className="grid grid-cols-[1.25rem_1fr] gap-x-2 items-start">
-                  <CheckCircle2 className="h-5 w-5 text-emerald shrink-0 mt-0.5" />
-                  <span>{t}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="bg-white rounded-3xl p-8 border border-gold/20 shadow-soft text-right">
-            <div className="flex items-center gap-3">
               <Award className="h-7 w-7 text-gold" />
               <h3 className="font-display text-2xl font-bold text-emerald-deep">إنجازات ومهارات محورية</h3>
             </div>
