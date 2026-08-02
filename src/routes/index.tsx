@@ -91,6 +91,8 @@ const SOCIAL = {
   linkedin: "https://www.linkedin.com/company/al-ramz-al-methaly/posts/?feedView=all",
   whatsapp: "https://wa.me/201204442060",
   whatsappDisplay: "+20 120 444 2060",
+  whatsappSA: "https://wa.me/966545215046",
+  whatsappSADisplay: "+966 54 521 5046",
   email: "alramzalmethaly@gmail.com",
 };
 
