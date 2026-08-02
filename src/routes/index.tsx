@@ -91,6 +91,8 @@ const SOCIAL = {
   linkedin: "https://www.linkedin.com/company/al-ramz-al-methaly/posts/?feedView=all",
   whatsapp: "https://wa.me/201204442060",
   whatsappDisplay: "+20 120 444 2060",
+  whatsappSA: "https://wa.me/966545215046",
+  whatsappSADisplay: "+966 54 521 5046",
   email: "alramzalmethaly@gmail.com",
 };
 
@@ -102,7 +104,7 @@ const features = [
 ];
 
 const services = [
-  { icon: FileSearch, title: "دراسات الجدوى", desc: "دراسات شاملة تكشف فرص النجاح وتقلل مخاطر القرارات الاستثمارية وتدعم اتخاذ القرار." },
+  { icon: FileSearch, title: "دراسات الجدوى", desc: "دراسات شاملة تكشف فرص النجاح وتقلل مخاطر القرارات الاستثمارية وتدعم اتخاذ القرار. بنظام تحليل المخاطر ونقاط التحكم الحرجة (HACCP)." },
   { icon: Calculator, title: "هندسة التكاليف", desc: "تحليل الانحرافات وتصميم أنظمة تكاليف متطورة لقطاع المطاعم والكافيهات والمصانع." },
   { icon: Cog, title: "تطبيق أنظمة الـ ERP", desc: "اختيار وتصميم وتطبيق برامج تخطيط موارد المؤسسات لضمان دقة وسرعة التقارير." },
   { icon: ShieldCheck, title: "الحوكمة وإدارة المخاطر", desc: "أطر رقابة داخلية متكاملة لحماية الأصول وضمان الامتثال للمعايير الدولية والمحلية." },
@@ -299,6 +301,10 @@ function TopBar() {
           <a href={SOCIAL.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-ivory transition">
             <Phone className="h-3.5 w-3.5 text-gold" />
             <span dir="ltr">{SOCIAL.whatsappDisplay}</span>
+          </a>
+          <a href={SOCIAL.whatsappSA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-ivory transition">
+            <Phone className="h-3.5 w-3.5 text-gold" />
+            <span dir="ltr">{SOCIAL.whatsappSADisplay}</span>
           </a>
           <a href={`mailto:${SOCIAL.email}`} className="hidden sm:flex items-center gap-2 hover:text-ivory transition">
             <Mail className="h-3.5 w-3.5 text-gold" />
@@ -874,28 +880,6 @@ function Team() {
         <div className="grid lg:grid-cols-2 gap-6">
           <div className="bg-white rounded-3xl p-8 border border-gold/20 shadow-soft text-right">
             <div className="flex items-center gap-3">
-              <GraduationCap className="h-7 w-7 text-gold" />
-              <h3 className="font-display text-2xl font-bold text-emerald-deep">المؤهلات الأكاديمية والمهنية</h3>
-            </div>
-            <ul className="mt-6 space-y-3 text-foreground/80">
-              {[
-                "بكالوريوس التجارة — تخصص محاسبة.",
-                "بكالوريوس التجارة — تخصص إدارة أعمال.",
-                "دراسات عليا — تخصص محاسبة مالية.",
-                "برنامج المحاسب الإداري المعتمد (CMA).",
-                "المعايير الدولية للتقارير المالية ونظم المعلومات المحاسبية (IFRS & AIS).",
-                "نظام تحليل المخاطر ونقاط التحكم الحرجة (HACCP).",
-              ].map((t) => (
-                <li key={t} className="grid grid-cols-[1.25rem_1fr] gap-x-2 items-start">
-                  <CheckCircle2 className="h-5 w-5 text-emerald shrink-0 mt-0.5" />
-                  <span>{t}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="bg-white rounded-3xl p-8 border border-gold/20 shadow-soft text-right">
-            <div className="flex items-center gap-3">
               <Award className="h-7 w-7 text-gold" />
               <h3 className="font-display text-2xl font-bold text-emerald-deep">إنجازات ومهارات محورية</h3>
             </div>
@@ -1022,6 +1006,10 @@ function CTA() {
                   <span dir="ltr">{SOCIAL.whatsappDisplay}</span>
                   <Phone className="h-5 w-5 text-gold" />
                 </a>
+                <a href={SOCIAL.whatsappSA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 justify-end hover:text-ivory transition">
+                  <span dir="ltr">{SOCIAL.whatsappSADisplay}</span>
+                  <Phone className="h-5 w-5 text-gold" />
+                </a>
                 <a href={`mailto:${SOCIAL.email}`} className="flex items-center gap-3 justify-end hover:text-ivory transition">
                   <span>{SOCIAL.email}</span>
                   <Mail className="h-5 w-5 text-gold" />
@@ -1091,6 +1079,12 @@ function Footer() {
                 <a href={SOCIAL.whatsapp} target="_blank" rel="noopener noreferrer" className="block text-right hover:text-ivory transition">
                   <span>واتساب: </span>
                   <bdi dir="ltr" style={{ unicodeBidi: "isolate" }}>{SOCIAL.whatsappDisplay}</bdi>
+                </a>
+              </li>
+              <li>
+                <a href={SOCIAL.whatsappSA} target="_blank" rel="noopener noreferrer" className="block text-right hover:text-ivory transition">
+                  <span>واتساب: </span>
+                  <bdi dir="ltr" style={{ unicodeBidi: "isolate" }}>{SOCIAL.whatsappSADisplay}</bdi>
                 </a>
               </li>
               <li>
