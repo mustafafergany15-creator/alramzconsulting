@@ -73,8 +73,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "الرمز المثالي | استشارات مالية وإدارية" },
-      { name: "description", content: "الرمز المثالي - شركة استشارات مالية وإدارية متكاملة. حلول مخصصة لنجاح مستدام في المملكة العربية السعودية ومصر." },
+      { title: "االرمز المثالي للاستشارات المالية والإدارية | Al Ramz Al Methaly" },
+      { name: "description", content: "الرمز المثالي للاستشارات المالية والإدارية تقدم خدمات الاستشارات المالية والإدارية، دراسات الجدوى، تطوير الأعمال، والاستشارات الاستراتيجية للشركات في المملكة العربية السعودية ومصر، مع حلول احترافية لدعم نمو الأعمال وتحقيق النجاح المستدام."},
       { name: "author", content: "Al Ramz Al Methaly" },
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { name: "theme-color", content: "#01432D" },
@@ -83,6 +83,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:locale", content: "ar_SA" },
       { property: "og:title", content: "الرمز المثالي | استشارات مالية وإدارية" },
       { property: "og:description", content: "الرمز المثالي - شركة استشارات مالية وإدارية متكاملة. حلول مخصصة لنجاح مستدام في المملكة العربية السعودية ومصر." },
+      { name: "keywords", content: "الرمز المثالي, استشارات مالية, استشارات إدارية, Financial Consulting, Management Consulting, Riyadh, Cairo",},
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "الرمز المثالي | استشارات مالية وإدارية" },
@@ -94,6 +95,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
+        rel: "icon",
+        href: "/logo.png",
+        type: "image/png",
+      },
+
+      {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Amiri:wght@400;700&display=swap",
       },
@@ -102,6 +109,43 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
     ],
+    scripts: [
+  {
+    type: "application/ld+json",
+    children: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FinancialService",
+      "@id": "https://alramzalmethaly.com/#organization",
+      name: "Al Ramz Al Methaly Financial & Management Consulting",
+      alternateName: "الرمز المثالي للاستشارات المالية والإدارية",
+      url: "https://alramzalmethaly.com",
+      logo: "https://alramzalmethaly.com/logo.png",
+      image: "https://alramzalmethaly.com/logo.png",
+      email: "mailto:alramzalmethaly@gmail.com",
+      telephone: [
+        "+966545215046",
+        "+201204442060"
+      ],
+      address: [
+        {
+          "@type": "PostalAddress",
+          addressLocality: "Riyadh",
+          addressCountry: "SA"
+        },
+        {
+          "@type": "PostalAddress",
+          addressLocality: "Cairo",
+          addressCountry: "EG"
+        }
+      ],
+      sameAs: [
+        "https://www.instagram.com/alramzalmethly/",
+        "https://www.linkedin.com/company/al-ramz-al-methaly/",
+        "https://www.facebook.com/people/شركة-الرمز-المثالي-للاستشارات-المالية-والادارية/61588506117123/"
+      ]
+    })
+  }
+]
   }),
   shellComponent: RootShell,
   component: RootComponent,
