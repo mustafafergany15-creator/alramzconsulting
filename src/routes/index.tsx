@@ -342,9 +342,19 @@ function useActiveSection(ids: string[]) {
 function Navbar() {
   const ids = navItems.map((n) => n.href.replace("#", ""));
   const active = useActiveSection(ids);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
+    <>
     <nav className="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-gold/20 shadow-soft">
-      <div className="container mx-auto flex items-center justify-between px-6 py-3">
+      <div className="container mx-auto flex items-center justify-between gap-3 px-4 sm:px-6 py-3">
         <a href="#home" className="flex items-center gap-3">
           <img
             src={logo}
@@ -353,7 +363,7 @@ function Navbar() {
             height={210}
             decoding="async"
             fetchPriority="high"
-            className="h-14 md:h-16 w-auto object-contain"
+            className="h-11 sm:h-14 md:h-16 w-auto object-contain"
           />
         </a>
         <ul className="hidden lg:flex items-center gap-6">
@@ -379,11 +389,115 @@ function Navbar() {
             );
           })}
         </ul>
-        <a href="#contact" className="bg-emerald-gradient text-ivory px-6 py-2.5 rounded-full text-sm font-semibold shadow-luxury transition-all hover:shadow-gold hover:-translate-y-0.5 hover:scale-[1.03]">
-          احجز استشارة
-        </a>
+        <div className="flex items-center gap-2">
+          <a href="#contact" className="hidden sm:inline-flex bg-emerald-gradient text-ivory px-5 lg:px-6 py-2.5 rounded-full text-sm font-semibold shadow-luxury transition-all hover:shadow-gold hover:-translate-y-0.5 hover:scale-[1.03]">
+            احجز استشارة
+          </a>
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            aria-label="فتح القائمة"
+            aria-expanded={open}
+            className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-xl border border-gold/30 bg-white text-emerald-deep shadow-soft active:scale-95 transition"
+          >
+            <Menu className="h-6 w-6" />
+          </button>
+        </div>
+      </div>
+
+      {/* Quick jump chips (mobile) */}
+      <div className="lg:hidden border-t border-gold/15 bg-white/70">
+        <div className="flex gap-2 overflow-x-auto px-4 py-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+          {navItems.map((n) => {
+            const id = n.href.replace("#", "");
+            const isActive = active === id;
+            return (
+              <a
+                key={n.href}
+                href={n.href}
+                className={`shrink-0 rounded-full px-3.5 py-1.5 text-[13px] font-semibold transition ${
+                  isActive
+                    ? "bg-emerald-gradient text-ivory shadow-soft"
+                    : "bg-ivory text-foreground/80 border border-gold/25"
+                }`}
+              >
+                {n.label}
+              </a>
+            );
+          })}
+        </div>
       </div>
     </nav>
+
+    {/* Mobile drawer */}
+    <div className={`lg:hidden fixed inset-0 z-[60] ${open ? "" : "pointer-events-none"}`} aria-hidden={!open}>
+      <div
+        onClick={() => setOpen(false)}
+        className={`absolute inset-0 bg-emerald-deep/50 backdrop-blur-sm transition-opacity duration-300 ${open ? "opacity-100" : "opacity-0"}`}
+      />
+      <aside
+        className={`absolute inset-y-0 right-0 flex w-[86%] max-w-xs flex-col bg-ivory shadow-luxury transition-transform duration-300 ${
+          open ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="flex items-center justify-between border-b border-gold/20 px-5 py-4">
+          <img src={logo} alt="الرمز المثالي" width={384} height={210} className="h-10 w-auto object-contain" />
+          <button
+            type="button"
+            onClick={() => setOpen(false)}
+            aria-label="إغلاق القائمة"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gold/30 bg-white text-emerald-deep active:scale-95 transition"
+          >
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+
+        <nav className="flex-1 overflow-y-auto px-3 py-4">
+          <ul className="space-y-1">
+            {navItems.map((n) => {
+              const id = n.href.replace("#", "");
+              const isActive = active === id;
+              return (
+                <li key={n.href}>
+                  <a
+                    href={n.href}
+                    onClick={() => setOpen(false)}
+                    className={`flex items-center justify-between rounded-xl px-4 py-3 text-[15px] font-semibold transition ${
+                      isActive
+                        ? "bg-emerald-gradient text-ivory shadow-soft"
+                        : "text-foreground/85 hover:bg-white"
+                    }`}
+                  >
+                    {n.label}
+                    <ArrowLeft className={`h-4 w-4 ${isActive ? "text-gold-soft" : "text-gold-ink"}`} />
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+
+        <div className="border-t border-gold/20 p-4 space-y-2">
+          <a
+            href="#contact"
+            onClick={() => setOpen(false)}
+            className="flex items-center justify-center rounded-full bg-emerald-gradient px-5 py-3 text-sm font-bold text-ivory shadow-luxury"
+          >
+            احجز استشارة
+          </a>
+          <a
+            href={SOCIAL.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 rounded-full border border-gold/35 bg-white px-5 py-3 text-sm font-semibold text-emerald-deep"
+          >
+            <MessageCircle className="h-4 w-4 text-gold-ink" />
+            واتساب
+          </a>
+        </div>
+      </aside>
+    </div>
+    </>
   );
 }
 
