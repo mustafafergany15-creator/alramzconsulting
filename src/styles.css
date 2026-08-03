@@ -182,6 +182,11 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* Offset anchor jumps so sections aren't hidden under the sticky navbar */
+  [id] {
+    scroll-margin-top: 7rem;
+  }
 }
 
 @utility text-gold-gradient {
