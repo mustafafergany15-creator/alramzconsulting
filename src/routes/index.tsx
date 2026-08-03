@@ -104,7 +104,7 @@ const features = [
 ];
 
 const services = [
-  { icon: FileSearch, title: "دراسات الجدوى", desc: "دراسات شاملة تكشف فرص النجاح وتقلل مخاطر القرارات الاستثمارية وتدعم اتخاذ القرار. بنظام تحليل المخاطر ونقاط التحكم الحرجة (HACCP)." },
+  { icon: FileSearch, title: "نظام تحليل المخاطر ونقاط التحكم الحرجة (HACCP)", desc: "" },
   { icon: Calculator, title: "هندسة التكاليف", desc: "تحليل الانحرافات وتصميم أنظمة تكاليف متطورة لقطاع المطاعم والكافيهات والمصانع." },
   { icon: Cog, title: "تطبيق أنظمة الـ ERP", desc: "اختيار وتصميم وتطبيق برامج تخطيط موارد المؤسسات لضمان دقة وسرعة التقارير." },
   { icon: ShieldCheck, title: "الحوكمة وإدارة المخاطر", desc: "أطر رقابة داخلية متكاملة لحماية الأصول وضمان الامتثال للمعايير الدولية والمحلية." },
@@ -729,7 +729,9 @@ function Services() {
                   <s.icon className={`h-8 w-8 ${i === 0 ? "text-emerald-deep" : "text-gold"}`} />
                 </div>
                 <h3 className={`mt-6 font-bold text-2xl ${i === 0 ? "text-ivory" : "text-emerald-deep"}`}>{s.title}</h3>
-                <p className={`mt-3 leading-relaxed ${i === 0 ? "text-ivory/90" : "text-foreground/80"}`}>{s.desc}</p>
+                {s.desc ? (
+                  <p className={`mt-3 leading-relaxed ${i === 0 ? "text-ivory/90" : "text-foreground/80"}`}>{s.desc}</p>
+                ) : null}
                 <a href="#contact" className={`mt-6 inline-flex items-center gap-2 font-semibold text-sm ${i === 0 ? "text-gold-soft" : "text-emerald"}`}>
                   اعرف المزيد <ArrowLeft className="h-4 w-4" />
                 </a>
