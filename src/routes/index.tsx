@@ -404,29 +404,6 @@ function Navbar() {
           </button>
         </div>
       </div>
-
-      {/* Quick jump chips (mobile) */}
-      <div className="lg:hidden border-t border-gold/15 bg-white/70">
-        <div className="flex gap-2 overflow-x-auto px-4 py-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-          {navItems.map((n) => {
-            const id = n.href.replace("#", "");
-            const isActive = active === id;
-            return (
-              <a
-                key={n.href}
-                href={n.href}
-                className={`shrink-0 rounded-full px-3.5 py-1.5 text-[13px] font-semibold transition ${
-                  isActive
-                    ? "bg-emerald-gradient text-ivory shadow-soft"
-                    : "bg-ivory text-foreground/80 border border-gold/25"
-                }`}
-              >
-                {n.label}
-              </a>
-            );
-          })}
-        </div>
-      </div>
     </nav>
 
     {/* Mobile drawer */}
