@@ -12,6 +12,7 @@ import {
   GraduationCap, CheckCircle2, BarChart3, Calculator, Cog,
   Search, PenTool, PlayCircle, Activity, Repeat,
 } from "lucide-react";
+import { Menu, X, MessageCircle } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: Index,
